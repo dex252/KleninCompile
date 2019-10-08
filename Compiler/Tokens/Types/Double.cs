@@ -1,7 +1,6 @@
 ﻿namespace Compiler.Tokens.Types
 {
-    class Int: Token<int>
+    class Double: Token<double>
     {
-       
     }
 }

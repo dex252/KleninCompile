@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using Compiler.Model;
 using Compiler.Tokens;
 using NLog;
 
@@ -18,13 +19,14 @@ namespace Compiler
         public static readonly Logger log = LogManager.GetCurrentClassLogger();
         static void Main(string[] args)
         {
+            #region Setting
             string path;
 
             Console.WriteLine();
 
-            if (args.Length > 0)
+            if (args.Length >= 0)
             {
-                path = Environment.CurrentDirectory + @"\" + args[0];
+                path = Environment.CurrentDirectory + @"\" + "Test.csc";//= Environment.CurrentDirectory + @"\" + args[0];
 
                 Atr atr = Atr.Default;
 
@@ -48,28 +50,32 @@ namespace Compiler
                 {
                     log.Error("Установленно значение атрибута по умолчанию: Default");
                 }
+                #endregion
 
-                if (!File.Exists(path))
+                if (File.Exists(path))
                 {
                     Tokenizer tokenizer = new Tokenizer();
 
-                    using (StreamReader stream = File.OpenText(path))
+                    using StreamReader stream = File.OpenText(path);
+                    string line;
+                    while ((line = stream.ReadLine()) != null)
                     {
-                        string line;
-
-                        while ((line = stream.ReadLine()) != null)
-                        {
-                            tokenizer.GetLine(line);
-
-                        }
+                        tokenizer.GetLine(line);
                     }
+
+                    tokenizer.StartAnalyzer();
                 }
                 else
                 {
-                    log.Error("Файл по указанному пути не существует");
+                    log.Error("Файл по указанному пути не существует: " + path);
                 }
 
             }
+        }
+        public static void Close(Item error)
+        {
+            Console.WriteLine($"Ошибка в позиции {error.SymbolPosition}, в строке {error.LinePosition}");
+            Environment.Exit(1);
         }
     }
 }

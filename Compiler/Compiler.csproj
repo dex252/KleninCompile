@@ -55,12 +55,20 @@
   <ItemGroup>
     <Compile Include="Application.cs" />
     <Compile Include="Attribute\Attribute.cs" />
+    <Compile Include="DataCollection\Data.cs" />
+    <Compile Include="DataCollection\DataAnalyzer.cs" />
+    <Compile Include="DataCollection\Interface\IDataAnalyzer.cs" />
     <Compile Include="Model\Item.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tokens\ITokenizer.cs" />
+    <Compile Include="Tokens\Tables\TokenTables.cs" />
     <Compile Include="Tokens\Tokenizer.cs" />
+    <Compile Include="Tokens\Types\Bool.cs" />
+    <Compile Include="Tokens\Types\Char.cs" />
+    <Compile Include="Tokens\Types\Double.cs" />
     <Compile Include="Tokens\Types\Int.cs" />
-    <Compile Include="Tokens\Types\Token.cs" />
+    <Compile Include="Tokens\Types\Abstract\Token.cs" />
+    <Compile Include="Tokens\Types\String.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

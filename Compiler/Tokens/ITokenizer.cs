@@ -1,13 +1,9 @@
-﻿using System.Collections.Generic;
-
-namespace Compiler.Tokens
+﻿namespace Compiler.Tokens
 {
     interface ITokenizer
     {
-        void GetLine(string literal);
+        void GetLine(string line);
         
-        void ParsLine(List<string> parsLine);
-
-        void EOF();
+        void StartAnalyzer();
     }
 }
