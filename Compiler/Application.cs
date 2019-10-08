@@ -58,12 +58,13 @@ namespace Compiler
 
                     using StreamReader stream = File.OpenText(path);
                     string line;
+                    int count = 0;
                     while ((line = stream.ReadLine()) != null)
                     {
-                        tokenizer.GetLine(line);
+                        count++;
+                        tokenizer.GetLine(line, count);
+                        tokenizer.StartAnalyzer();
                     }
-
-                    tokenizer.StartAnalyzer();
                 }
                 else
                 {

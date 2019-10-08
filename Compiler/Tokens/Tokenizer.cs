@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using Compiler.DataCollection;
 using Compiler.Model;
 using Compiler.Tokens.Tables;
@@ -13,7 +12,8 @@ namespace Compiler.Tokens
         private TokenTables tables;
         private List<Item> items;
 
-        private string AllText { get; set; }
+        private string Line { get; set; }
+        private int Count { get; set; }
 
         public Tokenizer()
         {
@@ -22,80 +22,64 @@ namespace Compiler.Tokens
             items = new List<Item>();
         }
 
-        public void GetLine(string line)
+        public void GetLine(string line, int count)
         {
-            AllText += line + "\n";
+            Line = line;
+            Count = count;
         }
 
         public void StartAnalyzer()
         {
             Item item = new Item();
-            int lineNum = 1;
 
-            for (int i = 0; i < AllText.Length; i++)
+            for (int i = 0; i < Line.Length; i++)
             {
-                if (AllText[i] == '\n')
+               
+                //удаляем пробелы
+                if (Line[i] == ' ')
                 {
-                    lineNum++;
-                    i++;
+                    while (Eof(i) && Line[i + 1] == ' ')
+                    {
+                        i++;
+                    }
                 }
+
                 #region Apostrof
-
-                if (i >= AllText.Length)
-                {
-                    Application.Close(item);
-                }
-
-                if (AllText[i] == ' ')
-                {
-                    try
-                    {
-                        while (AllText[i + 1] == ' ')
-                        {
-                            i++;
-                        }
-                    }
-                    catch (Exception e)
-                    {
-                        Application.log.Error(e);
-                    }
-                };
-                
                 //считываем текст, указываемый в out(вывод на экран), или в char
-                if (AllText[i] == '\'')
+                if (Line[i] == '\'')
                 {
                     item.LiteralValue += '\'';
                     item.SymbolPosition = i;
-                    item.LinePosition = lineNum;
+                    item.LinePosition = Count;
+                    item.TypeLiteral = TypeLeksem.Constants;
+
+                    if (!Eof(i)) Application.Close(item);
                     i++;
 
-                    while (AllText[i] != '\'')
+                    while (Line[i] != '\'')
                     {
-                        item.LiteralValue += AllText[i];
-                        i++;
-                        if (i == AllText.Length)
+                        item.LiteralValue += Line[i];
+
+                        if (!Eof(i))
                         {
-                            item.TypeLiteral = TypeLeksem.NULL;
+                            item.SymbolPosition = i;
                             Application.Close(item);
                         }
+                        i++;
                     }
 
                     item.LiteralValue += '\'';
-                    i++;
-                    item.TypeLiteral = TypeLeksem.Constants;
 
                     items.Add(item);
                     item = new Item();
                 }
                 #endregion
-                
-                if (item.SymbolPosition == 0)
-                {
-                    item.SymbolPosition = i;
-                    item.LinePosition = lineNum;
-                }
 
-                item.LiteralValue += AllText[i]; 
+                if (!Eof(i)) return;
+                i++;
+
+
+
                 /*
                  * a
                  * ab
@@ -114,39 +98,51 @@ namespace Compiler.Tokens
                  */
 
                 //проверка на разделители
-                if (item.LiteralValue.Length == 1)
-                {
-                    if (data.LimitersAnalyzer(item))
-                    {
-                        item.TypeLiteral = TypeLeksem.Limiters;
-                        i++;
+                //if (item.LiteralValue.Length == 1)
+                //{
+                //    if (data.LimitersAnalyzer(item))
+                //    {
+                //        item.TypeLiteral = TypeLeksem.Limiters;
+                //        i++;
 
-                        if (item.LiteralValue == "=" || item.LiteralValue == "!")
-                        {
-                            try
-                            {
-                                if (AllText[i] == '=')
-                                {
-                                    item.LiteralValue += AllText[i];
-                                    i++;
-                                }
+                //        if (item.LiteralValue == "=" || item.LiteralValue == "!")
+                //        {
+                //            try
+                //            {
+                //                if (Line[i] == '=')
+                //                {
+                //                    item.LiteralValue += Line[i];
+                //                    i++;
+                //                }
 
-                                //to do проверка на недопустимые, либо оставить это дело на синтаксический анализ
-                            }
-                            catch (Exception e)
-                            {
-                                Application.log.Error(e);
-                            }
-                        }
+                //                //to do проверка на недопустимые, либо оставить это дело на синтаксический анализ
+                //            }
+                //            catch (Exception e)
+                //            {
+                //                Application.log.Error(e);
+                //            }
+                //        }
 
-                        items.Add(item);
-                        item = new Item();
-                    }
-                }
+                //        items.Add(item);
+                //        item = new Item();
+                //    }
+                //}
             }
 
         }
 
+        /// <summary>
+        /// Проверка существования следущего символа в строке вслед за index. Возвращает true, если символ существует, false - если нет.
+        /// </summary>
+        private bool Eof(int index)
+        {
+            if (Line.Length == index + 1)
+            {
+                return false;
+            }
+
+            return true;
+        }
         //посмотреть на символ следующий за указанным 
         //private bool EosEquals(int i)
         //{

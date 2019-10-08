@@ -2,7 +2,7 @@
 {
     interface ITokenizer
     {
-        void GetLine(string line);
+        void GetLine(string line, int count);
         
         void StartAnalyzer();
     }
