@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Linq;
 using Compiler.DataCollection;
 using Compiler.Model;
 using Compiler.Tokens.Tables;
 
 namespace Compiler.Tokens
 {
-    class Tokenizer: ITokenizer
+    class Tokenizer : ITokenizer
     {
         private readonly Data data;
         private TokenTables tables;
@@ -30,11 +30,12 @@ namespace Compiler.Tokens
 
         public void StartAnalyzer()
         {
-            Item item = new Item();
+            Item item;
 
             for (int i = 0; i < Line.Length; i++)
             {
-               
+
+                #region SpaceDelete
                 //удаляем пробелы
                 if (Line[i] == ' ')
                 {
@@ -43,17 +44,21 @@ namespace Compiler.Tokens
                         i++;
                     }
                 }
+                #endregion
 
                 #region Apostrof
                 //считываем текст, указываемый в out(вывод на экран), или в char
                 if (Line[i] == '\'')
                 {
+                    item = new Item()
+                    {
+                        SymbolPosition = i,
+                        LinePosition = Count,
+                        TypeLiteral = TypeLeksem.Constants
+                    };
                     item.LiteralValue += '\'';
-                    item.SymbolPosition = i;
-                    item.LinePosition = Count;
-                    item.TypeLiteral = TypeLeksem.Constants;
 
-                    if (!Eof(i)) Application.Close(item);
+                    if (!Eof(i)) Application.Close(item);//жесткая привязка к строкам
                     i++;
 
                     while (Line[i] != '\'')
@@ -71,62 +76,102 @@ namespace Compiler.Tokens
                     item.LiteralValue += '\'';
 
                     items.Add(item);
-                    item = new Item();
+
+                    continue;
                 }
                 #endregion
 
-                if (!Eof(i)) return;
-                i++;
+                #region Constant
+                //Проверка на числовые значения
+                if (char.IsDigit(Line[i]))
+                {
+                    item = new Item()
+                    {
+                        SymbolPosition = i,
+                        LinePosition = Count,
+                        TypeLiteral = TypeLeksem.Constants
+                    };
 
+                    item.LiteralValue += Line[i];
 
+                    if (Eof(i))
+                    {
+                        while (Eof(i+1) && (char.IsDigit(Line[i+1]) || Line[i+1] == '.'))
+                        {
+                            item.LiteralValue += Line[i+1];
+                            i++;
+                        }
+
+                        if (char.IsDigit(Line[i+1]) || Line[i+1] == '.')
+                        {
+                            item.LiteralValue += Line[i+1];
+                        }
+
+                        var value = item.LiteralValue;
+
+                        if (value[value.Length - 1] == '.' || value.Count(x => x == '.') > 1)
+                        {
+                            Application.Close(item);
+                        }
+
+                        items.Add(item);
+                    }
+                    else
+                    {
+                        items.Add(item);
+                    }
+
+                    continue;
+                }
+                #endregion
+
+                #region Limiters
+                //проверка на разделители
+                if (data.Limiters.Contains(Line[i]))
+                {
+                    item = new Item
+                    {
+                        LinePosition = Count,
+                        SymbolPosition = i,
+                        TypeLiteral = TypeLeksem.Limiters
+                    };
+
+                    item.LiteralValue += Line[i];
+
+                    if (Eof(i) && (Line[i] == '=' || Line[i] == '!') && Line[i+1] == '=')
+                    {
+                        i++;
+                        item.LiteralValue += Line[i];
+                        items.Add(item);
+                    }
+                    else
+                    {
+                        items.Add(item);
+                    }
+                    continue;
+                }
+                #endregion
 
                 /*
-                 * a
-                 * ab
-                 * a;
-                 * ab;
-                 * 1;
-                 * 123;
-                 * 1s;
-                 * 1s
-                 * 1/n/n/n/n/n;
-                 * =
-                 * >=;
-                 * > 4
-                 * >f
-                 * ; /n /n;
-                 */
+                * a
+                * ab
+                * a;
+                * ab;
+                * 1;
+                * 123;
+                * 1s;
+                * 1s
+                * ;
+                * =
+                * >=;
+                * > 4
+                * >f
+                */
 
-                //проверка на разделители
-                //if (item.LiteralValue.Length == 1)
-                //{
-                //    if (data.LimitersAnalyzer(item))
-                //    {
-                //        item.TypeLiteral = TypeLeksem.Limiters;
-                //        i++;
+                #region Identifiers&KeyWords
+                //if (Line[i])
+                #endregion
 
-                //        if (item.LiteralValue == "=" || item.LiteralValue == "!")
-                //        {
-                //            try
-                //            {
-                //                if (Line[i] == '=')
-                //                {
-                //                    item.LiteralValue += Line[i];
-                //                    i++;
-                //                }
-
-                //                //to do проверка на недопустимые, либо оставить это дело на синтаксический анализ
-                //            }
-                //            catch (Exception e)
-                //            {
-                //                Application.log.Error(e);
-                //            }
-                //        }
-
-                //        items.Add(item);
-                //        item = new Item();
-                //    }
-                //}
             }
 
         }
@@ -136,31 +181,12 @@ namespace Compiler.Tokens
         /// </summary>
         private bool Eof(int index)
         {
-            if (Line.Length == index + 1)
-            {
-                return false;
-            }
-
-            return true;
+            return Line.Length > index + 1;
         }
-        //посмотреть на символ следующий за указанным 
-        //private bool EosEquals(int i)
-        //{
-        //    int next = i;
-        //    try
-        //    {
-        //        if (AllText[next] == '=';
-        //        else
-        //        {
-        //            if (AllText[next] == '\'' || AllText)
-        //        }
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        Application.log.Error(e);
-        //    }
-           
-           
-        //}
+
+        public List<Item> GetTable()
+        {
+            return items;
+        }
     }
 }

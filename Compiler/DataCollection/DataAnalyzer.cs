@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Runtime.Serialization.Formatters;
 using Compiler.Model;
 
 namespace Compiler.DataCollection

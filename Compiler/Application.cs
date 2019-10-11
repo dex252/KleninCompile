@@ -65,17 +65,26 @@ namespace Compiler
                         tokenizer.GetLine(line, count);
                         tokenizer.StartAnalyzer();
                     }
+
+                    foreach (var item in tokenizer.GetTable())
+                    {
+                        Console.WriteLine(item.LinePosition + "   " + item.SymbolPosition + "   " + item.TypeLiteral + "   `" + item.LiteralValue + "`");
+                    }
+
                 }
                 else
                 {
                     log.Error("Файл по указанному пути не существует: " + path);
                 }
 
+                Console.WriteLine("--Press AnyKey");
+                Console.ReadKey();
             }
         }
         public static void Close(Item error)
         {
             Console.WriteLine($"Ошибка в позиции {error.SymbolPosition}, в строке {error.LinePosition}");
+            Console.ReadKey();
             Environment.Exit(1);
         }
     }
