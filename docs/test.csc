@@ -1,13 +1,14 @@
 class Application
 {
-    void Main(string[] args)
+    void Main(char[] args)
     {
        int a = 5;
 	   
 	   int b = 5 + a;
-	    for (int i = 0; i < b; i++)
+	    while (int a < b)
             {
-                Write(a+i*2);
+                out(a+b*2);
+				a = a + 1;
             }
     }
 }

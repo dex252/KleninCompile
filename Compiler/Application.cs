@@ -6,14 +6,6 @@ using NLog;
 
 namespace Compiler
 {
-    enum Atr
-    {
-        Default,
-        One,
-        All,
-        Any
-    }
-
     class Application
     {
         public static readonly Logger log = LogManager.GetCurrentClassLogger();
@@ -24,10 +16,11 @@ namespace Compiler
 
             Console.WriteLine();
 
-            if (args.Length >= 0)
+            if (args.Length > 0)
             {
-                path = Environment.CurrentDirectory + @"\" + "Test.csc";//= Environment.CurrentDirectory + @"\" + args[0];
-
+                //path = Environment.CurrentDirectory + @"\" + "Test.csc";
+                // path = Environment.CurrentDirectory + @"\" + args[0];
+                path = args[0];
                 Atr atr = Atr.Default;
 
                 try
@@ -37,18 +30,23 @@ namespace Compiler
 
                     if (attributeValidation)
                     {
-                        log.Info("Введен атрибут: " + attribute);
+                        log.Info("Attribute entered: " + attribute);
+                        Console.WriteLine("Attribute entered: " + attribute);
+                        Console.WriteLine();
                         atr = (Atr) Enum.Parse(typeof(Atr), attribute);
                     }
                     else
                     {
-                        log.Error("Введенный атрибут не существует: " + attribute + " ; Установленно значение по умолчанию: Default");
+                        log.Error("The attribute you entered does not exist: " + attribute + " ; The default attribute value is set: Default");
+                        Console.WriteLine("The attribute you entered does not exist: " + attribute + " ; The default attribute value is set: Default");
                     }
 
                 }
                 catch
                 {
-                    log.Error("Установленно значение атрибута по умолчанию: Default");
+                    Console.WriteLine("The default attribute value is set: Default");
+                    Console.WriteLine();
+                    log.Error("The default attribute value is set: Default");
                 }
                 #endregion
 
@@ -66,25 +64,36 @@ namespace Compiler
                         tokenizer.StartAnalyzer();
                     }
 
-                    foreach (var item in tokenizer.GetTable())
-                    {
-                        Console.WriteLine(item.LinePosition + "   " + item.SymbolPosition + "   " + item.TypeLiteral + "   `" + item.LiteralValue + "`");
-                    }
+                    tokenizer.PrintTables();
+
+                    //foreach (var item in tokenizer.GetTable())
+                    //{
+                    //    Console.WriteLine("{0, 4} | {1, 4} | {2, 12} | {3, 20}",
+                    //        item.LinePosition,
+                    //        item.SymbolPosition,
+                    //        item.TypeLiteral,
+                    //        item.LiteralValue);
+                    //}
 
                 }
                 else
                 {
-                    log.Error("Файл по указанному пути не существует: " + path);
+                    log.Error("The file at the specified path does not exist: " + path);
+                    Console.WriteLine("The file at the specified path does not exist: " + path);
+                    Console.WriteLine("--Press AnyKey");
                 }
-
-                Console.WriteLine("--Press AnyKey");
-                Console.ReadKey();
             }
+            else
+            {
+                Console.WriteLine("No arguments");
+            }
+         
+            //Console.ReadKey();
         }
         public static void Close(Item error)
         {
-            Console.WriteLine($"Ошибка в позиции {error.SymbolPosition}, в строке {error.LinePosition}");
-            Console.ReadKey();
+            Console.WriteLine($"Error in {error.SymbolPosition} position, in line {error.LinePosition}");
+            //Console.ReadKey();
             Environment.Exit(1);
         }
     }

@@ -4,6 +4,13 @@ using System.Reflection;
 
 namespace Compiler
 {
+    enum Atr
+    {
+        Default,
+        One,
+        All,
+        Any
+    }
     internal class Attribute
     {
         private readonly List<string> collection;
