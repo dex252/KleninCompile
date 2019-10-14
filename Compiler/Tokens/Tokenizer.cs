@@ -186,46 +186,10 @@ namespace Compiler.Tokens
         {
             return items;
         }
-        /// <summary>
-        /// Вывод в консоль таблицы полученных литералов (отладка)
-        /// </summary>
-        public void PrintTables()
-        {
-            Distribution();
-
-            foreach (var item in tables.Identifiers)
-            {
-                PrintItem(item);
-            }
-
-            Console.WriteLine("-------------------------------------------------");
-            foreach (var item in tables.KeyWords)
-            {
-                PrintItem(item);
-            }
-
-            Console.WriteLine("-------------------------------------------------");
-            foreach (var item in tables.Constants)
-            {
-                PrintItem(item);
-            }
-
-            Console.WriteLine("-------------------------------------------------");
-            foreach (var item in tables.Limiters)
-            {
-                PrintItem(item);
-            }
-
-            Console.WriteLine("-------------------------------------------------");
-            Console.WriteLine($"Identifiers = {tables.Identifiers.Count}");
-            Console.WriteLine($"KeyWords = {tables.KeyWords.Count}");
-            Console.WriteLine($"Constants = {tables.Constants.Count}");
-            Console.WriteLine($"Limiters = {tables.Limiters.Count}");
-        }
-
+        
         private void PrintItem(Item item)
         {
-            Console.WriteLine("{0, 4} | {1, 4} | {2, 12} | {3, 20}",
+            Console.WriteLine("{0, 4}       {1, 4}      {2, 12}     {3, 20}",
                 item.LinePosition,
                 item.SymbolPosition,
                 item.TypeLiteral,
@@ -240,34 +204,5 @@ namespace Compiler.Tokens
             return Line.Length > index + 1;
         }
 
-        /// <summary>
-        /// Распределяем полученные значения в таблицу (отладка)
-        /// </summary>
-        private void Distribution()
-        {
-            if (tables == null)
-            {
-                tables = new TokenTables();
-                foreach (var item in items)
-                {
-                    switch (item.TypeLiteral)
-                    {
-                        case TypeLeksem.Constants:
-                            tables.Constants.Add(item);
-                            break;
-                        case TypeLeksem.Identifiers:
-                            tables.Identifiers.Add(item);
-                            break;
-                        case TypeLeksem.KeyWords:
-                            tables.KeyWords.Add(item);
-                            break;
-                        case TypeLeksem.Limiters:
-                            tables.Limiters.Add(item);
-                            break;
-                    }
-                }
-            }
-            
-        }
     }
 }

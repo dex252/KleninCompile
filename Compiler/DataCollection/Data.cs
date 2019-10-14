@@ -25,7 +25,7 @@ namespace Compiler
             "cin",
             "cout",
             "namespace",
-            "using"
+            "using",
         };
 
         /// <summary>

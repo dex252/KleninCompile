@@ -64,16 +64,14 @@ namespace Compiler
                         tokenizer.StartAnalyzer();
                     }
 
-                    tokenizer.PrintTables();
-
-                    //foreach (var item in tokenizer.GetTable())
-                    //{
-                    //    Console.WriteLine("{0, 4} | {1, 4} | {2, 12} | {3, 20}",
-                    //        item.LinePosition,
-                    //        item.SymbolPosition,
-                    //        item.TypeLiteral,
-                    //        item.LiteralValue);
-                    //}
+                    foreach (var item in tokenizer.GetTable())
+                    {
+                        Console.WriteLine("{0, 4}       {1, 4}      {2, 12}     {3, 20}",
+                            item.LinePosition,
+                            item.SymbolPosition,
+                            item.TypeLiteral,
+                            item.LiteralValue);
+                    }
 
                 }
                 else
