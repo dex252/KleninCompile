@@ -9,9 +9,11 @@ namespace Lexer
     {
         static void Main(string[] args)
         {
-            #region Setting
-
+            List<Token> tokensList = new List<Token>();
+            Token token = new Token();
             string path;
+            string excelPath;
+            #region Setting
 
             Console.WriteLine();
 
@@ -19,6 +21,7 @@ namespace Lexer
             if (args.Length == 0)
             {
                 path = Environment.CurrentDirectory + @"\" + "Test.csc";
+                excelPath = Environment.CurrentDirectory + @"\" + "table.xlsx";
                 //path = args[0];
                 Atr atr = Atr.Default;
 
@@ -51,16 +54,13 @@ namespace Lexer
                 if (File.Exists(path))
                 {
                     using StreamReader stream = File.OpenText(path);
-                    Tokenizer tokenizer = new Tokenizer(stream);
+                    Tokenizer tokenizer = new Tokenizer(stream, new StateTable(excelPath));
 
-                    Token token = new Token();
-                    List<Token> tokensList = new List<Token>();
-
-                    while (token != null)
-                    {
-                        token = tokenizer.GetToken();
-                        tokensList.Add(token);
-                    }
+                    //while (token != null)
+                    //{
+                    //    token = tokenizer.GetToken();
+                    //    tokensList.Add(token);
+                    //}
                 }
                 else
                 {
