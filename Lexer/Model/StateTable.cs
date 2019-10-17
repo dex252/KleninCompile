@@ -100,7 +100,7 @@ namespace Lexer.Model
             }
             else
             {
-                Console.WriteLine("Файл excel с таблицей переходов не найден.");
+                Console.WriteLine($"Exel file not found. Current path: {excelPath}");
             }
         }
     }

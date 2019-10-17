@@ -36,7 +36,7 @@ namespace Lexer
                     var oldState = State;
                     State = SetNewState(State, current);
 
-                    //экранируем от пробелов, переходов строк, переноса корретки и символов, не входящих в алфавит
+                    //экранируем от пробелов, табуляций, переходов строк, переноса корретки и символов, не входящих в алфавит
                     if (oldState == State.Begin && State == State.Indefinitely)
                     {
                         Stream.Read();
@@ -48,6 +48,13 @@ namespace Lexer
                                 ColumnPos++;
                                 continue;
                             }
+
+                            case 9:
+                            {
+                                RefreshState();
+                                ColumnPos++;
+                                continue;
+                                }
 
                             case 10:
                             {

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using Lexer.Model;
 
@@ -17,12 +18,16 @@ namespace Lexer
 
             Console.WriteLine();
 
-            //if (args.Length > 0)
-            if (args.Length == 0)
+            if (args.Length > 0)
+            //if (args.Length == 0)
             {
-                path = Environment.CurrentDirectory + @"\" + "Test.csc";
-                excelPath = Environment.CurrentDirectory + @"\" + "table.xlsx";
-                //path = args[0];
+                //path = Environment.CurrentDirectory + @"\" + "Test.csc";
+              //  excelPath = Environment.CurrentDirectory + @"\" + "table.xlsx";
+               // excelPath = "table.xlsx";
+               excelPath = ConfigurationManager
+                   .ConnectionStrings["Lexer.Properties.Settings.ExcelPathToTable"]
+                   .ConnectionString;
+                path = args[0];
                 Atr atr = Atr.Default;
 
                 try
@@ -79,7 +84,7 @@ namespace Lexer
                 Console.WriteLine("No arguments");
             }
 
-            Console.ReadKey();
+            //Console.ReadKey();
         }
     }
 }

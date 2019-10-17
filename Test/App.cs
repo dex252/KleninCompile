@@ -87,7 +87,7 @@ namespace Test
 
             try
             {
-                string processPath = path + "\\Compiler.exe";
+                string processPath = path + "\\Lexer.exe";
                 string arguments = appItems[cur];
 
                 textBoxApp.Text = arguments;
@@ -173,6 +173,20 @@ namespace Test
                 richTextBoxMy.AppendText(e.ToString());
             }
             
+        }
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == Keys.Left && ButtonBack.Enabled)
+            {
+                ButtonBack_Click(null, null);
+            }
+            else if (keyData == Keys.Right && ButtonForward.Enabled)
+            {
+                ButtonForward_Click(null, null);
+            }
+               
+            return base.ProcessCmdKey(ref msg, keyData);
         }
     }
 }
