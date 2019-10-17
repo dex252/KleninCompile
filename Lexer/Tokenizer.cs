@@ -1,5 +1,4 @@
-﻿using System;
-using System.Diagnostics.Eventing.Reader;
+﻿using System.Collections.Generic;
 using System.IO;
 using Lexer.Model;
 
@@ -7,124 +6,247 @@ namespace Lexer
 {
     class Tokenizer
     {
-        private StreamReader Stream { get; set; }
-        private int Cur { get; set; }
-        private StateTable StateTable { get; set; }
+        private StreamReader Stream { get; }
+        public Dictionary<(char, State), State> Dictionary { get; set; }
+        public Dictionary<string, bool> ReserveWords { get; set; }
         private int ColumnPos { get; set; }
-        private  int RowPos { get; set; }
+        private int RowPos { get; set; }
         private string Temp { get; set; }
         private State State { get; set; }
 
         public Tokenizer(StreamReader stream, StateTable stateTable)
         {
             Stream = stream;
-            RowPos = 0;
+            RowPos = 1;
             ColumnPos = 0;
-            Temp = "";
-            Cur = 0;
-            State = State.Null;
-            StateTable = stateTable;
+            Dictionary = stateTable.Dictionary;
+            ReserveWords = stateTable.ReserveWords;
         }
 
         public Token GetToken()
         {
-            while (State != State.Begin)
+            State = State.Begin;
+            Temp = "";
+            while (State != State.EndOfFile)
             {
-                State = State.Begin;
-                if (!Eof())
+                if (Stream.Peek() != -1)
                 {
-                    var asc = Stream.Read();
-                    char literal = (char)asc;
-                    //TO DO
-                    State = SetNewState(State, asc);
-                    if (State != State.Begin) Temp += literal.ToString();
-                    else return new Token()
+                    var current = Stream.Peek();
+
+                    var oldState = State;
+                    State = SetNewState(State, current);
+
+                    //экранируем от пробелов, переходов строк, переноса корретки и символов, не входящих в алфавит
+                    if (oldState == State.Begin && State == State.Indefinitely)
                     {
-                        RowPos = RowPos,
-                        ColumnPos = ColumnPos,
-                        LiteralValue = Temp
-                    };
+                        Stream.Read();
+                        switch (current)
+                        {
+                            case 32:
+                            {
+                                RefreshState();
+                                ColumnPos++;
+                                continue;
+                            }
 
-                    Console.WriteLine($"{literal} = {asc}       {State}     {RowPos}    {ColumnPos}");
+                            case 10:
+                            {
+                                RefreshState();
+                                RowPos++;
+                                ColumnPos = 0;
+                                continue;
+                            }
 
-                    
+                            case 13:
+                            {
+                                RefreshState();
+                                continue;
+                            }
+
+                            default:
+                            {
+                                Temp += (char)current;
+                                ColumnPos++;
+                                return new Token()
+                                {
+                                    LiteralValue = Temp,
+                                    RowPos = RowPos,
+                                    ColumnPos = ColumnPos - Temp.Length + 1,
+                                    TypeLeksem = TypeLeksem.ErrorException
+                                };
+                            }
+                        }
+                    }
+                 
+                    switch (State)
+                    {
+                        case State.Indefinitely:
+                        {
+                            if (oldState == State.Identifier)
+                            {
+                                if (ReserveWords.ContainsKey(Temp)) oldState = State.ReserveWord;
+                            }
+                            return new Token()
+                            {
+                                ColumnPos = ColumnPos - Temp.Length + 1,
+                                RowPos = RowPos,
+                                SourceValue = Temp,
+                                LiteralValue = SourceValueToLiteralValue(Temp, oldState),
+                                TypeLeksem = GetLeksemType(oldState)
+                            };
+                        }
+
+                        case State.Comment:
+                        {
+                            while (Stream.Peek() != 10 && Stream.Peek() != -1)
+                            {
+                                Stream.Read();
+                            }
+
+                            RefreshState();
+                            ColumnPos = 0;
+                            continue;
+                        }
+
+                        default:
+                        {
+                            Temp += (char) current;
+                            ColumnPos++;
+                            Stream.Read();
+                            break;
+                        }
+                    }
+                }
+                else
+                {
+                    if (State != State.Begin)
+                    {
+                        if (State == State.Identifier)
+                        {
+                            if (ReserveWords.ContainsKey(Temp)) State = State.ReserveWord;
+                        }
+
+                        return new Token()
+                        {
+                            ColumnPos = ColumnPos - Temp.Length + 1,
+                            RowPos = RowPos,
+                            SourceValue = Temp,
+                            LiteralValue = SourceValueToLiteralValue(Temp, State),
+                            TypeLeksem = GetLeksemType(State)
+                        };
+                    }
+                    State = State.EndOfFile;
                 }
             }
-            
+
             return null;
+        }
+
+        private void RefreshState()
+        {
+            State = State.Begin;
+            Temp = "";
+        }
+
+        private string SourceValueToLiteralValue(string value, State state)
+        {
+            if (state == State.String)
+            {
+                return value.Replace("\"", "");
+            }
+            if (state == State.Char)
+            {
+                return value.Replace("\'", "");
+            }
+
+            return value;
+        }
+
+        private TypeLeksem GetLeksemType(State oldState)
+        {
+            //TO DO
+            switch (oldState)
+            {
+                case State.Identifier:
+                    return TypeLeksem.Identifier;
+                case State.Word:
+                    return TypeLeksem.ErrorException;
+                case State.Int:
+                    return TypeLeksem.Integer;
+                case State.Double:
+                    return TypeLeksem.Double;
+                case State.ReserveWord:
+                    return TypeLeksem.ReserveWord;
+                case State.Operator:
+                    return TypeLeksem.Operator;
+                case State.Delimiters:
+                    return TypeLeksem.Delimiter;
+                case State.Logical:
+                    return TypeLeksem.Logical;
+                case State.ErrorException:
+                    return TypeLeksem.ErrorException;
+                case State.Plus:
+                    return TypeLeksem.Operator;
+                case State.PlusPlus:
+                    return TypeLeksem.Operator;
+                case State.Minus:
+                    return TypeLeksem.Operator;
+                case State.MinusMinus:
+                    return TypeLeksem.Operator;
+                case State.Equal:
+                    return TypeLeksem.Operator;
+                case State.EqualEqual:
+                    return TypeLeksem.Operator;
+                case State.LogicInequality:
+                    return TypeLeksem.Logical;
+                case State.Inequality:
+                    return TypeLeksem.Operator;
+                case State.More:
+                    return TypeLeksem.Operator;
+                case State.MoreEqual:
+                    return TypeLeksem.Operator;
+                case State.Less:
+                    return TypeLeksem.Operator;
+                case State.LessEqual:
+                    return TypeLeksem.Operator;
+                case State.Ampersand:
+                    return TypeLeksem.ErrorException;
+                case State.DoubleAmpersand:
+                    return TypeLeksem.Logical;
+                case State.Or:
+                    return TypeLeksem.ErrorException;
+                case State.DoubleOr:
+                    return TypeLeksem.Logical;
+                case State.Devision:
+                    return TypeLeksem.Operator;
+                case State.Comment:
+                    return TypeLeksem.ErrorException;
+                case State.Acute:
+                    return TypeLeksem.ErrorException;
+                case State.HalfChar:
+                    return TypeLeksem.ErrorException;
+                case State.Char:
+                    return TypeLeksem.Char;
+                case State.String:
+                    return TypeLeksem.String;
+                default: return TypeLeksem.ErrorException;
+            }
         }
 
         private State SetNewState(State state, int asc)
         {
-            TypeLiteral typeLiteral = SetTypeLiteral(asc);
-            // state = StateTable.dictionary[(typeLiteral, State)];
-
-            StateTable.dictionary.TryGetValue((typeLiteral, State), out state);
-
-            return state;
-        }
-
-        private TypeLiteral SetTypeLiteral(int asc)
-        {
-            TypeLiteral typeLiteral = TypeLiteral.Null;
-
-            if (asc == 10)
+            if (asc >= 65 && asc <= 90 || asc >= 97 && asc <= 122 || asc == 95)
             {
-                RowPos++;
-            }
-
-            if (asc == 46)
-            {
-                typeLiteral = TypeLiteral.Point;
-            }
-            else if (asc >= 65 && asc <= 90 || asc == 95 || asc >= 97 && asc <= 122)//попроавить
-            {
-                typeLiteral = TypeLiteral.Char;
+                Dictionary.TryGetValue(('s', state), out state);
             }
             else if (asc >= 48 && asc <= 57)
             {
-                typeLiteral = TypeLiteral.Number;
+                Dictionary.TryGetValue(('0', state), out state);
             }
-            else if (asc == 59 || asc == 44 || asc == 91 || asc == 93 || asc == 40 || asc == 41 || asc == 123 || asc == 125)
-            {
-                typeLiteral = TypeLiteral.Delimiter;
-            }
-            else if (asc == 61)
-            {
-                typeLiteral = TypeLiteral.Equal;
-            }
-            else if (asc == 33 || asc == 60 || asc == 62)
-            {
-                typeLiteral = TypeLiteral.ExclamationMoreOrLess;
-            }
-            else if (asc == 42 || asc == 47)
-            {
-                typeLiteral = TypeLiteral.Operator;
-            }
-            else if (asc == 34)
-            {
-                typeLiteral = TypeLiteral.DoubleQuote;
-            }
-            else if (asc == 92)
-            {
-                typeLiteral = TypeLiteral.Comment;
-            }
-            else if (asc == 45)
-            {
-                typeLiteral = TypeLiteral.Minus;
-            }
-            else if (asc == 43)
-            {
-                typeLiteral = TypeLiteral.Plus;
-            }
+            else
+                Dictionary.TryGetValue(((char) asc, state), out state);
 
-            return typeLiteral;
-        }
-
-        private bool Eof()
-        {
-            if (Stream.EndOfStream) return true;
-            return false;
+            return state;
         }
     }
 }

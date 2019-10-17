@@ -56,11 +56,17 @@ namespace Lexer
                     using StreamReader stream = File.OpenText(path);
                     Tokenizer tokenizer = new Tokenizer(stream, new StateTable(excelPath));
 
-                    //while (token != null)
-                    //{
-                    //    token = tokenizer.GetToken();
-                    //    tokensList.Add(token);
-                    //}
+                    while (token != null)
+                    {
+                        token = tokenizer.GetToken();
+                        if (token != null)
+                        {
+                            Console.WriteLine($"{token.RowPos,4}{token.ColumnPos,4}{token.TypeLeksem,18}{token.LiteralValue,12}");
+                            tokensList.Add(token);
+                        }
+
+                        if (token?.TypeLeksem == TypeLeksem.ErrorException) break;
+                    }
                 }
                 else
                 {

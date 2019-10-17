@@ -2,11 +2,16 @@
 {
     public enum TypeLeksem
     {
-        Constant,
+        ErrorException,
+        Char,
         Identifier,
-        KeyWord,
+        ReserveWord,
         Operator,
-        Number,
+        Integer,
+        Double,
+        Logical,
+        Delimiter,
+        String,
     }
 
     public class Token
@@ -15,5 +20,6 @@
         public int ColumnPos { get; set; }
         public string LiteralValue { get; set; }
         public TypeLeksem TypeLeksem { get; set; }
+        public string SourceValue { get; set; }
     }
 }
