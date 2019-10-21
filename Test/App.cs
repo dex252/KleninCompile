@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace Test
@@ -11,14 +14,18 @@ namespace Test
         private string[] appItems;
         private string[] myItems;
         private int cur;
+        public delegate void myDelegate();
+        public myDelegate Delegate;
 
         public App()
         {
             InitializeComponent();
+            Delegate = new myDelegate(CheckStatusControl);
         }
 
         private void ButtonChoice_Click(object sender, EventArgs e)
         {
+            StatusControl.BackColor = System.Drawing.Color.Gainsboro;
             ButtonForward.Enabled = false;
             ButtonBack.Enabled = false;
             Text = "Test";
@@ -84,7 +91,7 @@ namespace Test
             richTextBoxMy.Clear();
             richTextBoxApp.Clear();
             richTextBoxSource.Clear();
-
+            StatusControl.BackColor = System.Drawing.Color.Gainsboro;
             try
             {
                 string processPath = path + "\\Lexer.exe";
@@ -106,34 +113,79 @@ namespace Test
                         RedirectStandardOutput = true,
                         RedirectStandardError = true,
                         UseShellExecute = false,
-                        CreateNoWindow = true
+                        CreateNoWindow = true,
+                        StandardOutputEncoding = Encoding.UTF8
                     }
                 };
 
+                ps.EnableRaisingEvents = true;
                 ps.ErrorDataReceived += Printer;
                 ps.OutputDataReceived += Printer;
+
+                ps.Exited += (sender, e) =>
+                {
+                    Thread.Sleep(200);
+                    Invoke(Delegate);
+                };
 
                 ps.Start();
                 ps.BeginErrorReadLine();
                 ps.BeginOutputReadLine();
-
-
-                void Printer(object sender, DataReceivedEventArgs e)
-                {
-                    Trace.WriteLine(e.Data);
-
-                    this.BeginInvoke(new MethodInvoker(() =>
-                    {
-                        richTextBoxApp.AppendText(e.Data + "\n");
-                    }));
-                }
-
             }
             catch (Exception e)
             {
                 richTextBoxApp.Clear();
                 richTextBoxApp.AppendText(e.ToString());
             }
+        }
+
+        private void CheckStatusControl()
+        {
+            var myTextBox = richTextBoxMy.Text;
+            var appTextBox = richTextBoxApp.Text;
+
+            appTextBox = appTextBox.Replace('\n', ' ');
+            appTextBox = appTextBox.Replace('\t', ' ');
+            myTextBox = myTextBox.Replace("\n", " ");
+            myTextBox = myTextBox.Replace("\t", " ");
+
+            var myText = myTextBox.Split(' ').ToList();
+            var appText = appTextBox.Split(' ').ToList();
+
+            myText.RemoveAll(x => x == "");
+            appText.RemoveAll(x => x == "");
+
+            if (myText.Count == 0 && appText.Count == 0) StatusControl.BackColor = System.Drawing.Color.Green;
+            else if (myText.Count == appText.Count)
+            {
+                StatusControl.BackColor = System.Drawing.Color.Green;
+
+                for (int i = 0; i < myText.Count; i++)
+                {
+                    if (myText[i] != appText[i])
+                    {
+                        StatusControl.BackColor = System.Drawing.Color.Red;
+                    }
+                }
+
+            }
+            else
+            {
+                StatusControl.BackColor = System.Drawing.Color.Red;
+            }
+
+
+
+        }
+
+        private void Printer(object sender, DataReceivedEventArgs e)
+        {
+            Trace.WriteLine(e.Data);
+
+            this.BeginInvoke(new MethodInvoker(() =>
+            {
+                if (e.Data != null) richTextBoxApp.AppendText(e.Data + "\n");
+            }));
         }
 
         private void PrintSourceResult(string arguments)

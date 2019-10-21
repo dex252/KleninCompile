@@ -34,12 +34,13 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.ButtonForward = new System.Windows.Forms.ToolStripButton();
             this.ButtonChoice = new System.Windows.Forms.ToolStripButton();
-            this.richTextBoxApp = new MyRichTextBox();
             this.textBoxApp = new System.Windows.Forms.TextBox();
             this.textBoxMy = new System.Windows.Forms.TextBox();
-            this.richTextBoxMy = new MyRichTextBox();
-            this.richTextBoxSource = new MyRichTextBox();
             this.textBoxSource = new System.Windows.Forms.TextBox();
+            this.StatusControl = new System.Windows.Forms.Panel();
+            this.richTextBoxSource = new Test.MyRichTextBox();
+            this.richTextBoxMy = new Test.MyRichTextBox();
+            this.richTextBoxApp = new Test.MyRichTextBox();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -93,18 +94,9 @@
             this.ButtonChoice.Text = "Выбрать папку для проверки";
             this.ButtonChoice.Click += new System.EventHandler(this.ButtonChoice_Click);
             // 
-            // richTextBoxApp
-            // 
-            this.richTextBoxApp.Location = new System.Drawing.Point(6, 54);
-            this.richTextBoxApp.Name = "richTextBoxApp";
-            this.richTextBoxApp.ReadOnly = true;
-            this.richTextBoxApp.Size = new System.Drawing.Size(410, 700);
-            this.richTextBoxApp.TabIndex = 2;
-            this.richTextBoxApp.Text = "";
-            // 
             // textBoxApp
             // 
-            this.textBoxApp.Location = new System.Drawing.Point(6, 28);
+            this.textBoxApp.Location = new System.Drawing.Point(426, 28);
             this.textBoxApp.Name = "textBoxApp";
             this.textBoxApp.ReadOnly = true;
             this.textBoxApp.Size = new System.Drawing.Size(410, 20);
@@ -118,8 +110,35 @@
             this.textBoxMy.Size = new System.Drawing.Size(410, 20);
             this.textBoxMy.TabIndex = 5;
             // 
+            // textBoxSource
+            // 
+            this.textBoxSource.Location = new System.Drawing.Point(6, 28);
+            this.textBoxSource.Name = "textBoxSource";
+            this.textBoxSource.ReadOnly = true;
+            this.textBoxSource.Size = new System.Drawing.Size(410, 20);
+            this.textBoxSource.TabIndex = 9;
+            // 
+            // StatusControl
+            // 
+            this.StatusControl.BackColor = System.Drawing.Color.Gainsboro;
+            this.StatusControl.Location = new System.Drawing.Point(426, 0);
+            this.StatusControl.Name = "StatusControl";
+            this.StatusControl.Size = new System.Drawing.Size(410, 25);
+            this.StatusControl.TabIndex = 11;
+            // 
+            // richTextBoxSource
+            // 
+            this.richTextBoxSource.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.richTextBoxSource.Location = new System.Drawing.Point(6, 54);
+            this.richTextBoxSource.Name = "richTextBoxSource";
+            this.richTextBoxSource.ReadOnly = true;
+            this.richTextBoxSource.Size = new System.Drawing.Size(410, 700);
+            this.richTextBoxSource.TabIndex = 8;
+            this.richTextBoxSource.Text = "";
+            // 
             // richTextBoxMy
             // 
+            this.richTextBoxMy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.richTextBoxMy.Location = new System.Drawing.Point(842, 54);
             this.richTextBoxMy.Name = "richTextBoxMy";
             this.richTextBoxMy.ReadOnly = true;
@@ -127,28 +146,22 @@
             this.richTextBoxMy.TabIndex = 6;
             this.richTextBoxMy.Text = "";
             // 
-            // richTextBoxSource
+            // richTextBoxApp
             // 
-            this.richTextBoxSource.Location = new System.Drawing.Point(422, 54);
-            this.richTextBoxSource.Name = "richTextBoxSource";
-            this.richTextBoxSource.ReadOnly = true;
-            this.richTextBoxSource.Size = new System.Drawing.Size(410, 700);
-            this.richTextBoxSource.TabIndex = 8;
-            this.richTextBoxSource.Text = "";
-            // 
-            // textBoxSource
-            // 
-            this.textBoxSource.Location = new System.Drawing.Point(422, 28);
-            this.textBoxSource.Name = "textBoxSource";
-            this.textBoxSource.ReadOnly = true;
-            this.textBoxSource.Size = new System.Drawing.Size(410, 20);
-            this.textBoxSource.TabIndex = 9;
+            this.richTextBoxApp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.richTextBoxApp.Location = new System.Drawing.Point(426, 54);
+            this.richTextBoxApp.Name = "richTextBoxApp";
+            this.richTextBoxApp.ReadOnly = true;
+            this.richTextBoxApp.Size = new System.Drawing.Size(410, 700);
+            this.richTextBoxApp.TabIndex = 2;
+            this.richTextBoxApp.Text = "";
             // 
             // App
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 761);
+            this.Controls.Add(this.StatusControl);
             this.Controls.Add(this.textBoxSource);
             this.Controls.Add(this.richTextBoxSource);
             this.Controls.Add(this.richTextBoxMy);
@@ -179,6 +192,7 @@
         private System.Windows.Forms.ToolStripButton ButtonChoice;
         private MyRichTextBox richTextBoxSource;
         private System.Windows.Forms.TextBox textBoxSource;
+        private System.Windows.Forms.Panel StatusControl;
     }
 }
 

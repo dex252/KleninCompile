@@ -16,7 +16,7 @@ namespace Lexer
             string excelPath;
             #region Setting
 
-            Console.WriteLine();
+            //Console.WriteLine();
 
             if (args.Length > 0)
             //if (args.Length == 0)
@@ -37,8 +37,8 @@ namespace Lexer
 
                     if (attributeValidation)
                     {
-                        Console.WriteLine("Attribute entered: " + attribute);
-                        Console.WriteLine();
+                       // Console.WriteLine("Attribute entered: " + attribute);
+                      //  Console.WriteLine();
                         atr = (Atr)Enum.Parse(typeof(Atr), attribute);
                     }
                     else
@@ -50,8 +50,8 @@ namespace Lexer
                 }
                 catch
                 {
-                    Console.WriteLine("The default attribute value is set: Default");
-                    Console.WriteLine();
+                   // Console.WriteLine("The default attribute value is set: Default");
+                   // Console.WriteLine();
                 }
 
                 #endregion
@@ -66,7 +66,7 @@ namespace Lexer
                         token = tokenizer.GetToken();
                         if (token != null)
                         {
-                            Console.WriteLine($"{token.RowPos,4}{token.ColumnPos,4}{token.TypeLeksem,18}{token.LiteralValue,12}");
+                            Console.WriteLine($"{token.RowPos}  {token.ColumnPos}   {token.TypeLeksem}  {token.LiteralValue}");
                             tokensList.Add(token);
                         }
 
