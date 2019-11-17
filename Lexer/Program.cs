@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.IO;
 using Lexer.Model;
 
@@ -10,23 +9,14 @@ namespace Lexer
     {
         static void Main(string[] args)
         {
-            List<Token> tokensList = new List<Token>();
-            Token token = new Token();
             string path;
-            string excelPath;
             #region Setting
-
-            //Console.WriteLine();
 
             if (args.Length > 0)
             //if (args.Length == 0)
             {
-                //path = Environment.CurrentDirectory + @"\" + "Test.csc";
-              //  excelPath = Environment.CurrentDirectory + @"\" + "table.xlsx";
-               // excelPath = "table.xlsx";
-               excelPath = ConfigurationManager
-                   .ConnectionStrings["Lexer.Properties.Settings.ExcelPathToTable"]
-                   .ConnectionString;
+                path = Environment.CurrentDirectory + @"\" + "Test.csc";
+   
                 path = args[0];
                 Atr atr = Atr.Default;
 
@@ -37,8 +27,6 @@ namespace Lexer
 
                     if (attributeValidation)
                     {
-                       // Console.WriteLine("Attribute entered: " + attribute);
-                      //  Console.WriteLine();
                         atr = (Atr)Enum.Parse(typeof(Atr), attribute);
                     }
                     else
@@ -56,28 +44,16 @@ namespace Lexer
 
                 #endregion
 
-                if (File.Exists(path))
-                {
-                    using StreamReader stream = File.OpenText(path);
-                    Tokenizer tokenizer = new Tokenizer(stream, new StateTable(excelPath));
-
-                    while (token != null)
-                    {
-                        token = tokenizer.GetToken();
-                        if (token != null)
-                        {
-                            Console.WriteLine($"{token.RowPos}  {token.ColumnPos}   {token.TypeLeksem}  {token.LiteralValue}");
-                            tokensList.Add(token);
-                        }
-
-                        if (token?.TypeLeksem == TypeLeksem.ErrorException) break;
-                    }
-                }
-                else
-                {
+               if (File.Exists(path))
+               {
+                    Syntax Syntax = new Syntax(path);
+                    Syntax.SyntaxAnalyzer();
+               }
+               else
+               {
                     Console.WriteLine("The file at the specified path does not exist: " + path);
                     Console.WriteLine("--Press AnyKey");
-                }
+               }
             }
             else
             {

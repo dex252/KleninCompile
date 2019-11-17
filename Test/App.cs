@@ -21,6 +21,30 @@ namespace Test
         {
             InitializeComponent();
             Delegate = new myDelegate(CheckStatusControl);
+
+            try
+            {
+                path = @"C:\Users\Slava\Desktop\tester";
+                if (path != null)
+                {
+                    string[] dir = Directory.GetDirectories(path, "*", SearchOption.AllDirectories);
+
+                    if (dir.Length == 2 && dir[0].Contains("app") && dir[1].Contains("my"))
+                    {
+                        SetSettings(dir[0], dir[1]);
+                    }
+                    if (dir.Length == 3 && dir[0].Contains("app") && dir[2].Contains("my"))
+                    {
+
+                        SetSettings(dir[0], dir[2]);
+                    }
+
+                }
+            }
+            catch(Exception e)
+            {
+
+            }
         }
 
         private void ButtonChoice_Click(object sender, EventArgs e)

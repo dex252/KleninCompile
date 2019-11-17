@@ -4,27 +4,29 @@ using Lexer.Model;
 
 namespace Lexer
 {
-    class Tokenizer
+    class Tokenyzer
     {
         private StreamReader Stream { get; }
         public Dictionary<(char, State), State> Dictionary { get; set; }
         public Dictionary<string, bool> ReserveWords { get; set; }
         private int ColumnPos { get; set; }
         private int RowPos { get; set; }
+        private int Cur { get; set; }
         private string Temp { get; set; }
         private State State { get; set; }
 
-        public Tokenizer(StreamReader stream, StateTable stateTable)
+        public Tokenyzer(StreamReader stream, StateTable stateTable)
         {
             Stream = stream;
             RowPos = 1;
             ColumnPos = 0;
+            Cur = 0;
             Dictionary = stateTable.Dictionary;
             ReserveWords = stateTable.ReserveWords;
         }
 
         public Token GetToken()
-        {
+        {   
             State = State.Begin;
             Temp = "";
             while (State != State.EndOfFile)
@@ -32,14 +34,32 @@ namespace Lexer
                 if (Stream.Peek() != -1)
                 {
                     var current = Stream.Peek();
+                   // var curr = (char)Stream.Peek();
 
                     var oldState = State;
                     State = SetNewState(State, current);
 
+                    if (State == State.IntDoubleOperator)
+                    {
+                        Stream.DiscardBufferedData();
+                        Stream.BaseStream.Seek(Cur-1, System.IO.SeekOrigin.Begin);
+                        Cur--;
+                        string value = Temp.Remove(Temp.Length - 1, 1);
+                        
+                        return new Token()
+                        {
+                            LiteralValue = value,
+                            RowPos = RowPos,
+                            ColumnPos = ColumnPos - Temp.Length,
+                            TypeLeksem = TypeLeksem.Integer
+                        };
+                    }
+            
                     //экранируем от пробелов, табуляций, переходов строк, переноса корретки и символов, не входящих в алфавит
                     if (oldState == State.Begin && State == State.Indefinitely)
                     {
                         Stream.Read();
+                        Cur++;
                         switch (current)
                         {
                             case 32:
@@ -48,7 +68,7 @@ namespace Lexer
                                 ColumnPos++;
                                 continue;
                             }
-
+                              
                             case 9:
                             {
                                 RefreshState();
@@ -108,6 +128,7 @@ namespace Lexer
                             while (Stream.Peek() != 10 && Stream.Peek() != -1)
                             {
                                 Stream.Read();
+                                Cur++;
                             }
 
                             RefreshState();
@@ -115,11 +136,64 @@ namespace Lexer
                             continue;
                         }
 
+                        case State.DevisionMultiplication:
+                            {
+                                bool exit = true;//многострочные комментарии
+                                Stream.Read();
+                                Cur++;
+                                ColumnPos++;
+                                while (exit)
+                                {
+                                    while (Stream.Peek() != 42 && Stream.Peek() != -1) /* (42) = * */
+                                    {
+                                        //экранируем от пробелов, табов и переноса корреток (необходимо для счета позиции символов)
+                                        switch (Stream.Peek())
+                                        {
+
+                                            case 10:
+                                                {
+                                                    RowPos++;
+                                                    ColumnPos = 0;
+                                                    break;
+                                                }
+
+                                            case 13:
+                                                {
+                                                    break;
+                                                }
+
+                                            default:
+                                                {
+                                                    ColumnPos++;
+                                                    break;
+                                                }
+                                        }
+
+                                        Stream.Read();
+                                        Cur++;
+                                    }
+                                    Stream.Read();
+                                    ColumnPos++;
+                                    Cur++;
+                                    //встретили умножение - проверяем следующий символ
+                                    if (Stream.Peek() == 47 && Stream.Peek() != -1) /* (47) = / */
+                                    {
+                                        Stream.Read();
+                                        ColumnPos++;
+                                        Cur++;
+                                        exit = false;//выходим
+                                    }
+                                }
+                                RefreshState();
+                                continue;
+                            }
+
                         default:
                         {
                             Temp += (char) current;
                             ColumnPos++;
                             Stream.Read();
+                            Cur++;
                             break;
                         }
                     }
@@ -216,12 +290,8 @@ namespace Lexer
                     return TypeLeksem.Operator;
                 case State.LessEqual:
                     return TypeLeksem.Operator;
-                case State.Ampersand:
-                    return TypeLeksem.ErrorException;
                 case State.DoubleAmpersand:
                     return TypeLeksem.Logical;
-                case State.Or:
-                    return TypeLeksem.ErrorException;
                 case State.DoubleOr:
                     return TypeLeksem.Logical;
                 case State.Devision:
@@ -236,6 +306,16 @@ namespace Lexer
                     return TypeLeksem.Char;
                 case State.String:
                     return TypeLeksem.String;
+                case State.ShiftLeft:
+                    return TypeLeksem.Operator;
+                case State.ShiftRight:
+                    return TypeLeksem.Operator;
+                case State.Ampersand:
+                    return TypeLeksem.Operator;
+                case State.IntPoint:
+                    return TypeLeksem.Operator;
+                case State.Or:
+                    return TypeLeksem.Operator;
                 default: return TypeLeksem.ErrorException;
             }
         }

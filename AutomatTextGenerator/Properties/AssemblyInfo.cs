@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // Общие сведения об этой сборке предоставляются следующим набором
 // набора атрибутов. Измените значения этих атрибутов для изменения сведений,
 // связанные с этой сборкой.
-[assembly: AssemblyTitle("Compiler")]
+[assembly: AssemblyTitle("AutomatTextGenerator")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Compiler")]
+[assembly: AssemblyProduct("AutomatTextGenerator")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Следующий GUID представляет идентификатор typelib, если этот проект доступен из модели COM
-[assembly: Guid("a4038d67-abf9-42f7-90a0-4d2984ac6b91")]
+[assembly: Guid("a09bd478-1c42-4ff7-9f3f-a33f4ee1d084")]
 
 // Сведения о версии сборки состоят из указанных ниже четырех значений:
 //
