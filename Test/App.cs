@@ -24,7 +24,7 @@ namespace Test
 
             try
             {
-                path = @"C:\Users\Slava\Desktop\tester";
+                path = @"C:\Users\dex25\Desktop\tester";
                 if (path != null)
                 {
                     string[] dir = Directory.GetDirectories(path, "*", SearchOption.AllDirectories);

@@ -544,11 +544,11 @@ namespace Lexer.Service
             /* 266 */
             Dictionary.Add(('s', State.PlusPlus), State.ErrorException);
             /* 267 */
-            Dictionary.Add(('=', State.PlusPlus), State.ErrorException);
+            Dictionary.Add(('=', State.PlusPlus), State.Indefinitely);//ex
             /* 268 */
-            Dictionary.Add(('>', State.PlusPlus), State.ErrorException);
+            Dictionary.Add(('>', State.PlusPlus), State.Indefinitely);//ex
             /* 269 */
-            Dictionary.Add(('<', State.PlusPlus), State.ErrorException);
+            Dictionary.Add(('<', State.PlusPlus), State.Indefinitely);//ex
             /* 270 */
             Dictionary.Add((',', State.PlusPlus), State.ErrorException);
             /* 271 */
@@ -556,13 +556,13 @@ namespace Lexer.Service
             /* 272 */
             Dictionary.Add(('"', State.PlusPlus), State.ErrorException);
             /* 273 */
-            Dictionary.Add(('+', State.PlusPlus), State.ErrorException);
+            Dictionary.Add(('+', State.PlusPlus), State.Indefinitely);//ex
             /* 274 */
-            Dictionary.Add(('-', State.PlusPlus), State.ErrorException);
+            Dictionary.Add(('-', State.PlusPlus), State.Indefinitely);//ex
             /* 275 */
-            Dictionary.Add(('*', State.PlusPlus), State.ErrorException);
+            Dictionary.Add(('*', State.PlusPlus), State.Indefinitely);//ex
             /* 276 */
-            Dictionary.Add(('^', State.PlusPlus), State.ErrorException);
+            Dictionary.Add(('^', State.PlusPlus), State.Indefinitely);//ex
             /* 277 */
             Dictionary.Add(('{', State.PlusPlus), State.ErrorException);
             /* 278 */
@@ -576,15 +576,15 @@ namespace Lexer.Service
             /* 282 */
             Dictionary.Add((']', State.PlusPlus), State.ErrorException);
             /* 283 */
-            Dictionary.Add(('/', State.PlusPlus), State.ErrorException);
+            Dictionary.Add(('/', State.PlusPlus), State.Indefinitely);//ex
             /* 284 */
-            Dictionary.Add(('&', State.PlusPlus), State.ErrorException);
+            Dictionary.Add(('&', State.PlusPlus), State.Indefinitely);//ex
             /* 285 */
-            Dictionary.Add(('|', State.PlusPlus), State.ErrorException);
+            Dictionary.Add(('|', State.PlusPlus), State.Indefinitely);//ex
             /* 286 */
             Dictionary.Add(('\'', State.PlusPlus), State.ErrorException);
             /* 287 */
-            Dictionary.Add(('!', State.PlusPlus), State.ErrorException);
+            Dictionary.Add(('!', State.PlusPlus), State.Indefinitely);//ex
             /* 288 */
             Dictionary.Add((';', State.PlusPlus), State.Indefinitely);
             /* 289 */
@@ -640,11 +640,11 @@ namespace Lexer.Service
             /* 314 */
             Dictionary.Add(('s', State.MinusMinus), State.ErrorException);
             /* 315 */
-            Dictionary.Add(('=', State.MinusMinus), State.ErrorException);
+            Dictionary.Add(('=', State.MinusMinus), State.Indefinitely);//ex
             /* 316 */
-            Dictionary.Add(('>', State.MinusMinus), State.ErrorException);
+            Dictionary.Add(('>', State.MinusMinus), State.Indefinitely);//ex
             /* 317 */
-            Dictionary.Add(('<', State.MinusMinus), State.ErrorException);
+            Dictionary.Add(('<', State.MinusMinus), State.Indefinitely);//ex
             /* 318 */
             Dictionary.Add((',', State.MinusMinus), State.ErrorException);
             /* 319 */
@@ -652,13 +652,13 @@ namespace Lexer.Service
             /* 320 */
             Dictionary.Add(('"', State.MinusMinus), State.ErrorException);
             /* 321 */
-            Dictionary.Add(('+', State.MinusMinus), State.ErrorException);
+            Dictionary.Add(('+', State.MinusMinus), State.Indefinitely);//ex
             /* 322 */
-            Dictionary.Add(('-', State.MinusMinus), State.ErrorException);
+            Dictionary.Add(('-', State.MinusMinus), State.Indefinitely);//ex
             /* 323 */
-            Dictionary.Add(('*', State.MinusMinus), State.ErrorException);
+            Dictionary.Add(('*', State.MinusMinus), State.Indefinitely);//ex
             /* 324 */
-            Dictionary.Add(('^', State.MinusMinus), State.ErrorException);
+            Dictionary.Add(('^', State.MinusMinus), State.Indefinitely);//ex
             /* 325 */
             Dictionary.Add(('{', State.MinusMinus), State.ErrorException);
             /* 326 */
@@ -672,15 +672,15 @@ namespace Lexer.Service
             /* 330 */
             Dictionary.Add((']', State.MinusMinus), State.ErrorException);
             /* 331 */
-            Dictionary.Add(('/', State.MinusMinus), State.ErrorException);
+            Dictionary.Add(('/', State.MinusMinus), State.Indefinitely);//ex
             /* 332 */
-            Dictionary.Add(('&', State.MinusMinus), State.ErrorException);
+            Dictionary.Add(('&', State.MinusMinus), State.Indefinitely);//ex
             /* 333 */
-            Dictionary.Add(('|', State.MinusMinus), State.ErrorException);
+            Dictionary.Add(('|', State.MinusMinus), State.Indefinitely);//ex
             /* 334 */
             Dictionary.Add(('\'', State.MinusMinus), State.ErrorException);
             /* 335 */
-            Dictionary.Add(('!', State.MinusMinus), State.ErrorException);
+            Dictionary.Add(('!', State.MinusMinus), State.Indefinitely);//ex
             /* 336 */
             Dictionary.Add((';', State.MinusMinus), State.Indefinitely);
             /* 337 */

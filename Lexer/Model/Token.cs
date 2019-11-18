@@ -4,6 +4,7 @@
     {
         ErrorException,
         Char,
+        String,
         Identifier,
         ReserveWord,
         Operator,
@@ -11,7 +12,7 @@
         Double,
         Logical,
         Delimiter,
-        String,
+        Equals,
     }
 
     public class Token

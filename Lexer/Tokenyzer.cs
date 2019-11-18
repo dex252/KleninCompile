@@ -275,21 +275,21 @@ namespace Lexer
                 case State.MinusMinus:
                     return TypeLeksem.Operator;
                 case State.Equal:
-                    return TypeLeksem.Operator;
+                    return TypeLeksem.Delimiter;
                 case State.EqualEqual:
-                    return TypeLeksem.Operator;
+                    return TypeLeksem.Equals;
                 case State.LogicInequality:
                     return TypeLeksem.Logical;
                 case State.Inequality:
-                    return TypeLeksem.Operator;
+                    return TypeLeksem.Equals;
                 case State.More:
-                    return TypeLeksem.Operator;
+                    return TypeLeksem.Equals;
                 case State.MoreEqual:
-                    return TypeLeksem.Operator;
+                    return TypeLeksem.Equals;
                 case State.Less:
-                    return TypeLeksem.Operator;
+                    return TypeLeksem.Equals;
                 case State.LessEqual:
-                    return TypeLeksem.Operator;
+                    return TypeLeksem.Equals;
                 case State.DoubleAmpersand:
                     return TypeLeksem.Logical;
                 case State.DoubleOr:
