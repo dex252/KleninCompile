@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using Lexer.Model;
 
@@ -34,7 +35,7 @@ namespace Lexer
                 if (Stream.Peek() != -1)
                 {
                     var current = Stream.Peek();
-                   // var curr = (char)Stream.Peek();
+                    var curr = (char)Stream.Peek();
 
                     var oldState = State;
                     State = SetNewState(State, current);

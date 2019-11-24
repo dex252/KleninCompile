@@ -2,15 +2,18 @@
 {
     class Node
     {
-        public Node Left { get; set; }
-        public Node Right { get; set; }
-        public Token Value { get; set; }
-
-        //public Node() {}
-        //public Node(Token token)
-        //{
-        //    Value = token;
-        //}
+       
     }
 
+    class BinaryNode : Node
+    {
+        public Node Left { get; set; }
+        public Node Right { get; set; }
+        public Token Operation { get; set; }
+    }
+
+    class LiteralNode : Node
+    {
+        public Token Constant { get; set; }
+    }
 }

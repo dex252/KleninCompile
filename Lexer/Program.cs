@@ -12,12 +12,12 @@ namespace Lexer
             string path;
             #region Setting
 
-            if (args.Length > 0)
-            //if (args.Length == 0)
+            //if (args.Length > 0)
+            if (args.Length == 0)
             {
                 path = Environment.CurrentDirectory + @"\" + "Test.csc";
    
-                path = args[0];
+                //path = args[0];
                 Atr atr = Atr.Default;
 
                 try
@@ -60,7 +60,7 @@ namespace Lexer
                 Console.WriteLine("No arguments");
             }
 
-            //Console.ReadKey();
+            Console.ReadKey();
         }
     }
 }
