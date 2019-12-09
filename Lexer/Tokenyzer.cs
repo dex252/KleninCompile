@@ -114,6 +114,7 @@ namespace Lexer
                             {
                                 if (ReserveWords.ContainsKey(Temp)) oldState = State.ReserveWord;
                             }
+                           
                             return new Token()
                             {
                                 ColumnPos = ColumnPos - Temp.Length + 1,
@@ -207,6 +208,46 @@ namespace Lexer
                         {
                             if (ReserveWords.ContainsKey(Temp)) State = State.ReserveWord;
                         }
+
+                        //------------------------CHECK----------------------------------
+                        if (State == State.Int)
+                        {
+                            try
+                            {
+                                int Int = Convert.ToInt32(SourceValueToLiteralValue(Temp, State));
+                            }
+                            catch(Exception e)
+                            {
+                                return new Token()
+                                {
+                                    ColumnPos = ColumnPos - Temp.Length + 1,
+                                    RowPos = RowPos,
+                                    SourceValue = Temp,
+                                    LiteralValue = SourceValueToLiteralValue(Temp, State),
+                                    TypeLeksem = TypeLeksem.ErrorException
+                                };
+                            }
+                        }
+
+                        if (State == State.Double)
+                        {
+                            try
+                            {
+                                double Double = Convert.ToDouble(SourceValueToLiteralValue(Temp, State));
+                            }
+                            catch (Exception e)
+                            {
+                                return new Token()
+                                {
+                                    ColumnPos = ColumnPos - Temp.Length + 1,
+                                    RowPos = RowPos,
+                                    SourceValue = Temp,
+                                    LiteralValue = SourceValueToLiteralValue(Temp, State),
+                                    TypeLeksem = TypeLeksem.ErrorException
+                                };
+                            }
+                        }
+                        //--------------------------------------------------------------
 
                         return new Token()
                         {

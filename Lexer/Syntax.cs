@@ -3,6 +3,7 @@ using Lexer.Model.Nodes;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using Lexer.Service;
 
 namespace Lexer
 {
@@ -27,8 +28,9 @@ namespace Lexer
             tokenyzer = new Tokenyzer(stream, new StateTable());
 
             tree = ParseExpression();
+            new TreePrinter(tree);
 
-            Console.WriteLine(tree);
+            Console.WriteLine();
         }
 
         private Node ParseExpression()
@@ -71,20 +73,38 @@ namespace Lexer
             return left;
         }
 
-       
         private Node ParseFactor()
         {
-            var token = tokenyzer.GetToken();
+            var token = Next();
 
             if (token?.TypeLeksem == TypeLeksem.Integer || token?.TypeLeksem == TypeLeksem.Double)
             {
                 return new LiteralNode()
                 {
-                    Constant = token
+                    Constant = token,
+                    Right = ParseIterator()
                 };
             }
-           
+
             throw new NotImplementedException();
+        }
+
+        private Node ParseIterator()
+        {
+            var token = Next();
+
+            if (token?.LiteralValue == "++" || token?.LiteralValue == "--")
+            {
+                return new IteratorNode()
+                {
+                    Iterator = token,
+                };
+            }
+            else
+            {
+                SetBuff(token);
+                return null;
+            }
         }
 
         private Token Next()
@@ -94,12 +114,21 @@ namespace Lexer
             if (token == null)
             {
                 token = tokenyzer.GetToken();
+                if (!CheckErrorExceptionTypeToken(token))
+                {
+                    Console.WriteLine("Error");
+                    throw new NotImplementedException();
+                }
             }
             SetBuff(null);
 
             return token;
         }
 
+        private bool CheckErrorExceptionTypeToken(Token token)
+        {
+            return token?.TypeLeksem != TypeLeksem.ErrorException;
+        }
 
         private void SetBuff(Token token)
         {

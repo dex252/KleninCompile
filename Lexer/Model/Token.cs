@@ -3,13 +3,13 @@
     public enum TypeLeksem
     {
         ErrorException,
-        Char,
-        String,
+        Char,//
+        String,//
         Identifier,
         ReserveWord,
         Operator,
-        Integer,
-        Double,
+        Integer,//
+        Double,//
         Logical,
         Delimiter,
         Equals,
@@ -22,5 +22,10 @@
         public string LiteralValue { get; set; }
         public TypeLeksem TypeLeksem { get; set; }
         public string SourceValue { get; set; }
+
+        public override string ToString()
+        {
+            return LiteralValue;
+        }
     }
 }
