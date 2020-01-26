@@ -2,6 +2,18 @@
 
 namespace Lexer.Model.Nodes
 {
+    enum NodeType
+    {
+        Node = 0,
+        BinaryNode,
+        BlockNode,
+        IteratorNode,
+        NumberNode,
+        SymbolsNode,
+        BoolNode,
+        EndLineNode,
+        IdentifyNode
+    }
     class Node
     {
         public int SpaceCount { get; }
@@ -13,6 +25,11 @@ namespace Lexer.Model.Nodes
         public virtual void Print(int space)
         {
 
+        }
+
+        public virtual NodeType GetTypeNode()
+        {
+            return NodeType.Node;
         }
     }
 
@@ -46,6 +63,11 @@ namespace Lexer.Model.Nodes
         public Node Right { get; set; }
         public Node Block { get; set; }
 
+        public override NodeType GetTypeNode()
+        {
+            return NodeType.BlockNode;
+        }
+
         public override void Print(int space)
         {
             for (int i = 0; i < SpaceCount; i++)
@@ -71,6 +93,11 @@ namespace Lexer.Model.Nodes
             Console.Write(Iterator.LiteralValue);
             Right?.Print(0);
         }
+
+        public override NodeType GetTypeNode()
+        {
+            return NodeType.IteratorNode;
+        }
     }
 
     class NumberNode : Node
@@ -86,6 +113,12 @@ namespace Lexer.Model.Nodes
             }
 
             Console.Write(Constant.LiteralValue);
+
+            if (Right?.GetTypeNode() == NodeType.BlockNode)
+            {
+                Console.WriteLine();
+            }
+         
             Right?.Print(0);
 
             Console.WriteLine();
@@ -135,12 +168,9 @@ namespace Lexer.Model.Nodes
     {
     }
 
-    class SomeBlocksNode : BinaryNode
-    {
-    }
-
     class IdentifyNode: NumberNode
     {
 
     }
+
 }

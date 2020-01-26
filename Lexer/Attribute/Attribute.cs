@@ -7,9 +7,8 @@ namespace Lexer
     enum Atr
     {
         Default,
-        One,
-        All,
-        Any
+        Lexer,
+        Syntax
     }
     internal class Attribute
     {

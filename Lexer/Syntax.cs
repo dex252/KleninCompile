@@ -217,7 +217,7 @@ namespace Lexer
                 return new IdentifyNode()
                 {
                     Constant = token,
-                    Right = ParseIterator()
+                    Right = ParseStatement()
                 };
             }
 
@@ -242,7 +242,7 @@ namespace Lexer
         }
 
         //TO DO: только для переменных
-        private Node ParseIterator()
+        private Node ParseStatement()
         {
             var token = Next();
 
@@ -251,6 +251,20 @@ namespace Lexer
                 return new IteratorNode()
                 {
                     Iterator = token
+                };
+            }
+
+            if (token?.LiteralValue == "{")
+            {
+                NumBlocks += 2;
+                return new BlockNode()
+                {
+                    Left = new SymbolsNode(NumBlocks)
+                    {
+                        Constant = token
+                    },
+                    Block = ParseBraces(),
+                    Right = ParseBraces()
                 };
             }
 
@@ -275,6 +289,7 @@ namespace Lexer
                     Console.WriteLine("Error");
                     throw new NotImplementedException();
                 }
+
             }
             SetBuff(null);
 

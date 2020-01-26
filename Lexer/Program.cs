@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using Lexer.Model;
 
@@ -18,7 +17,7 @@ namespace Lexer
                 path = Environment.CurrentDirectory + @"\" + "Test.csc";
    
                 //path = args[0];
-                Atr atr = Atr.Default;
+                Atr atr = Atr.Default; 
 
                 try
                 {
@@ -46,8 +45,26 @@ namespace Lexer
 
                if (File.Exists(path))
                {
-                    Syntax Syntax = new Syntax(path);
-                    Syntax.SyntaxAnalyzer();
+                    #region Attribute
+                    if (atr == Atr.Default || atr == Atr.Syntax)
+                    {
+                        Syntax Syntax = new Syntax(path);
+                        Syntax.SyntaxAnalyzer();
+                    }
+                    else if (atr == Atr.Lexer)
+                    {
+                        using StreamReader stream = File.OpenText(path);
+                        var tokenyzer = new Tokenyzer(stream, new StateTable());
+
+                        Token token = tokenyzer.GetToken();
+                        while (token != null)
+                        {
+                            Console.WriteLine(token.RowPos+"    "+token.ColumnPos+ "    "+token.LiteralValue+ "    "+token.TypeLeksem);
+                            token = tokenyzer.GetToken();
+                        }
+                    }
+
+                    #endregion
                }
                else
                {
