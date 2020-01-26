@@ -78,6 +78,7 @@ namespace Lexer.Model.Nodes
             Console.WriteLine();
 
             Block?.Print(5 + Left.SpaceCount);
+
             Right?.Print(0);
           
         }
@@ -169,6 +170,11 @@ namespace Lexer.Model.Nodes
     }
 
     class IdentifyNode: NumberNode
+    {
+
+    }
+
+    class RoundBlockNode: BlockNode
     {
 
     }

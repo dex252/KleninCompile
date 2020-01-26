@@ -1,33 +1,24 @@
 ﻿using Lexer.Model;
 using Lexer.Model.Nodes;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using Lexer.Service;
 
 namespace Lexer
 {
-    enum SymbolType
-    {
-        Null = 0,
-        StartBlock,
-        EndBlock,
-    }
     class Syntax
     {
-        private string path;
-        private List<Token> tokensList = new List<Token>();
-        private Token token = new Token();
-        private List<Token> term;
         private Node tree;
         private Tokenyzer tokenyzer;
         private Token buff;
-        private int NumBlocks = 0;
 
+        private string path;
+
+        private int NumBlocks = 0;
+        private int NumRoundBlocks = 0;
         public Syntax(string path)
         {
             this.path = path;
-
         }
 
         public void SyntaxAnalyzer()
@@ -212,12 +203,41 @@ namespace Lexer
                 };
             }
 
+
             if (token?.TypeLeksem == TypeLeksem.Identifier)
             {
                 return new IdentifyNode()
                 {
                     Constant = token,
                     Right = ParseStatement()
+                };
+            }
+
+            if (token?.LiteralValue == ")")
+            {
+                NumBlocks -= 2;
+                return new RoundBlockNode()
+                {
+                    Left = new SymbolsNode(NumBlocks + 2)
+                    {
+                        Constant = token,
+                    },
+                    Block = ParseBraces(),
+
+                };
+            }
+
+            if (token?.LiteralValue == "(")
+            {
+                NumBlocks += 2;
+                return new RoundBlockNode()
+                {
+                    Left = new SymbolsNode(NumBlocks)
+                    {
+                        Constant = token
+                    },
+                    Block = ParseBraces(),
+                    Right = ParseBraces()
                 };
             }
 
@@ -234,6 +254,20 @@ namespace Lexer
                 return new NumberNode()
                 {
                     Constant = token
+                };
+            }
+
+            if (token?.LiteralValue == "(")
+            {
+                NumRoundBlocks += 2;
+                return new RoundBlockNode()
+                {
+                    Left = new SymbolsNode(NumBlocks)
+                    {
+                        Constant = token
+                    },
+                    Block = ParseBraces(),
+                    Right = ParseBraces()
                 };
             }
 
@@ -258,6 +292,20 @@ namespace Lexer
             {
                 NumBlocks += 2;
                 return new BlockNode()
+                {
+                    Left = new SymbolsNode(NumBlocks)
+                    {
+                        Constant = token
+                    },
+                    Block = ParseBraces(),
+                    Right = ParseBraces()
+                };
+            }
+
+            if (token?.LiteralValue == "(")
+            {
+                NumRoundBlocks += 2;
+                return new RoundBlockNode()
                 {
                     Left = new SymbolsNode(NumBlocks)
                     {
