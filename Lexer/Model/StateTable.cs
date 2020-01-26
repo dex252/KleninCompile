@@ -55,27 +55,31 @@ namespace Lexer.Model
     public class StateTable
     {
         public Dictionary<(char, State), State> Dictionary { get; set; }
-        public Dictionary<string, bool> ReserveWords { get; set; } = new Dictionary<string, bool>()
+        public HashSet<string> ReserveWords { get; set; } = new HashSet<string>()
         {
-            {"if", true} ,
-            {"else", true} ,
-            {"while", true},
-            {"int", true},
-            {"double",true},
-            {"char",true},
-            {"bool",true},
-            {"true",true},
-            {"false",true},
-            {"new",true},
-            {"void",true},
-            {"return",true},
-            {"class",true},
-            {"cin",true},
-            {"cout",true},
-            {"namespace",true},
-            {"using",true},
-            {"null", true},
-            {"string", true }
+            {"if"} ,
+            {"else"} ,
+            {"while"},
+            {"int"},
+            {"double"},
+            {"char"},
+            {"bool"},
+            {"true"},
+            {"false"},
+            {"new"},
+            {"void"},
+            {"return"},
+            {"class"},
+            {"cin"},
+            {"cout"},
+            {"namespace"},
+            {"using"},
+            {"null"},
+            {"string"},
+            {"public"},
+            { "private"},
+            {"static"},
+            {"var"}
         };
 
         public StateTable()

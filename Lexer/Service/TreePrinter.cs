@@ -6,7 +6,7 @@ namespace Lexer.Service
     {
         public TreePrinter(Node tree)
         {
-            tree.Print(10);
+            tree.Print(1);
         }
     }
 }

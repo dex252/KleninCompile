@@ -9,7 +9,7 @@ namespace Lexer
     {
         private StreamReader Stream { get; }
         public Dictionary<(char, State), State> Dictionary { get; set; }
-        public Dictionary<string, bool> ReserveWords { get; set; }
+        public HashSet<string> ReserveWords { get; set; }
         private int ColumnPos { get; set; }
         private int RowPos { get; set; }
         private int Cur { get; set; }
@@ -112,7 +112,7 @@ namespace Lexer
                         {
                             if (oldState == State.Identifier)
                             {
-                                if (ReserveWords.ContainsKey(Temp)) oldState = State.ReserveWord;
+                                if (ReserveWords.Contains(Temp)) oldState = State.ReserveWord;
                             }
                            
                             return new Token()
@@ -146,7 +146,7 @@ namespace Lexer
                                 ColumnPos++;
                                 while (exit)
                                 {
-                                    while (Stream.Peek() != 42 && Stream.Peek() != -1) /* (42) = * */
+                                    while (Stream.Peek() != 42 && Stream.Peek() != -1) /* (42) = *    */
                                     {
                                         //экранируем от пробелов, табов и переноса корреток (необходимо для счета позиции символов)
                                         switch (Stream.Peek())
@@ -177,8 +177,8 @@ namespace Lexer
                                     Stream.Read();
                                     ColumnPos++;
                                     Cur++;
-                                    //встретили умножение - проверяем следующий символ
-                                    if (Stream.Peek() == 47 && Stream.Peek() != -1) /* (47) = / */
+                                   
+                                    if (Stream.Peek() == 47 && Stream.Peek() != -1) /*    (47) = /    */
                                     {
                                         Stream.Read();
                                         ColumnPos++;
@@ -206,15 +206,15 @@ namespace Lexer
                     {
                         if (State == State.Identifier)
                         {
-                            if (ReserveWords.ContainsKey(Temp)) State = State.ReserveWord;
+                            if (ReserveWords.Contains(Temp)) State = State.ReserveWord;
                         }
 
-                        //------------------------CHECK----------------------------------
+                        //------------------------CHECK MAX LENGTH----------------------------------
                         if (State == State.Int)
                         {
                             try
                             {
-                                int Int = Convert.ToInt32(SourceValueToLiteralValue(Temp, State));
+                                int Int = Convert.ToInt32(Temp);
                             }
                             catch(Exception e)
                             {
@@ -233,7 +233,7 @@ namespace Lexer
                         {
                             try
                             {
-                                double Double = Convert.ToDouble(SourceValueToLiteralValue(Temp, State));
+                                double Double = Convert.ToDouble(Temp);
                             }
                             catch (Exception e)
                             {

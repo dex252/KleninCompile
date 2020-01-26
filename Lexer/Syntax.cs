@@ -7,6 +7,12 @@ using Lexer.Service;
 
 namespace Lexer
 {
+    enum SymbolType
+    {
+        Null = 0,
+        StartBlock,
+        EndBlock,
+    }
     class Syntax
     {
         private string path;
@@ -16,10 +22,12 @@ namespace Lexer
         private Node tree;
         private Tokenyzer tokenyzer;
         private Token buff;
+        private int NumBlocks = 0;
 
         public Syntax(string path)
         {
             this.path = path;
+
         }
 
         public void SyntaxAnalyzer()
@@ -27,25 +35,29 @@ namespace Lexer
             using StreamReader stream = File.OpenText(path);
             tokenyzer = new Tokenyzer(stream, new StateTable());
 
-            tree = ParseExpression();
+            tree = ParseBraces();
             new TreePrinter(tree);
 
             Console.WriteLine();
         }
 
-        private Node ParseExpression()
+        private Node ParseBraces()
         {
-            Node left = ParseTerm();
+            Node left = ParseLine();
 
             var token = Next();
 
-            if (token?.LiteralValue == "+" || token?.LiteralValue == "-")
+            if (token?.LiteralValue == "{")
             {
-                return new BinaryNode()
+                NumBlocks+=2;
+                return new BlockNode()
                 {
-                   Left = left,
-                   Operation = token,
-                   Right = ParseExpression()
+                    Left = new SymbolsNode(NumBlocks)
+                    {
+                        Constant = token
+                    },
+                    Block = left,
+                    Right = ParseBraces()
                 };
             }
 
@@ -53,9 +65,70 @@ namespace Lexer
             return left;
         }
 
-        private Node ParseTerm()
+        private Node ParseLine()
         {
-            Node left = ParseFactor();
+            Node left = ParseExpression();
+
+            var token = Next();
+
+            if (token?.LiteralValue == ";")
+            {
+                return new EndLineNode()
+                {
+                    Left = left,
+                    Operation = token,
+                    Right = ParseLine()
+                };
+            }
+
+            SetBuff(token);
+            return left;
+
+        }
+
+        private Node ParseExpression()
+        {
+            Node left = ParseLowOperation();
+
+            var token = Next();
+
+            if (token?.LiteralValue == "=")
+            {
+                return new BinaryNode()
+                {
+                    Left = left,
+                    Operation = token,
+                    Right = ParseExpression()
+                };
+            }
+
+            SetBuff(token);
+            return left;
+        }
+
+        private Node ParseLowOperation()
+        {
+            Node left = ParseHightOperation();
+
+            var token = Next();
+
+            if (token?.LiteralValue == "+" || token?.LiteralValue == "-")
+            {
+                return new BinaryNode()
+                {
+                    Left = left,
+                    Operation = token,
+                    Right = ParseLowOperation()
+                };
+            }
+
+            SetBuff(token);
+            return left;
+        }
+
+        private Node ParseHightOperation()
+        {
+            Node left = ParseLyteral();
 
             var token = Next();
 
@@ -65,7 +138,7 @@ namespace Lexer
                 {
                     Left = left,
                     Operation = token,
-                    Right = ParseTerm()
+                    Right = ParseHightOperation()
                 };
             }
 
@@ -73,22 +146,102 @@ namespace Lexer
             return left;
         }
 
-        private Node ParseFactor()
+
+        private Node ParseLyteral()
         {
             var token = Next();
 
             if (token?.TypeLeksem == TypeLeksem.Integer || token?.TypeLeksem == TypeLeksem.Double)
             {
-                return new LiteralNode()
+                return new NumberNode()
+                {
+                    Constant = token
+                };
+            }
+
+            if (token?.TypeLeksem == TypeLeksem.Char || token?.TypeLeksem == TypeLeksem.String)
+            {
+                return new SymbolsNode()
+                {
+                    Constant = token
+                };
+            }
+
+            if (token?.LiteralValue == "true" || token?.LiteralValue == "false")
+            {
+                return new BoolNode()
+                {
+                    Constant = token
+                };
+            }
+
+            if (token?.LiteralValue == "-")
+            {
+                return new NumberNode()
+                {
+                    Constant = token,
+                    Right = ParseNumber()
+                };
+            }
+
+            if (token?.LiteralValue == "}")
+            {
+                NumBlocks-=2;
+                return new BlockNode()
+                {
+                   Left = new SymbolsNode(NumBlocks+2)
+                   {
+                       Constant = token,
+                   },
+                   Block = ParseBraces(),
+
+                };
+            }
+
+            if (token?.LiteralValue == "{")
+            {
+                NumBlocks+=2;
+                return new BlockNode()
+                {
+                    Left = new SymbolsNode(NumBlocks)
+                    {
+                        Constant = token
+                    },
+                    Block = ParseBraces(),
+                    Right = ParseBraces()
+                };
+            }
+
+            if (token?.TypeLeksem == TypeLeksem.Identifier)
+            {
+                return new IdentifyNode()
                 {
                     Constant = token,
                     Right = ParseIterator()
                 };
             }
 
-            throw new NotImplementedException();
+            SetBuff(token);
+            return null;
         }
 
+        private Node ParseNumber()
+        {
+            var token = Next();
+
+            if (token?.TypeLeksem == TypeLeksem.Integer || token?.TypeLeksem == TypeLeksem.Double)
+            {
+                return new NumberNode()
+                {
+                    Constant = token
+                };
+            }
+
+            SetBuff(token);
+            return null;
+        }
+
+        //TO DO: только для переменных
         private Node ParseIterator()
         {
             var token = Next();
@@ -97,16 +250,19 @@ namespace Lexer
             {
                 return new IteratorNode()
                 {
-                    Iterator = token,
+                    Iterator = token
                 };
             }
-            else
-            {
-                SetBuff(token);
-                return null;
-            }
+
+            SetBuff(token);
+            return null;
+
         }
 
+        /// <summary>
+        /// Получить следующий токен, либо токен из буфера, если таковой содержится в нем
+        /// </summary>
+        /// <returns></returns>
         private Token Next()
         {
             var token = GetBuff();
@@ -130,6 +286,10 @@ namespace Lexer
             return token?.TypeLeksem != TypeLeksem.ErrorException;
         }
 
+        /// <summary>
+        /// Записать токен в буфер
+        /// </summary>
+        /// <param name="token">Записываемый токен</param>
         private void SetBuff(Token token)
         {
             buff = token;
