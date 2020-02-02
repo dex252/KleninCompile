@@ -32,9 +32,6 @@ namespace Lexer.Model.Nodes
             return NodeType.Node;
         }
     }
-
-  
-
     class BinaryNode : Node
     {
         public Node Left { get; set; }

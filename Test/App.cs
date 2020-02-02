@@ -119,7 +119,7 @@ namespace Test
             try
             {
                 string processPath = path + "\\Lexer.exe";
-                string arguments = appItems[cur] + " Lexer";//check Args
+                string arguments = appItems[cur];//check Args
 
                 textBoxApp.Text = arguments;
                 textBoxMy.Text = myItems[cur];

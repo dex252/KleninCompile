@@ -58,1687 +58,4313 @@ namespace Lexer.Service
             /* 24 */
             Dictionary.Add((';', State.Begin), State.Delimiters);
             /* 25 */
-            Dictionary.Add(('0', State.Identifier), State.Identifier);
+            Dictionary.Add(('@', State.Begin), State.Dog);
             /* 26 */
-            Dictionary.Add(('s', State.Identifier), State.Identifier);
+            Dictionary.Add(('_', State.Begin), State.Identifier);
             /* 27 */
-            Dictionary.Add(('=', State.Identifier), State.Indefinitely);
+            Dictionary.Add(('e', State.Begin), State.Identifier);
             /* 28 */
-            Dictionary.Add(('>', State.Identifier), State.Indefinitely);
+            Dictionary.Add(('d', State.Begin), State.Identifier);
             /* 29 */
-            Dictionary.Add(('<', State.Identifier), State.Indefinitely);
+            Dictionary.Add(('m', State.Begin), State.Identifier);
             /* 30 */
-            Dictionary.Add((',', State.Identifier), State.Indefinitely);
+            Dictionary.Add(('f', State.Begin), State.Identifier);
             /* 31 */
-            Dictionary.Add(('.', State.Identifier), State.Indefinitely);
+            Dictionary.Add(('\\', State.Begin), State.BackSlashException);
             /* 32 */
-            Dictionary.Add(('"', State.Identifier), State.ErrorException);
+            Dictionary.Add(('n', State.Begin), State.Identifier);
             /* 33 */
-            Dictionary.Add(('+', State.Identifier), State.Indefinitely);
+            Dictionary.Add(('0', State.Identifier), State.Identifier);
             /* 34 */
-            Dictionary.Add(('-', State.Identifier), State.Indefinitely);
+            Dictionary.Add(('s', State.Identifier), State.Identifier);
             /* 35 */
-            Dictionary.Add(('*', State.Identifier), State.Indefinitely);
+            Dictionary.Add(('=', State.Identifier), State.Indefinitely);
             /* 36 */
-            Dictionary.Add(('^', State.Identifier), State.Indefinitely);
+            Dictionary.Add(('>', State.Identifier), State.Indefinitely);
             /* 37 */
-            Dictionary.Add(('{', State.Identifier), State.Indefinitely);
+            Dictionary.Add(('<', State.Identifier), State.Indefinitely);
             /* 38 */
-            Dictionary.Add(('}', State.Identifier), State.Indefinitely);
+            Dictionary.Add((',', State.Identifier), State.Indefinitely);
             /* 39 */
-            Dictionary.Add(('(', State.Identifier), State.Indefinitely);
+            Dictionary.Add(('.', State.Identifier), State.Indefinitely);
             /* 40 */
-            Dictionary.Add((')', State.Identifier), State.Indefinitely);
+            Dictionary.Add(('"', State.Identifier), State.ErrorInIdentifier);
             /* 41 */
-            Dictionary.Add(('[', State.Identifier), State.Indefinitely);
+            Dictionary.Add(('+', State.Identifier), State.Indefinitely);
             /* 42 */
-            Dictionary.Add((']', State.Identifier), State.Indefinitely);
+            Dictionary.Add(('-', State.Identifier), State.Indefinitely);
             /* 43 */
-            Dictionary.Add(('/', State.Identifier), State.Indefinitely);
+            Dictionary.Add(('*', State.Identifier), State.Indefinitely);
             /* 44 */
-            Dictionary.Add(('&', State.Identifier), State.Indefinitely);
+            Dictionary.Add(('^', State.Identifier), State.Indefinitely);
             /* 45 */
-            Dictionary.Add(('|', State.Identifier), State.Indefinitely);
+            Dictionary.Add(('{', State.Identifier), State.Indefinitely);
             /* 46 */
-            Dictionary.Add(('\'', State.Identifier), State.ErrorException);
+            Dictionary.Add(('}', State.Identifier), State.Indefinitely);
             /* 47 */
-            Dictionary.Add(('!', State.Identifier), State.Indefinitely);
+            Dictionary.Add(('(', State.Identifier), State.Indefinitely);
             /* 48 */
-            Dictionary.Add((';', State.Identifier), State.Indefinitely);
+            Dictionary.Add((')', State.Identifier), State.Indefinitely);
             /* 49 */
-            Dictionary.Add(('0', State.ReserveWord), State.Indefinitely);
+            Dictionary.Add(('[', State.Identifier), State.Indefinitely);
             /* 50 */
-            Dictionary.Add(('s', State.ReserveWord), State.Indefinitely);
+            Dictionary.Add((']', State.Identifier), State.Indefinitely);
             /* 51 */
-            Dictionary.Add(('=', State.ReserveWord), State.Indefinitely);
+            Dictionary.Add(('/', State.Identifier), State.Indefinitely);
             /* 52 */
-            Dictionary.Add(('>', State.ReserveWord), State.Indefinitely);
+            Dictionary.Add(('&', State.Identifier), State.Indefinitely);
             /* 53 */
-            Dictionary.Add(('<', State.ReserveWord), State.Indefinitely);
+            Dictionary.Add(('|', State.Identifier), State.Indefinitely);
             /* 54 */
-            Dictionary.Add((',', State.ReserveWord), State.Indefinitely);
+            Dictionary.Add(('\'', State.Identifier), State.ErrorInIdentifier);
             /* 55 */
-            Dictionary.Add(('.', State.ReserveWord), State.Indefinitely);
+            Dictionary.Add(('!', State.Identifier), State.Indefinitely);
             /* 56 */
-            Dictionary.Add(('"', State.ReserveWord), State.Indefinitely);
+            Dictionary.Add((';', State.Identifier), State.Indefinitely);
             /* 57 */
-            Dictionary.Add(('+', State.ReserveWord), State.Indefinitely);
+            Dictionary.Add(('@', State.Identifier), State.ErrorInIdentifier);
             /* 58 */
-            Dictionary.Add(('-', State.ReserveWord), State.Indefinitely);
+            Dictionary.Add(('_', State.Identifier), State.Identifier);
             /* 59 */
-            Dictionary.Add(('*', State.ReserveWord), State.Indefinitely);
+            Dictionary.Add(('e', State.Identifier), State.Identifier);
             /* 60 */
-            Dictionary.Add(('^', State.ReserveWord), State.Indefinitely);
+            Dictionary.Add(('d', State.Identifier), State.Identifier);
             /* 61 */
-            Dictionary.Add(('{', State.ReserveWord), State.Indefinitely);
+            Dictionary.Add(('m', State.Identifier), State.Identifier);
             /* 62 */
-            Dictionary.Add(('}', State.ReserveWord), State.Indefinitely);
+            Dictionary.Add(('f', State.Identifier), State.Identifier);
             /* 63 */
-            Dictionary.Add(('(', State.ReserveWord), State.Indefinitely);
+            Dictionary.Add(('\\', State.Identifier), State.ErrorInIdentifier);
             /* 64 */
-            Dictionary.Add((')', State.ReserveWord), State.Indefinitely);
+            Dictionary.Add(('n', State.Identifier), State.Identifier);
             /* 65 */
-            Dictionary.Add(('[', State.ReserveWord), State.Indefinitely);
+            Dictionary.Add(('0', State.ReserveWord), State.Indefinitely);
             /* 66 */
-            Dictionary.Add((']', State.ReserveWord), State.Indefinitely);
+            Dictionary.Add(('s', State.ReserveWord), State.Indefinitely);
             /* 67 */
-            Dictionary.Add(('/', State.ReserveWord), State.Indefinitely);
+            Dictionary.Add(('=', State.ReserveWord), State.Indefinitely);
             /* 68 */
-            Dictionary.Add(('&', State.ReserveWord), State.Indefinitely);
+            Dictionary.Add(('>', State.ReserveWord), State.Indefinitely);
             /* 69 */
-            Dictionary.Add(('|', State.ReserveWord), State.Indefinitely);
+            Dictionary.Add(('<', State.ReserveWord), State.Indefinitely);
             /* 70 */
-            Dictionary.Add(('\'', State.ReserveWord), State.Indefinitely);
+            Dictionary.Add((',', State.ReserveWord), State.Indefinitely);
             /* 71 */
-            Dictionary.Add(('!', State.ReserveWord), State.Indefinitely);
+            Dictionary.Add(('.', State.ReserveWord), State.Indefinitely);
             /* 72 */
-            Dictionary.Add((';', State.ReserveWord), State.Indefinitely);
+            Dictionary.Add(('"', State.ReserveWord), State.Indefinitely);
             /* 73 */
-            Dictionary.Add(('0', State.Word), State.Word);
+            Dictionary.Add(('+', State.ReserveWord), State.Indefinitely);
             /* 74 */
-            Dictionary.Add(('s', State.Word), State.Word);
+            Dictionary.Add(('-', State.ReserveWord), State.Indefinitely);
             /* 75 */
-            Dictionary.Add(('=', State.Word), State.Word);
+            Dictionary.Add(('*', State.ReserveWord), State.Indefinitely);
             /* 76 */
-            Dictionary.Add(('>', State.Word), State.Word);
+            Dictionary.Add(('^', State.ReserveWord), State.Indefinitely);
             /* 77 */
-            Dictionary.Add(('<', State.Word), State.Word);
+            Dictionary.Add(('{', State.ReserveWord), State.Indefinitely);
             /* 78 */
-            Dictionary.Add((',', State.Word), State.Word);
+            Dictionary.Add(('}', State.ReserveWord), State.Indefinitely);
             /* 79 */
-            Dictionary.Add(('.', State.Word), State.Word);
+            Dictionary.Add(('(', State.ReserveWord), State.Indefinitely);
             /* 80 */
-            Dictionary.Add(('"', State.Word), State.String);
+            Dictionary.Add((')', State.ReserveWord), State.Indefinitely);
             /* 81 */
-            Dictionary.Add(('+', State.Word), State.Word);
+            Dictionary.Add(('[', State.ReserveWord), State.Indefinitely);
             /* 82 */
-            Dictionary.Add(('-', State.Word), State.Word);
+            Dictionary.Add((']', State.ReserveWord), State.Indefinitely);
             /* 83 */
-            Dictionary.Add(('*', State.Word), State.Word);
+            Dictionary.Add(('/', State.ReserveWord), State.Indefinitely);
             /* 84 */
-            Dictionary.Add(('^', State.Word), State.Word);
+            Dictionary.Add(('&', State.ReserveWord), State.Indefinitely);
             /* 85 */
-            Dictionary.Add(('{', State.Word), State.Word);
+            Dictionary.Add(('|', State.ReserveWord), State.Indefinitely);
             /* 86 */
-            Dictionary.Add(('}', State.Word), State.Word);
+            Dictionary.Add(('\'', State.ReserveWord), State.Indefinitely);
             /* 87 */
-            Dictionary.Add(('(', State.Word), State.Word);
+            Dictionary.Add(('!', State.ReserveWord), State.Indefinitely);
             /* 88 */
-            Dictionary.Add((')', State.Word), State.Word);
+            Dictionary.Add((';', State.ReserveWord), State.Indefinitely);
             /* 89 */
-            Dictionary.Add(('[', State.Word), State.Word);
+            Dictionary.Add(('@', State.ReserveWord), State.Indefinitely);
             /* 90 */
-            Dictionary.Add((']', State.Word), State.Word);
+            Dictionary.Add(('_', State.ReserveWord), State.Indefinitely);
             /* 91 */
-            Dictionary.Add(('/', State.Word), State.Word);
+            Dictionary.Add(('e', State.ReserveWord), State.Indefinitely);
             /* 92 */
-            Dictionary.Add(('&', State.Word), State.Word);
+            Dictionary.Add(('d', State.ReserveWord), State.Indefinitely);
             /* 93 */
-            Dictionary.Add(('|', State.Word), State.Word);
+            Dictionary.Add(('m', State.ReserveWord), State.Indefinitely);
             /* 94 */
-            Dictionary.Add(('\'', State.Word), State.Word);
+            Dictionary.Add(('f', State.ReserveWord), State.Indefinitely);
             /* 95 */
-            Dictionary.Add(('!', State.Word), State.Word);
+            Dictionary.Add(('\\', State.ReserveWord), State.Indefinitely);
             /* 96 */
-            Dictionary.Add((';', State.Word), State.Word);
-            /* SPECIAL */
-            Dictionary.Add((' ', State.Word), State.Word);
+            Dictionary.Add(('n', State.ReserveWord), State.Indefinitely);
             /* 97 */
-            Dictionary.Add(('0', State.Int), State.Int);
+            Dictionary.Add(('0', State.Word), State.Word);
+            /* 97AD */
+            Dictionary.Add((' ', State.Word), State.Word);//ADDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
             /* 98 */
-            Dictionary.Add(('s', State.Int), State.ErrorException);
+            Dictionary.Add(('s', State.Word), State.Word);
             /* 99 */
-            Dictionary.Add(('=', State.Int), State.Indefinitely);
+            Dictionary.Add(('=', State.Word), State.Word);
             /* 100 */
-            Dictionary.Add(('>', State.Int), State.Indefinitely);
+            Dictionary.Add(('>', State.Word), State.Word);
             /* 101 */
-            Dictionary.Add(('<', State.Int), State.Indefinitely);
+            Dictionary.Add(('<', State.Word), State.Word);
             /* 102 */
-            Dictionary.Add((',', State.Int), State.Indefinitely);
+            Dictionary.Add((',', State.Word), State.Word);
             /* 103 */
-            Dictionary.Add(('.', State.Int), State.IntPoint);
+            Dictionary.Add(('.', State.Word), State.Word);
             /* 104 */
-            Dictionary.Add(('"', State.Int), State.ErrorException);
+            Dictionary.Add(('"', State.Word), State.String);
             /* 105 */
-            Dictionary.Add(('+', State.Int), State.Indefinitely);
+            Dictionary.Add(('+', State.Word), State.Word);
             /* 106 */
-            Dictionary.Add(('-', State.Int), State.Indefinitely);
+            Dictionary.Add(('-', State.Word), State.Word);
             /* 107 */
-            Dictionary.Add(('*', State.Int), State.Indefinitely);
+            Dictionary.Add(('*', State.Word), State.Word);
             /* 108 */
-            Dictionary.Add(('^', State.Int), State.Indefinitely);
+            Dictionary.Add(('^', State.Word), State.Word);
             /* 109 */
-            Dictionary.Add(('{', State.Int), State.ErrorException);
+            Dictionary.Add(('{', State.Word), State.Word);
             /* 110 */
-            Dictionary.Add(('}', State.Int), State.Indefinitely);
+            Dictionary.Add(('}', State.Word), State.Word);
             /* 111 */
-            Dictionary.Add(('(', State.Int), State.ErrorException);
+            Dictionary.Add(('(', State.Word), State.Word);
             /* 112 */
-            Dictionary.Add((')', State.Int), State.Indefinitely);
+            Dictionary.Add((')', State.Word), State.Word);
             /* 113 */
-            Dictionary.Add(('[', State.Int), State.ErrorException);
+            Dictionary.Add(('[', State.Word), State.Word);
             /* 114 */
-            Dictionary.Add((']', State.Int), State.Indefinitely);
+            Dictionary.Add((']', State.Word), State.Word);
             /* 115 */
-            Dictionary.Add(('/', State.Int), State.Indefinitely);
+            Dictionary.Add(('/', State.Word), State.Word);
             /* 116 */
-            Dictionary.Add(('&', State.Int), State.Indefinitely);
+            Dictionary.Add(('&', State.Word), State.Word);
             /* 117 */
-            Dictionary.Add(('|', State.Int), State.Indefinitely);
+            Dictionary.Add(('|', State.Word), State.Word);
             /* 118 */
-            Dictionary.Add(('\'', State.Int), State.ErrorException);
+            Dictionary.Add(('\'', State.Word), State.Word);
             /* 119 */
-            Dictionary.Add(('!', State.Int), State.ErrorException);
+            Dictionary.Add(('!', State.Word), State.Word);
             /* 120 */
-            Dictionary.Add((';', State.Int), State.Indefinitely);
+            Dictionary.Add((';', State.Word), State.Word);
             /* 121 */
-            Dictionary.Add(('0', State.Double), State.Double);
+            Dictionary.Add(('@', State.Word), State.Word);
             /* 122 */
-            Dictionary.Add(('s', State.Double), State.ErrorException);
+            Dictionary.Add(('_', State.Word), State.Word);
             /* 123 */
-            Dictionary.Add(('=', State.Double), State.Indefinitely);
+            Dictionary.Add(('e', State.Word), State.Word);
             /* 124 */
-            Dictionary.Add(('>', State.Double), State.Indefinitely);
+            Dictionary.Add(('d', State.Word), State.Word);
             /* 125 */
-            Dictionary.Add(('<', State.Double), State.Indefinitely);
+            Dictionary.Add(('m', State.Word), State.Word);
             /* 126 */
-            Dictionary.Add((',', State.Double), State.Indefinitely);
+            Dictionary.Add(('f', State.Word), State.Word);
             /* 127 */
-            Dictionary.Add(('.', State.Double), State.Indefinitely);
+            Dictionary.Add(('\\', State.Word), State.Word);
             /* 128 */
-            Dictionary.Add(('"', State.Double), State.ErrorException);
+            Dictionary.Add(('n', State.Word), State.Word);
             /* 129 */
-            Dictionary.Add(('+', State.Double), State.Indefinitely);
+            Dictionary.Add(('0', State.Int), State.Int);
             /* 130 */
-            Dictionary.Add(('-', State.Double), State.Indefinitely);
+            Dictionary.Add(('s', State.Int), State.NumberException);
             /* 131 */
-            Dictionary.Add(('*', State.Double), State.Indefinitely);
+            Dictionary.Add(('=', State.Int), State.Indefinitely);
             /* 132 */
-            Dictionary.Add(('^', State.Double), State.Indefinitely);
+            Dictionary.Add(('>', State.Int), State.Indefinitely);
             /* 133 */
-            Dictionary.Add(('{', State.Double), State.ErrorException);
+            Dictionary.Add(('<', State.Int), State.Indefinitely);
             /* 134 */
-            Dictionary.Add(('}', State.Double), State.Indefinitely);
+            Dictionary.Add((',', State.Int), State.NumberException);
             /* 135 */
-            Dictionary.Add(('(', State.Double), State.ErrorException);
+            Dictionary.Add(('.', State.Int), State.IntPoint);
             /* 136 */
-            Dictionary.Add((')', State.Double), State.Indefinitely);
+            Dictionary.Add(('"', State.Int), State.NumberException);
             /* 137 */
-            Dictionary.Add(('[', State.Double), State.ErrorException);
+            Dictionary.Add(('+', State.Int), State.Indefinitely);
             /* 138 */
-            Dictionary.Add((']', State.Double), State.Indefinitely);
+            Dictionary.Add(('-', State.Int), State.Indefinitely);
             /* 139 */
-            Dictionary.Add(('/', State.Double), State.Indefinitely);
+            Dictionary.Add(('*', State.Int), State.Indefinitely);
             /* 140 */
-            Dictionary.Add(('&', State.Double), State.Indefinitely);
+            Dictionary.Add(('^', State.Int), State.Indefinitely);
             /* 141 */
-            Dictionary.Add(('|', State.Double), State.Indefinitely);
+            Dictionary.Add(('{', State.Int), State.NumberException);
             /* 142 */
-            Dictionary.Add(('\'', State.Double), State.ErrorException);
+            Dictionary.Add(('}', State.Int), State.Indefinitely);
             /* 143 */
-            Dictionary.Add(('!', State.Double), State.ErrorException);
+            Dictionary.Add(('(', State.Int), State.NumberException);
             /* 144 */
-            Dictionary.Add((';', State.Double), State.Indefinitely);
+            Dictionary.Add((')', State.Int), State.Indefinitely);
             /* 145 */
-            Dictionary.Add(('0', State.Operator), State.Indefinitely);
+            Dictionary.Add(('[', State.Int), State.NumberException);
             /* 146 */
-            Dictionary.Add(('s', State.Operator), State.Indefinitely);
+            Dictionary.Add((']', State.Int), State.Indefinitely);
             /* 147 */
-            Dictionary.Add(('=', State.Operator), State.Indefinitely);
+            Dictionary.Add(('/', State.Int), State.Indefinitely);
             /* 148 */
-            Dictionary.Add(('>', State.Operator), State.Indefinitely);
+            Dictionary.Add(('&', State.Int), State.Indefinitely);
             /* 149 */
-            Dictionary.Add(('<', State.Operator), State.Indefinitely);
+            Dictionary.Add(('|', State.Int), State.Indefinitely);
             /* 150 */
-            Dictionary.Add((',', State.Operator), State.Indefinitely);
+            Dictionary.Add(('\'', State.Int), State.NumberException);
             /* 151 */
-            Dictionary.Add(('.', State.Operator), State.Indefinitely);
+            Dictionary.Add(('!', State.Int), State.Indefinitely);
             /* 152 */
-            Dictionary.Add(('"', State.Operator), State.Indefinitely);
+            Dictionary.Add((';', State.Int), State.Indefinitely);
             /* 153 */
-            Dictionary.Add(('+', State.Operator), State.Indefinitely);
+            Dictionary.Add(('@', State.Int), State.NumberException);
             /* 154 */
-            Dictionary.Add(('-', State.Operator), State.Indefinitely);
+            Dictionary.Add(('_', State.Int), State.Int_);
             /* 155 */
-            Dictionary.Add(('*', State.Operator), State.Indefinitely);
+            Dictionary.Add(('e', State.Int), State.ExponentaInt);
             /* 156 */
-            Dictionary.Add(('^', State.Operator), State.Indefinitely);
+            Dictionary.Add(('d', State.Int), State.DoubleD);
             /* 157 */
-            Dictionary.Add(('{', State.Operator), State.Indefinitely);
+            Dictionary.Add(('m', State.Int), State.Decimal);
             /* 158 */
-            Dictionary.Add(('}', State.Operator), State.Indefinitely);
+            Dictionary.Add(('f', State.Int), State.Float);
             /* 159 */
-            Dictionary.Add(('(', State.Operator), State.Indefinitely);
+            Dictionary.Add(('\\', State.Int), State.NumberException);
             /* 160 */
-            Dictionary.Add((')', State.Operator), State.Indefinitely);
+            Dictionary.Add(('n', State.Int), State.NumberException);
             /* 161 */
-            Dictionary.Add(('[', State.Operator), State.Indefinitely);
+            Dictionary.Add(('0', State.Double), State.Double);
             /* 162 */
-            Dictionary.Add((']', State.Operator), State.Indefinitely);
+            Dictionary.Add(('s', State.Double), State.NumberException);
             /* 163 */
-            Dictionary.Add(('/', State.Operator), State.Indefinitely);
+            Dictionary.Add(('=', State.Double), State.Indefinitely);
             /* 164 */
-            Dictionary.Add(('&', State.Operator), State.Indefinitely);
+            Dictionary.Add(('>', State.Double), State.Indefinitely);
             /* 165 */
-            Dictionary.Add(('|', State.Operator), State.Indefinitely);
+            Dictionary.Add(('<', State.Double), State.Indefinitely);
             /* 166 */
-            Dictionary.Add(('\'', State.Operator), State.Indefinitely);
+            Dictionary.Add((',', State.Double), State.NumberException);
             /* 167 */
-            Dictionary.Add(('!', State.Operator), State.Indefinitely);
+            Dictionary.Add(('.', State.Double), State.Indefinitely);
             /* 168 */
-            Dictionary.Add((';', State.Operator), State.Indefinitely);
+            Dictionary.Add(('"', State.Double), State.NumberException);
             /* 169 */
-            Dictionary.Add(('0', State.Delimiters), State.Indefinitely);
+            Dictionary.Add(('+', State.Double), State.Indefinitely);
             /* 170 */
-            Dictionary.Add(('s', State.Delimiters), State.Indefinitely);
+            Dictionary.Add(('-', State.Double), State.Indefinitely);
             /* 171 */
-            Dictionary.Add(('=', State.Delimiters), State.Indefinitely);
+            Dictionary.Add(('*', State.Double), State.Indefinitely);
             /* 172 */
-            Dictionary.Add(('>', State.Delimiters), State.Indefinitely);
+            Dictionary.Add(('^', State.Double), State.Indefinitely);
             /* 173 */
-            Dictionary.Add(('<', State.Delimiters), State.Indefinitely);
+            Dictionary.Add(('{', State.Double), State.NumberException);
             /* 174 */
-            Dictionary.Add((',', State.Delimiters), State.Indefinitely);
+            Dictionary.Add(('}', State.Double), State.Indefinitely);
             /* 175 */
-            Dictionary.Add(('.', State.Delimiters), State.Indefinitely);
+            Dictionary.Add(('(', State.Double), State.NumberException);
             /* 176 */
-            Dictionary.Add(('"', State.Delimiters), State.Indefinitely);
+            Dictionary.Add((')', State.Double), State.Indefinitely);
             /* 177 */
-            Dictionary.Add(('+', State.Delimiters), State.Indefinitely);
+            Dictionary.Add(('[', State.Double), State.NumberException);
             /* 178 */
-            Dictionary.Add(('-', State.Delimiters), State.Indefinitely);
+            Dictionary.Add((']', State.Double), State.Indefinitely);
             /* 179 */
-            Dictionary.Add(('*', State.Delimiters), State.Indefinitely);
+            Dictionary.Add(('/', State.Double), State.Indefinitely);
             /* 180 */
-            Dictionary.Add(('^', State.Delimiters), State.Indefinitely);
+            Dictionary.Add(('&', State.Double), State.Indefinitely);
             /* 181 */
-            Dictionary.Add(('{', State.Delimiters), State.Indefinitely);
+            Dictionary.Add(('|', State.Double), State.Indefinitely);
             /* 182 */
-            Dictionary.Add(('}', State.Delimiters), State.Indefinitely);
+            Dictionary.Add(('\'', State.Double), State.NumberException);
             /* 183 */
-            Dictionary.Add(('(', State.Delimiters), State.Indefinitely);
+            Dictionary.Add(('!', State.Double), State.Indefinitely);
             /* 184 */
-            Dictionary.Add((')', State.Delimiters), State.Indefinitely);
+            Dictionary.Add((';', State.Double), State.Indefinitely);
             /* 185 */
-            Dictionary.Add(('[', State.Delimiters), State.Indefinitely);
+            Dictionary.Add(('@', State.Double), State.NumberException);
             /* 186 */
-            Dictionary.Add((']', State.Delimiters), State.Indefinitely);
+            Dictionary.Add(('_', State.Double), State.Double_);
             /* 187 */
-            Dictionary.Add(('/', State.Delimiters), State.Indefinitely);
+            Dictionary.Add(('e', State.Double), State.ExponentaDouble);
             /* 188 */
-            Dictionary.Add(('&', State.Delimiters), State.Indefinitely);
+            Dictionary.Add(('d', State.Double), State.DoubleToDouble);
             /* 189 */
-            Dictionary.Add(('|', State.Delimiters), State.Indefinitely);
+            Dictionary.Add(('m', State.Double), State.DoubleToDecimal);
             /* 190 */
-            Dictionary.Add(('\'', State.Delimiters), State.Indefinitely);
+            Dictionary.Add(('f', State.Double), State.DoubleToFloat);
             /* 191 */
-            Dictionary.Add(('!', State.Delimiters), State.Indefinitely);
+            Dictionary.Add(('\\', State.Double), State.NumberException);
             /* 192 */
-            Dictionary.Add((';', State.Delimiters), State.Indefinitely);
+            Dictionary.Add(('n', State.Double), State.NumberException);
             /* 193 */
-            Dictionary.Add(('0', State.Logical), State.Indefinitely);
+            Dictionary.Add(('0', State.Operator), State.Indefinitely);
             /* 194 */
-            Dictionary.Add(('s', State.Logical), State.Indefinitely);
+            Dictionary.Add(('s', State.Operator), State.Indefinitely);
             /* 195 */
-            Dictionary.Add(('=', State.Logical), State.Indefinitely);
+            Dictionary.Add(('=', State.Operator), State.Indefinitely);
             /* 196 */
-            Dictionary.Add(('>', State.Logical), State.Indefinitely);
+            Dictionary.Add(('>', State.Operator), State.Indefinitely);
             /* 197 */
-            Dictionary.Add(('<', State.Logical), State.Indefinitely);
+            Dictionary.Add(('<', State.Operator), State.Indefinitely);
             /* 198 */
-            Dictionary.Add((',', State.Logical), State.Indefinitely);
+            Dictionary.Add((',', State.Operator), State.Indefinitely);
             /* 199 */
-            Dictionary.Add(('.', State.Logical), State.Indefinitely);
+            Dictionary.Add(('.', State.Operator), State.Indefinitely);
             /* 200 */
-            Dictionary.Add(('"', State.Logical), State.Indefinitely);
+            Dictionary.Add(('"', State.Operator), State.Indefinitely);
             /* 201 */
-            Dictionary.Add(('+', State.Logical), State.Indefinitely);
+            Dictionary.Add(('+', State.Operator), State.Indefinitely);
             /* 202 */
-            Dictionary.Add(('-', State.Logical), State.Indefinitely);
+            Dictionary.Add(('-', State.Operator), State.Indefinitely);
             /* 203 */
-            Dictionary.Add(('*', State.Logical), State.Indefinitely);
+            Dictionary.Add(('*', State.Operator), State.Indefinitely);
             /* 204 */
-            Dictionary.Add(('^', State.Logical), State.Indefinitely);
+            Dictionary.Add(('^', State.Operator), State.Indefinitely);
             /* 205 */
-            Dictionary.Add(('{', State.Logical), State.Indefinitely);
+            Dictionary.Add(('{', State.Operator), State.Indefinitely);
             /* 206 */
-            Dictionary.Add(('}', State.Logical), State.Indefinitely);
+            Dictionary.Add(('}', State.Operator), State.Indefinitely);
             /* 207 */
-            Dictionary.Add(('(', State.Logical), State.Indefinitely);
+            Dictionary.Add(('(', State.Operator), State.Indefinitely);
             /* 208 */
-            Dictionary.Add((')', State.Logical), State.Indefinitely);
+            Dictionary.Add((')', State.Operator), State.Indefinitely);
             /* 209 */
-            Dictionary.Add(('[', State.Logical), State.Indefinitely);
+            Dictionary.Add(('[', State.Operator), State.Indefinitely);
             /* 210 */
-            Dictionary.Add((']', State.Logical), State.Indefinitely);
+            Dictionary.Add((']', State.Operator), State.Indefinitely);
             /* 211 */
-            Dictionary.Add(('/', State.Logical), State.Indefinitely);
+            Dictionary.Add(('/', State.Operator), State.Indefinitely);
             /* 212 */
-            Dictionary.Add(('&', State.Logical), State.Indefinitely);
+            Dictionary.Add(('&', State.Operator), State.Indefinitely);
             /* 213 */
-            Dictionary.Add(('|', State.Logical), State.Indefinitely);
+            Dictionary.Add(('|', State.Operator), State.Indefinitely);
             /* 214 */
-            Dictionary.Add(('\'', State.Logical), State.Indefinitely);
+            Dictionary.Add(('\'', State.Operator), State.Indefinitely);
             /* 215 */
-            Dictionary.Add(('!', State.Logical), State.Indefinitely);
+            Dictionary.Add(('!', State.Operator), State.Indefinitely);
             /* 216 */
-            Dictionary.Add((';', State.Logical), State.Indefinitely);
+            Dictionary.Add((';', State.Operator), State.Indefinitely);
             /* 217 */
-            Dictionary.Add(('0', State.ErrorException), State.Indefinitely);
+            Dictionary.Add(('@', State.Operator), State.Indefinitely);
             /* 218 */
-            Dictionary.Add(('s', State.ErrorException), State.Indefinitely);
+            Dictionary.Add(('_', State.Operator), State.Indefinitely);
             /* 219 */
-            Dictionary.Add(('=', State.ErrorException), State.Indefinitely);
+            Dictionary.Add(('e', State.Operator), State.Indefinitely);
             /* 220 */
-            Dictionary.Add(('>', State.ErrorException), State.Indefinitely);
+            Dictionary.Add(('d', State.Operator), State.Indefinitely);
             /* 221 */
-            Dictionary.Add(('<', State.ErrorException), State.Indefinitely);
+            Dictionary.Add(('m', State.Operator), State.Indefinitely);
             /* 222 */
-            Dictionary.Add((',', State.ErrorException), State.Indefinitely);
+            Dictionary.Add(('f', State.Operator), State.Indefinitely);
             /* 223 */
-            Dictionary.Add(('.', State.ErrorException), State.Indefinitely);
+            Dictionary.Add(('\\', State.Operator), State.Indefinitely);
             /* 224 */
-            Dictionary.Add(('"', State.ErrorException), State.Indefinitely);
+            Dictionary.Add(('n', State.Operator), State.Indefinitely);
             /* 225 */
-            Dictionary.Add(('+', State.ErrorException), State.Indefinitely);
+            Dictionary.Add(('0', State.Delimiters), State.Indefinitely);
             /* 226 */
-            Dictionary.Add(('-', State.ErrorException), State.Indefinitely);
+            Dictionary.Add(('s', State.Delimiters), State.Indefinitely);
             /* 227 */
-            Dictionary.Add(('*', State.ErrorException), State.Indefinitely);
+            Dictionary.Add(('=', State.Delimiters), State.Indefinitely);
             /* 228 */
-            Dictionary.Add(('^', State.ErrorException), State.Indefinitely);
+            Dictionary.Add(('>', State.Delimiters), State.Indefinitely);
             /* 229 */
-            Dictionary.Add(('{', State.ErrorException), State.Indefinitely);
+            Dictionary.Add(('<', State.Delimiters), State.Indefinitely);
             /* 230 */
-            Dictionary.Add(('}', State.ErrorException), State.Indefinitely);
+            Dictionary.Add((',', State.Delimiters), State.Indefinitely);
             /* 231 */
-            Dictionary.Add(('(', State.ErrorException), State.Indefinitely);
+            Dictionary.Add(('.', State.Delimiters), State.Indefinitely);
             /* 232 */
-            Dictionary.Add((')', State.ErrorException), State.Indefinitely);
+            Dictionary.Add(('"', State.Delimiters), State.Indefinitely);
             /* 233 */
-            Dictionary.Add(('[', State.ErrorException), State.Indefinitely);
+            Dictionary.Add(('+', State.Delimiters), State.Indefinitely);
             /* 234 */
-            Dictionary.Add((']', State.ErrorException), State.Indefinitely);
+            Dictionary.Add(('-', State.Delimiters), State.Indefinitely);
             /* 235 */
-            Dictionary.Add(('/', State.ErrorException), State.Indefinitely);
+            Dictionary.Add(('*', State.Delimiters), State.Indefinitely);
             /* 236 */
-            Dictionary.Add(('&', State.ErrorException), State.Indefinitely);
+            Dictionary.Add(('^', State.Delimiters), State.Indefinitely);
             /* 237 */
-            Dictionary.Add(('|', State.ErrorException), State.Indefinitely);
+            Dictionary.Add(('{', State.Delimiters), State.Indefinitely);
             /* 238 */
-            Dictionary.Add(('\'', State.ErrorException), State.Indefinitely);
+            Dictionary.Add(('}', State.Delimiters), State.Indefinitely);
             /* 239 */
-            Dictionary.Add(('!', State.ErrorException), State.Indefinitely);
+            Dictionary.Add(('(', State.Delimiters), State.Indefinitely);
             /* 240 */
-            Dictionary.Add((';', State.ErrorException), State.Indefinitely);
+            Dictionary.Add((')', State.Delimiters), State.Indefinitely);
             /* 241 */
-            Dictionary.Add(('0', State.Plus), State.Indefinitely);
+            Dictionary.Add(('[', State.Delimiters), State.Indefinitely);
             /* 242 */
-            Dictionary.Add(('s', State.Plus), State.Indefinitely);
+            Dictionary.Add((']', State.Delimiters), State.Indefinitely);
             /* 243 */
-            Dictionary.Add(('=', State.Plus), State.ErrorException);
+            Dictionary.Add(('/', State.Delimiters), State.Indefinitely);
             /* 244 */
-            Dictionary.Add(('>', State.Plus), State.ErrorException);
+            Dictionary.Add(('&', State.Delimiters), State.Indefinitely);
             /* 245 */
-            Dictionary.Add(('<', State.Plus), State.ErrorException);
+            Dictionary.Add(('|', State.Delimiters), State.Indefinitely);
             /* 246 */
-            Dictionary.Add((',', State.Plus), State.ErrorException);
+            Dictionary.Add(('\'', State.Delimiters), State.Indefinitely);
             /* 247 */
-            Dictionary.Add(('.', State.Plus), State.ErrorException);
+            Dictionary.Add(('!', State.Delimiters), State.Indefinitely);
             /* 248 */
-            Dictionary.Add(('"', State.Plus), State.Indefinitely);
+            Dictionary.Add((';', State.Delimiters), State.Indefinitely);
             /* 249 */
-            Dictionary.Add(('+', State.Plus), State.PlusPlus);
+            Dictionary.Add(('@', State.Delimiters), State.Indefinitely);
             /* 250 */
-            Dictionary.Add(('-', State.Plus), State.ErrorException);
+            Dictionary.Add(('_', State.Delimiters), State.Indefinitely);
             /* 251 */
-            Dictionary.Add(('*', State.Plus), State.ErrorException);
+            Dictionary.Add(('e', State.Delimiters), State.Indefinitely);
             /* 252 */
-            Dictionary.Add(('^', State.Plus), State.ErrorException);
+            Dictionary.Add(('d', State.Delimiters), State.Indefinitely);
             /* 253 */
-            Dictionary.Add(('{', State.Plus), State.ErrorException);
+            Dictionary.Add(('m', State.Delimiters), State.Indefinitely);
             /* 254 */
-            Dictionary.Add(('}', State.Plus), State.ErrorException);
+            Dictionary.Add(('f', State.Delimiters), State.Indefinitely);
             /* 255 */
-            Dictionary.Add(('(', State.Plus), State.Indefinitely);
+            Dictionary.Add(('\\', State.Delimiters), State.Indefinitely);
             /* 256 */
-            Dictionary.Add((')', State.Plus), State.Indefinitely);
+            Dictionary.Add(('n', State.Delimiters), State.Indefinitely);
             /* 257 */
-            Dictionary.Add(('[', State.Plus), State.ErrorException);
+            Dictionary.Add(('0', State.Logical), State.Indefinitely);
             /* 258 */
-            Dictionary.Add((']', State.Plus), State.ErrorException);
+            Dictionary.Add(('s', State.Logical), State.Indefinitely);
             /* 259 */
-            Dictionary.Add(('/', State.Plus), State.ErrorException);
+            Dictionary.Add(('=', State.Logical), State.Indefinitely);
             /* 260 */
-            Dictionary.Add(('&', State.Plus), State.ErrorException);
+            Dictionary.Add(('>', State.Logical), State.Indefinitely);
             /* 261 */
-            Dictionary.Add(('|', State.Plus), State.ErrorException);
+            Dictionary.Add(('<', State.Logical), State.Indefinitely);
             /* 262 */
-            Dictionary.Add(('\'', State.Plus), State.Indefinitely);
+            Dictionary.Add((',', State.Logical), State.Indefinitely);
             /* 263 */
-            Dictionary.Add(('!', State.Plus), State.ErrorException);
+            Dictionary.Add(('.', State.Logical), State.Indefinitely);
             /* 264 */
-            Dictionary.Add((';', State.Plus), State.ErrorException);
+            Dictionary.Add(('"', State.Logical), State.Indefinitely);
             /* 265 */
-            Dictionary.Add(('0', State.PlusPlus), State.Indefinitely);
+            Dictionary.Add(('+', State.Logical), State.Indefinitely);
             /* 266 */
-            Dictionary.Add(('s', State.PlusPlus), State.ErrorException);
+            Dictionary.Add(('-', State.Logical), State.Indefinitely);
             /* 267 */
-            Dictionary.Add(('=', State.PlusPlus), State.Indefinitely);//ex
+            Dictionary.Add(('*', State.Logical), State.Indefinitely);
             /* 268 */
-            Dictionary.Add(('>', State.PlusPlus), State.Indefinitely);//ex
+            Dictionary.Add(('^', State.Logical), State.Indefinitely);
             /* 269 */
-            Dictionary.Add(('<', State.PlusPlus), State.Indefinitely);//ex
+            Dictionary.Add(('{', State.Logical), State.Indefinitely);
             /* 270 */
-            Dictionary.Add((',', State.PlusPlus), State.ErrorException);
+            Dictionary.Add(('}', State.Logical), State.Indefinitely);
             /* 271 */
-            Dictionary.Add(('.', State.PlusPlus), State.ErrorException);
+            Dictionary.Add(('(', State.Logical), State.Indefinitely);
             /* 272 */
-            Dictionary.Add(('"', State.PlusPlus), State.ErrorException);
+            Dictionary.Add((')', State.Logical), State.Indefinitely);
             /* 273 */
-            Dictionary.Add(('+', State.PlusPlus), State.Indefinitely);//ex
+            Dictionary.Add(('[', State.Logical), State.Indefinitely);
             /* 274 */
-            Dictionary.Add(('-', State.PlusPlus), State.Indefinitely);//ex
+            Dictionary.Add((']', State.Logical), State.Indefinitely);
             /* 275 */
-            Dictionary.Add(('*', State.PlusPlus), State.Indefinitely);//ex
+            Dictionary.Add(('/', State.Logical), State.Indefinitely);
             /* 276 */
-            Dictionary.Add(('^', State.PlusPlus), State.Indefinitely);//ex
+            Dictionary.Add(('&', State.Logical), State.Indefinitely);
             /* 277 */
-            Dictionary.Add(('{', State.PlusPlus), State.ErrorException);
+            Dictionary.Add(('|', State.Logical), State.Indefinitely);
             /* 278 */
-            Dictionary.Add(('}', State.PlusPlus), State.ErrorException);
+            Dictionary.Add(('\'', State.Logical), State.Indefinitely);
             /* 279 */
-            Dictionary.Add(('(', State.PlusPlus), State.ErrorException);
+            Dictionary.Add(('!', State.Logical), State.Indefinitely);
             /* 280 */
-            Dictionary.Add((')', State.PlusPlus), State.ErrorException);
+            Dictionary.Add((';', State.Logical), State.Indefinitely);
             /* 281 */
-            Dictionary.Add(('[', State.PlusPlus), State.ErrorException);
+            Dictionary.Add(('@', State.Logical), State.Indefinitely);
             /* 282 */
-            Dictionary.Add((']', State.PlusPlus), State.ErrorException);
+            Dictionary.Add(('_', State.Logical), State.Indefinitely);
             /* 283 */
-            Dictionary.Add(('/', State.PlusPlus), State.Indefinitely);//ex
+            Dictionary.Add(('e', State.Logical), State.Indefinitely);
             /* 284 */
-            Dictionary.Add(('&', State.PlusPlus), State.Indefinitely);//ex
+            Dictionary.Add(('d', State.Logical), State.Indefinitely);
             /* 285 */
-            Dictionary.Add(('|', State.PlusPlus), State.Indefinitely);//ex
+            Dictionary.Add(('m', State.Logical), State.Indefinitely);
             /* 286 */
-            Dictionary.Add(('\'', State.PlusPlus), State.ErrorException);
+            Dictionary.Add(('f', State.Logical), State.Indefinitely);
             /* 287 */
-            Dictionary.Add(('!', State.PlusPlus), State.Indefinitely);//ex
+            Dictionary.Add(('\\', State.Logical), State.Indefinitely);
             /* 288 */
-            Dictionary.Add((';', State.PlusPlus), State.Indefinitely);
+            Dictionary.Add(('n', State.Logical), State.Indefinitely);
             /* 289 */
-            Dictionary.Add(('0', State.Minus), State.Indefinitely);
+            Dictionary.Add(('0', State.ErrorException), State.Indefinitely);
             /* 290 */
-            Dictionary.Add(('s', State.Minus), State.Indefinitely);
+            Dictionary.Add(('s', State.ErrorException), State.Indefinitely);
             /* 291 */
-            Dictionary.Add(('=', State.Minus), State.ErrorException);
+            Dictionary.Add(('=', State.ErrorException), State.Indefinitely);
             /* 292 */
-            Dictionary.Add(('>', State.Minus), State.ErrorException);
+            Dictionary.Add(('>', State.ErrorException), State.Indefinitely);
             /* 293 */
-            Dictionary.Add(('<', State.Minus), State.ErrorException);
+            Dictionary.Add(('<', State.ErrorException), State.Indefinitely);
             /* 294 */
-            Dictionary.Add((',', State.Minus), State.ErrorException);
+            Dictionary.Add((',', State.ErrorException), State.Indefinitely);
             /* 295 */
-            Dictionary.Add(('.', State.Minus), State.ErrorException);
+            Dictionary.Add(('.', State.ErrorException), State.Indefinitely);
             /* 296 */
-            Dictionary.Add(('"', State.Minus), State.Indefinitely);
+            Dictionary.Add(('"', State.ErrorException), State.Indefinitely);
             /* 297 */
-            Dictionary.Add(('+', State.Minus), State.ErrorException);
+            Dictionary.Add(('+', State.ErrorException), State.Indefinitely);
             /* 298 */
-            Dictionary.Add(('-', State.Minus), State.MinusMinus);
+            Dictionary.Add(('-', State.ErrorException), State.Indefinitely);
             /* 299 */
-            Dictionary.Add(('*', State.Minus), State.ErrorException);
+            Dictionary.Add(('*', State.ErrorException), State.Indefinitely);
             /* 300 */
-            Dictionary.Add(('^', State.Minus), State.ErrorException);
+            Dictionary.Add(('^', State.ErrorException), State.Indefinitely);
             /* 301 */
-            Dictionary.Add(('{', State.Minus), State.ErrorException);
+            Dictionary.Add(('{', State.ErrorException), State.Indefinitely);
             /* 302 */
-            Dictionary.Add(('}', State.Minus), State.ErrorException);
+            Dictionary.Add(('}', State.ErrorException), State.Indefinitely);
             /* 303 */
-            Dictionary.Add(('(', State.Minus), State.Indefinitely);
+            Dictionary.Add(('(', State.ErrorException), State.Indefinitely);
             /* 304 */
-            Dictionary.Add((')', State.Minus), State.Indefinitely);
+            Dictionary.Add((')', State.ErrorException), State.Indefinitely);
             /* 305 */
-            Dictionary.Add(('[', State.Minus), State.ErrorException);
+            Dictionary.Add(('[', State.ErrorException), State.Indefinitely);
             /* 306 */
-            Dictionary.Add((']', State.Minus), State.ErrorException);
+            Dictionary.Add((']', State.ErrorException), State.Indefinitely);
             /* 307 */
-            Dictionary.Add(('/', State.Minus), State.ErrorException);
+            Dictionary.Add(('/', State.ErrorException), State.Indefinitely);
             /* 308 */
-            Dictionary.Add(('&', State.Minus), State.ErrorException);
+            Dictionary.Add(('&', State.ErrorException), State.Indefinitely);
             /* 309 */
-            Dictionary.Add(('|', State.Minus), State.ErrorException);
+            Dictionary.Add(('|', State.ErrorException), State.Indefinitely);
             /* 310 */
-            Dictionary.Add(('\'', State.Minus), State.Indefinitely);
+            Dictionary.Add(('\'', State.ErrorException), State.Indefinitely);
             /* 311 */
-            Dictionary.Add(('!', State.Minus), State.ErrorException);
+            Dictionary.Add(('!', State.ErrorException), State.Indefinitely);
             /* 312 */
-            Dictionary.Add((';', State.Minus), State.ErrorException);
+            Dictionary.Add((';', State.ErrorException), State.Indefinitely);
             /* 313 */
-            Dictionary.Add(('0', State.MinusMinus), State.Indefinitely);
+            Dictionary.Add(('@', State.ErrorException), State.Indefinitely);
             /* 314 */
-            Dictionary.Add(('s', State.MinusMinus), State.ErrorException);
+            Dictionary.Add(('_', State.ErrorException), State.Indefinitely);
             /* 315 */
-            Dictionary.Add(('=', State.MinusMinus), State.Indefinitely);//ex
+            Dictionary.Add(('e', State.ErrorException), State.Indefinitely);
             /* 316 */
-            Dictionary.Add(('>', State.MinusMinus), State.Indefinitely);//ex
+            Dictionary.Add(('d', State.ErrorException), State.Indefinitely);
             /* 317 */
-            Dictionary.Add(('<', State.MinusMinus), State.Indefinitely);//ex
+            Dictionary.Add(('m', State.ErrorException), State.Indefinitely);
             /* 318 */
-            Dictionary.Add((',', State.MinusMinus), State.ErrorException);
+            Dictionary.Add(('f', State.ErrorException), State.Indefinitely);
             /* 319 */
-            Dictionary.Add(('.', State.MinusMinus), State.ErrorException);
+            Dictionary.Add(('\\', State.ErrorException), State.Indefinitely);
             /* 320 */
-            Dictionary.Add(('"', State.MinusMinus), State.ErrorException);
+            Dictionary.Add(('n', State.ErrorException), State.Indefinitely);
             /* 321 */
-            Dictionary.Add(('+', State.MinusMinus), State.Indefinitely);//ex
+            Dictionary.Add(('0', State.Plus), State.Indefinitely);
             /* 322 */
-            Dictionary.Add(('-', State.MinusMinus), State.Indefinitely);//ex
+            Dictionary.Add(('s', State.Plus), State.Indefinitely);
             /* 323 */
-            Dictionary.Add(('*', State.MinusMinus), State.Indefinitely);//ex
+            Dictionary.Add(('=', State.Plus), State.ErrorInOperator);
             /* 324 */
-            Dictionary.Add(('^', State.MinusMinus), State.Indefinitely);//ex
+            Dictionary.Add(('>', State.Plus), State.ErrorInOperator);
             /* 325 */
-            Dictionary.Add(('{', State.MinusMinus), State.ErrorException);
+            Dictionary.Add(('<', State.Plus), State.ErrorInOperator);
             /* 326 */
-            Dictionary.Add(('}', State.MinusMinus), State.ErrorException);
+            Dictionary.Add((',', State.Plus), State.ErrorInOperator);
             /* 327 */
-            Dictionary.Add(('(', State.MinusMinus), State.ErrorException);
+            Dictionary.Add(('.', State.Plus), State.ErrorInOperator);
             /* 328 */
-            Dictionary.Add((')', State.MinusMinus), State.ErrorException);
+            Dictionary.Add(('"', State.Plus), State.Indefinitely);
             /* 329 */
-            Dictionary.Add(('[', State.MinusMinus), State.ErrorException);
+            Dictionary.Add(('+', State.Plus), State.PlusPlus);
             /* 330 */
-            Dictionary.Add((']', State.MinusMinus), State.ErrorException);
+            Dictionary.Add(('-', State.Plus), State.ErrorInOperator);
             /* 331 */
-            Dictionary.Add(('/', State.MinusMinus), State.Indefinitely);//ex
+            Dictionary.Add(('*', State.Plus), State.ErrorInOperator);
             /* 332 */
-            Dictionary.Add(('&', State.MinusMinus), State.Indefinitely);//ex
+            Dictionary.Add(('^', State.Plus), State.ErrorInOperator);
             /* 333 */
-            Dictionary.Add(('|', State.MinusMinus), State.Indefinitely);//ex
+            Dictionary.Add(('{', State.Plus), State.ErrorInOperator);
             /* 334 */
-            Dictionary.Add(('\'', State.MinusMinus), State.ErrorException);
+            Dictionary.Add(('}', State.Plus), State.ErrorInOperator);
             /* 335 */
-            Dictionary.Add(('!', State.MinusMinus), State.Indefinitely);//ex
+            Dictionary.Add(('(', State.Plus), State.Indefinitely);
             /* 336 */
-            Dictionary.Add((';', State.MinusMinus), State.Indefinitely);
+            Dictionary.Add((')', State.Plus), State.ErrorInOperator);
             /* 337 */
-            Dictionary.Add(('0', State.Equal), State.Indefinitely);
+            Dictionary.Add(('[', State.Plus), State.ErrorInOperator);
             /* 338 */
-            Dictionary.Add(('s', State.Equal), State.Indefinitely);
+            Dictionary.Add((']', State.Plus), State.ErrorInOperator);
             /* 339 */
-            Dictionary.Add(('=', State.Equal), State.EqualEqual);
+            Dictionary.Add(('/', State.Plus), State.ErrorInOperator);
             /* 340 */
-            Dictionary.Add(('>', State.Equal), State.ErrorException);
+            Dictionary.Add(('&', State.Plus), State.ErrorInOperator);
             /* 341 */
-            Dictionary.Add(('<', State.Equal), State.ErrorException);
+            Dictionary.Add(('|', State.Plus), State.ErrorInOperator);
             /* 342 */
-            Dictionary.Add((',', State.Equal), State.ErrorException);
+            Dictionary.Add(('\'', State.Plus), State.Indefinitely);
             /* 343 */
-            Dictionary.Add(('.', State.Equal), State.ErrorException);
+            Dictionary.Add(('!', State.Plus), State.ErrorInOperator);
             /* 344 */
-            Dictionary.Add(('"', State.Equal), State.Indefinitely);
+            Dictionary.Add((';', State.Plus), State.ErrorInOperator);
             /* 345 */
-            Dictionary.Add(('+', State.Equal), State.Indefinitely);
+            Dictionary.Add(('@', State.Plus), State.Indefinitely);
             /* 346 */
-            Dictionary.Add(('-', State.Equal), State.Indefinitely);
+            Dictionary.Add(('_', State.Plus), State.Indefinitely);
             /* 347 */
-            Dictionary.Add(('*', State.Equal), State.ErrorException);
+            Dictionary.Add(('e', State.Plus), State.Indefinitely);
             /* 348 */
-            Dictionary.Add(('^', State.Equal), State.ErrorException);
+            Dictionary.Add(('d', State.Plus), State.Indefinitely);
             /* 349 */
-            Dictionary.Add(('{', State.Equal), State.Indefinitely);
+            Dictionary.Add(('m', State.Plus), State.Indefinitely);
             /* 350 */
-            Dictionary.Add(('}', State.Equal), State.ErrorException);
+            Dictionary.Add(('f', State.Plus), State.Indefinitely);
             /* 351 */
-            Dictionary.Add(('(', State.Equal), State.Indefinitely);
+            Dictionary.Add(('\\', State.Plus), State.ErrorInOperator);
             /* 352 */
-            Dictionary.Add((')', State.Equal), State.ErrorException);
+            Dictionary.Add(('n', State.Plus), State.Indefinitely);
             /* 353 */
-            Dictionary.Add(('[', State.Equal), State.Indefinitely);
+            Dictionary.Add(('0', State.PlusPlus), State.ErrorInEterator);
             /* 354 */
-            Dictionary.Add((']', State.Equal), State.ErrorException);
+            Dictionary.Add(('s', State.PlusPlus), State.ErrorInEterator);
             /* 355 */
-            Dictionary.Add(('/', State.Equal), State.ErrorException);
+            Dictionary.Add(('=', State.PlusPlus), State.Indefinitely);
             /* 356 */
-            Dictionary.Add(('&', State.Equal), State.ErrorException);
+            Dictionary.Add(('>', State.PlusPlus), State.Indefinitely);
             /* 357 */
-            Dictionary.Add(('|', State.Equal), State.ErrorException);
+            Dictionary.Add(('<', State.PlusPlus), State.Indefinitely);
             /* 358 */
-            Dictionary.Add(('\'', State.Equal), State.Indefinitely);
+            Dictionary.Add((',', State.PlusPlus), State.ErrorInEterator);
             /* 359 */
-            Dictionary.Add(('!', State.Equal), State.ErrorException);
+            Dictionary.Add(('.', State.PlusPlus), State.ErrorInEterator);
             /* 360 */
-            Dictionary.Add((';', State.Equal), State.ErrorException);
+            Dictionary.Add(('"', State.PlusPlus), State.ErrorInEterator);
             /* 361 */
-            Dictionary.Add(('0', State.EqualEqual), State.Indefinitely);
+            Dictionary.Add(('+', State.PlusPlus), State.ErrorInEterator);
             /* 362 */
-            Dictionary.Add(('s', State.EqualEqual), State.Indefinitely);
+            Dictionary.Add(('-', State.PlusPlus), State.ErrorInEterator);
             /* 363 */
-            Dictionary.Add(('=', State.EqualEqual), State.ErrorException);
+            Dictionary.Add(('*', State.PlusPlus), State.ErrorInEterator);
             /* 364 */
-            Dictionary.Add(('>', State.EqualEqual), State.ErrorException);
+            Dictionary.Add(('^', State.PlusPlus), State.ErrorInEterator);
             /* 365 */
-            Dictionary.Add(('<', State.EqualEqual), State.ErrorException);
+            Dictionary.Add(('{', State.PlusPlus), State.ErrorInEterator);
             /* 366 */
-            Dictionary.Add((',', State.EqualEqual), State.ErrorException);
+            Dictionary.Add(('}', State.PlusPlus), State.ErrorInEterator);
             /* 367 */
-            Dictionary.Add(('.', State.EqualEqual), State.ErrorException);
+            Dictionary.Add(('(', State.PlusPlus), State.ErrorInEterator);
             /* 368 */
-            Dictionary.Add(('"', State.EqualEqual), State.Indefinitely);
+            Dictionary.Add((')', State.PlusPlus), State.Indefinitely);
             /* 369 */
-            Dictionary.Add(('+', State.EqualEqual), State.Indefinitely);
+            Dictionary.Add(('[', State.PlusPlus), State.ErrorInEterator);
             /* 370 */
-            Dictionary.Add(('-', State.EqualEqual), State.Indefinitely);
+            Dictionary.Add((']', State.PlusPlus), State.ErrorInEterator);
             /* 371 */
-            Dictionary.Add(('*', State.EqualEqual), State.ErrorException);
+            Dictionary.Add(('/', State.PlusPlus), State.ErrorInEterator);
             /* 372 */
-            Dictionary.Add(('^', State.EqualEqual), State.ErrorException);
+            Dictionary.Add(('&', State.PlusPlus), State.ErrorInEterator);
             /* 373 */
-            Dictionary.Add(('{', State.EqualEqual), State.Indefinitely);
+            Dictionary.Add(('|', State.PlusPlus), State.ErrorInEterator);
             /* 374 */
-            Dictionary.Add(('}', State.EqualEqual), State.ErrorException);
+            Dictionary.Add(('\'', State.PlusPlus), State.ErrorInEterator);
             /* 375 */
-            Dictionary.Add(('(', State.EqualEqual), State.Indefinitely);
+            Dictionary.Add(('!', State.PlusPlus), State.Indefinitely);
             /* 376 */
-            Dictionary.Add((')', State.EqualEqual), State.ErrorException);
+            Dictionary.Add((';', State.PlusPlus), State.Indefinitely);
             /* 377 */
-            Dictionary.Add(('[', State.EqualEqual), State.Indefinitely);
+            Dictionary.Add(('@', State.PlusPlus), State.ErrorInEterator);
             /* 378 */
-            Dictionary.Add((']', State.EqualEqual), State.ErrorException);
+            Dictionary.Add(('_', State.PlusPlus), State.ErrorInEterator);
             /* 379 */
-            Dictionary.Add(('/', State.EqualEqual), State.ErrorException);
+            Dictionary.Add(('e', State.PlusPlus), State.ErrorInEterator);
             /* 380 */
-            Dictionary.Add(('&', State.EqualEqual), State.ErrorException);
+            Dictionary.Add(('d', State.PlusPlus), State.ErrorInEterator);
             /* 381 */
-            Dictionary.Add(('|', State.EqualEqual), State.ErrorException);
+            Dictionary.Add(('m', State.PlusPlus), State.ErrorInEterator);
             /* 382 */
-            Dictionary.Add(('\'', State.EqualEqual), State.Indefinitely);
+            Dictionary.Add(('f', State.PlusPlus), State.ErrorInEterator);
             /* 383 */
-            Dictionary.Add(('!', State.EqualEqual), State.ErrorException);
+            Dictionary.Add(('\\', State.PlusPlus), State.ErrorInEterator);
             /* 384 */
-            Dictionary.Add((';', State.EqualEqual), State.ErrorException);
+            Dictionary.Add(('n', State.PlusPlus), State.ErrorInEterator);
             /* 385 */
-            Dictionary.Add(('0', State.LogicInequality), State.Indefinitely);
+            Dictionary.Add(('0', State.Minus), State.Indefinitely);
             /* 386 */
-            Dictionary.Add(('s', State.LogicInequality), State.Indefinitely);
+            Dictionary.Add(('s', State.Minus), State.Indefinitely);
             /* 387 */
-            Dictionary.Add(('=', State.LogicInequality), State.Inequality);
+            Dictionary.Add(('=', State.Minus), State.ErrorInOperator);
             /* 388 */
-            Dictionary.Add(('>', State.LogicInequality), State.ErrorException);
+            Dictionary.Add(('>', State.Minus), State.ErrorInOperator);
             /* 389 */
-            Dictionary.Add(('<', State.LogicInequality), State.ErrorException);
+            Dictionary.Add(('<', State.Minus), State.ErrorInOperator);
             /* 390 */
-            Dictionary.Add((',', State.LogicInequality), State.ErrorException);
+            Dictionary.Add((',', State.Minus), State.ErrorInOperator);
             /* 391 */
-            Dictionary.Add(('.', State.LogicInequality), State.ErrorException);
+            Dictionary.Add(('.', State.Minus), State.ErrorInOperator);
             /* 392 */
-            Dictionary.Add(('"', State.LogicInequality), State.Indefinitely);
+            Dictionary.Add(('"', State.Minus), State.Indefinitely);
             /* 393 */
-            Dictionary.Add(('+', State.LogicInequality), State.ErrorException);
+            Dictionary.Add(('+', State.Minus), State.ErrorInOperator);
             /* 394 */
-            Dictionary.Add(('-', State.LogicInequality), State.ErrorException);
+            Dictionary.Add(('-', State.Minus), State.MinusMinus);
             /* 395 */
-            Dictionary.Add(('*', State.LogicInequality), State.ErrorException);
+            Dictionary.Add(('*', State.Minus), State.ErrorInOperator);
             /* 396 */
-            Dictionary.Add(('^', State.LogicInequality), State.ErrorException);
+            Dictionary.Add(('^', State.Minus), State.ErrorInOperator);
             /* 397 */
-            Dictionary.Add(('{', State.LogicInequality), State.ErrorException);
+            Dictionary.Add(('{', State.Minus), State.ErrorInOperator);
             /* 398 */
-            Dictionary.Add(('}', State.LogicInequality), State.ErrorException);
+            Dictionary.Add(('}', State.Minus), State.ErrorInOperator);
             /* 399 */
-            Dictionary.Add(('(', State.LogicInequality), State.Indefinitely);
+            Dictionary.Add(('(', State.Minus), State.Indefinitely);
             /* 400 */
-            Dictionary.Add((')', State.LogicInequality), State.ErrorException);
+            Dictionary.Add((')', State.Minus), State.ErrorInOperator);
             /* 401 */
-            Dictionary.Add(('[', State.LogicInequality), State.ErrorException);
+            Dictionary.Add(('[', State.Minus), State.ErrorInOperator);
             /* 402 */
-            Dictionary.Add((']', State.LogicInequality), State.ErrorException);
+            Dictionary.Add((']', State.Minus), State.ErrorInOperator);
             /* 403 */
-            Dictionary.Add(('/', State.LogicInequality), State.ErrorException);
+            Dictionary.Add(('/', State.Minus), State.ErrorInOperator);
             /* 404 */
-            Dictionary.Add(('&', State.LogicInequality), State.ErrorException);
+            Dictionary.Add(('&', State.Minus), State.ErrorInOperator);
             /* 405 */
-            Dictionary.Add(('|', State.LogicInequality), State.ErrorException);
+            Dictionary.Add(('|', State.Minus), State.ErrorInOperator);
             /* 406 */
-            Dictionary.Add(('\'', State.LogicInequality), State.Indefinitely);
+            Dictionary.Add(('\'', State.Minus), State.Indefinitely);
             /* 407 */
-            Dictionary.Add(('!', State.LogicInequality), State.ErrorException);
+            Dictionary.Add(('!', State.Minus), State.ErrorInOperator);
             /* 408 */
-            Dictionary.Add((';', State.LogicInequality), State.ErrorException);
+            Dictionary.Add((';', State.Minus), State.ErrorInOperator);
             /* 409 */
-            Dictionary.Add(('0', State.Inequality), State.Indefinitely);
+            Dictionary.Add(('@', State.Minus), State.Indefinitely);
             /* 410 */
-            Dictionary.Add(('s', State.Inequality), State.Indefinitely);
+            Dictionary.Add(('_', State.Minus), State.Indefinitely);
             /* 411 */
-            Dictionary.Add(('=', State.Inequality), State.ErrorException);
+            Dictionary.Add(('e', State.Minus), State.Indefinitely);
             /* 412 */
-            Dictionary.Add(('>', State.Inequality), State.ErrorException);
+            Dictionary.Add(('d', State.Minus), State.Indefinitely);
             /* 413 */
-            Dictionary.Add(('<', State.Inequality), State.ErrorException);
+            Dictionary.Add(('m', State.Minus), State.Indefinitely);
             /* 414 */
-            Dictionary.Add((',', State.Inequality), State.ErrorException);
+            Dictionary.Add(('f', State.Minus), State.Indefinitely);
             /* 415 */
-            Dictionary.Add(('.', State.Inequality), State.ErrorException);
+            Dictionary.Add(('\\', State.Minus), State.ErrorInOperator);
             /* 416 */
-            Dictionary.Add(('"', State.Inequality), State.Indefinitely);
+            Dictionary.Add(('n', State.Minus), State.Indefinitely);
             /* 417 */
-            Dictionary.Add(('+', State.Inequality), State.ErrorException);
+            Dictionary.Add(('0', State.MinusMinus), State.ErrorInEterator);
             /* 418 */
-            Dictionary.Add(('-', State.Inequality), State.ErrorException);
+            Dictionary.Add(('s', State.MinusMinus), State.ErrorInEterator);
             /* 419 */
-            Dictionary.Add(('*', State.Inequality), State.ErrorException);
+            Dictionary.Add(('=', State.MinusMinus), State.Indefinitely);
             /* 420 */
-            Dictionary.Add(('^', State.Inequality), State.ErrorException);
+            Dictionary.Add(('>', State.MinusMinus), State.Indefinitely);
             /* 421 */
-            Dictionary.Add(('{', State.Inequality), State.ErrorException);
+            Dictionary.Add(('<', State.MinusMinus), State.Indefinitely);
             /* 422 */
-            Dictionary.Add(('}', State.Inequality), State.ErrorException);
+            Dictionary.Add((',', State.MinusMinus), State.ErrorInEterator);
             /* 423 */
-            Dictionary.Add(('(', State.Inequality), State.Indefinitely);
+            Dictionary.Add(('.', State.MinusMinus), State.ErrorInEterator);
             /* 424 */
-            Dictionary.Add((')', State.Inequality), State.ErrorException);
+            Dictionary.Add(('"', State.MinusMinus), State.ErrorInEterator);
             /* 425 */
-            Dictionary.Add(('[', State.Inequality), State.ErrorException);
+            Dictionary.Add(('+', State.MinusMinus), State.ErrorInEterator);
             /* 426 */
-            Dictionary.Add((']', State.Inequality), State.ErrorException);
+            Dictionary.Add(('-', State.MinusMinus), State.ErrorInEterator);
             /* 427 */
-            Dictionary.Add(('/', State.Inequality), State.ErrorException);
+            Dictionary.Add(('*', State.MinusMinus), State.ErrorInEterator);
             /* 428 */
-            Dictionary.Add(('&', State.Inequality), State.ErrorException);
+            Dictionary.Add(('^', State.MinusMinus), State.ErrorInEterator);
             /* 429 */
-            Dictionary.Add(('|', State.Inequality), State.ErrorException);
+            Dictionary.Add(('{', State.MinusMinus), State.ErrorInEterator);
             /* 430 */
-            Dictionary.Add(('\'', State.Inequality), State.Indefinitely);
+            Dictionary.Add(('}', State.MinusMinus), State.ErrorInEterator);
             /* 431 */
-            Dictionary.Add(('!', State.Inequality), State.ErrorException);
+            Dictionary.Add(('(', State.MinusMinus), State.ErrorInEterator);
             /* 432 */
-            Dictionary.Add((';', State.Inequality), State.ErrorException);
+            Dictionary.Add((')', State.MinusMinus), State.Indefinitely);
             /* 433 */
-            Dictionary.Add(('0', State.More), State.Indefinitely);
+            Dictionary.Add(('[', State.MinusMinus), State.ErrorInEterator);
             /* 434 */
-            Dictionary.Add(('s', State.More), State.Indefinitely);
+            Dictionary.Add((']', State.MinusMinus), State.ErrorInEterator);
             /* 435 */
-            Dictionary.Add(('=', State.More), State.MoreEqual);
+            Dictionary.Add(('/', State.MinusMinus), State.ErrorInEterator);
             /* 436 */
-            Dictionary.Add(('>', State.More), State.ShiftRight);
+            Dictionary.Add(('&', State.MinusMinus), State.ErrorInEterator);
             /* 437 */
-            Dictionary.Add(('<', State.More), State.ErrorException);
+            Dictionary.Add(('|', State.MinusMinus), State.ErrorInEterator);
             /* 438 */
-            Dictionary.Add((',', State.More), State.ErrorException);
+            Dictionary.Add(('\'', State.MinusMinus), State.ErrorInEterator);
             /* 439 */
-            Dictionary.Add(('.', State.More), State.ErrorException);
+            Dictionary.Add(('!', State.MinusMinus), State.Indefinitely);
             /* 440 */
-            Dictionary.Add(('"', State.More), State.Indefinitely);
+            Dictionary.Add((';', State.MinusMinus), State.Indefinitely);
             /* 441 */
-            Dictionary.Add(('+', State.More), State.Indefinitely);
+            Dictionary.Add(('@', State.MinusMinus), State.ErrorInEterator);
             /* 442 */
-            Dictionary.Add(('-', State.More), State.Indefinitely);
+            Dictionary.Add(('_', State.MinusMinus), State.ErrorInEterator);
             /* 443 */
-            Dictionary.Add(('*', State.More), State.ErrorException);
+            Dictionary.Add(('e', State.MinusMinus), State.ErrorInEterator);
             /* 444 */
-            Dictionary.Add(('^', State.More), State.ErrorException);
+            Dictionary.Add(('d', State.MinusMinus), State.ErrorInEterator);
             /* 445 */
-            Dictionary.Add(('{', State.More), State.Indefinitely);
+            Dictionary.Add(('m', State.MinusMinus), State.ErrorInEterator);
             /* 446 */
-            Dictionary.Add(('}', State.More), State.ErrorException);
+            Dictionary.Add(('f', State.MinusMinus), State.ErrorInEterator);
             /* 447 */
-            Dictionary.Add(('(', State.More), State.Indefinitely);
+            Dictionary.Add(('\\', State.MinusMinus), State.ErrorInEterator);
             /* 448 */
-            Dictionary.Add((')', State.More), State.ErrorException);
+            Dictionary.Add(('n', State.MinusMinus), State.ErrorInEterator);
             /* 449 */
-            Dictionary.Add(('[', State.More), State.Indefinitely);
+            Dictionary.Add(('0', State.Equal), State.Indefinitely);
             /* 450 */
-            Dictionary.Add((']', State.More), State.ErrorException);
+            Dictionary.Add(('s', State.Equal), State.Indefinitely);
             /* 451 */
-            Dictionary.Add(('/', State.More), State.ErrorException);
+            Dictionary.Add(('=', State.Equal), State.EqualEqual);
             /* 452 */
-            Dictionary.Add(('&', State.More), State.ErrorException);
+            Dictionary.Add(('>', State.Equal), State.ErrorInLogicalExpression);
             /* 453 */
-            Dictionary.Add(('|', State.More), State.ErrorException);
+            Dictionary.Add(('<', State.Equal), State.ErrorInLogicalExpression);
             /* 454 */
-            Dictionary.Add(('\'', State.More), State.Indefinitely);
+            Dictionary.Add((',', State.Equal), State.ErrorInLogicalExpression);
             /* 455 */
-            Dictionary.Add(('!', State.More), State.ErrorException);
+            Dictionary.Add(('.', State.Equal), State.ErrorInLogicalExpression);
             /* 456 */
-            Dictionary.Add((';', State.More), State.ErrorException);
+            Dictionary.Add(('"', State.Equal), State.Indefinitely);
             /* 457 */
-            Dictionary.Add(('0', State.MoreEqual), State.Indefinitely);
+            Dictionary.Add(('+', State.Equal), State.Indefinitely);
             /* 458 */
-            Dictionary.Add(('s', State.MoreEqual), State.Indefinitely);
+            Dictionary.Add(('-', State.Equal), State.Indefinitely);
             /* 459 */
-            Dictionary.Add(('=', State.MoreEqual), State.ErrorException);
+            Dictionary.Add(('*', State.Equal), State.ErrorInLogicalExpression);
             /* 460 */
-            Dictionary.Add(('>', State.MoreEqual), State.ErrorException);
+            Dictionary.Add(('^', State.Equal), State.ErrorInLogicalExpression);
             /* 461 */
-            Dictionary.Add(('<', State.MoreEqual), State.ErrorException);
+            Dictionary.Add(('{', State.Equal), State.ErrorInLogicalExpression);
             /* 462 */
-            Dictionary.Add((',', State.MoreEqual), State.ErrorException);
+            Dictionary.Add(('}', State.Equal), State.ErrorInLogicalExpression);
             /* 463 */
-            Dictionary.Add(('.', State.MoreEqual), State.ErrorException);
+            Dictionary.Add(('(', State.Equal), State.Indefinitely);
             /* 464 */
-            Dictionary.Add(('"', State.MoreEqual), State.Indefinitely);
+            Dictionary.Add((')', State.Equal), State.ErrorInLogicalExpression);
             /* 465 */
-            Dictionary.Add(('+', State.MoreEqual), State.Indefinitely);
+            Dictionary.Add(('[', State.Equal), State.ErrorInLogicalExpression);
             /* 466 */
-            Dictionary.Add(('-', State.MoreEqual), State.Indefinitely);
+            Dictionary.Add((']', State.Equal), State.ErrorInLogicalExpression);
             /* 467 */
-            Dictionary.Add(('*', State.MoreEqual), State.ErrorException);
+            Dictionary.Add(('/', State.Equal), State.ErrorInLogicalExpression);
             /* 468 */
-            Dictionary.Add(('^', State.MoreEqual), State.ErrorException);
+            Dictionary.Add(('&', State.Equal), State.ErrorInLogicalExpression);
             /* 469 */
-            Dictionary.Add(('{', State.MoreEqual), State.Indefinitely);
+            Dictionary.Add(('|', State.Equal), State.ErrorInLogicalExpression);
             /* 470 */
-            Dictionary.Add(('}', State.MoreEqual), State.ErrorException);
+            Dictionary.Add(('\'', State.Equal), State.Indefinitely);
             /* 471 */
-            Dictionary.Add(('(', State.MoreEqual), State.Indefinitely);
+            Dictionary.Add(('!', State.Equal), State.ErrorInLogicalExpression);
             /* 472 */
-            Dictionary.Add((')', State.MoreEqual), State.ErrorException);
+            Dictionary.Add((';', State.Equal), State.ErrorInLogicalExpression);
             /* 473 */
-            Dictionary.Add(('[', State.MoreEqual), State.Indefinitely);
+            Dictionary.Add(('@', State.Equal), State.Indefinitely);
             /* 474 */
-            Dictionary.Add((']', State.MoreEqual), State.ErrorException);
+            Dictionary.Add(('_', State.Equal), State.Indefinitely);
             /* 475 */
-            Dictionary.Add(('/', State.MoreEqual), State.ErrorException);
+            Dictionary.Add(('e', State.Equal), State.Indefinitely);
             /* 476 */
-            Dictionary.Add(('&', State.MoreEqual), State.ErrorException);
+            Dictionary.Add(('d', State.Equal), State.Indefinitely);
             /* 477 */
-            Dictionary.Add(('|', State.MoreEqual), State.ErrorException);
+            Dictionary.Add(('m', State.Equal), State.Indefinitely);
             /* 478 */
-            Dictionary.Add(('\'', State.MoreEqual), State.Indefinitely);
+            Dictionary.Add(('f', State.Equal), State.Indefinitely);
             /* 479 */
-            Dictionary.Add(('!', State.MoreEqual), State.ErrorException);
+            Dictionary.Add(('\\', State.Equal), State.ErrorInLogicalExpression);
             /* 480 */
-            Dictionary.Add((';', State.MoreEqual), State.ErrorException);
+            Dictionary.Add(('n', State.Equal), State.Indefinitely);
             /* 481 */
-            Dictionary.Add(('0', State.Less), State.Indefinitely);
+            Dictionary.Add(('0', State.EqualEqual), State.Indefinitely);
             /* 482 */
-            Dictionary.Add(('s', State.Less), State.Indefinitely);
+            Dictionary.Add(('s', State.EqualEqual), State.Indefinitely);
             /* 483 */
-            Dictionary.Add(('=', State.Less), State.LessEqual);
+            Dictionary.Add(('=', State.EqualEqual), State.ErrorInLogicalExpression);
             /* 484 */
-            Dictionary.Add(('>', State.Less), State.ErrorException);
+            Dictionary.Add(('>', State.EqualEqual), State.ErrorInLogicalExpression);
             /* 485 */
-            Dictionary.Add(('<', State.Less), State.ShiftLeft);
+            Dictionary.Add(('<', State.EqualEqual), State.ErrorInLogicalExpression);
             /* 486 */
-            Dictionary.Add((',', State.Less), State.ErrorException);
+            Dictionary.Add((',', State.EqualEqual), State.ErrorInLogicalExpression);
             /* 487 */
-            Dictionary.Add(('.', State.Less), State.ErrorException);
+            Dictionary.Add(('.', State.EqualEqual), State.ErrorInLogicalExpression);
             /* 488 */
-            Dictionary.Add(('"', State.Less), State.Indefinitely);
+            Dictionary.Add(('"', State.EqualEqual), State.Indefinitely);
             /* 489 */
-            Dictionary.Add(('+', State.Less), State.Indefinitely);
+            Dictionary.Add(('+', State.EqualEqual), State.Indefinitely);
             /* 490 */
-            Dictionary.Add(('-', State.Less), State.Indefinitely);
+            Dictionary.Add(('-', State.EqualEqual), State.Indefinitely);
             /* 491 */
-            Dictionary.Add(('*', State.Less), State.ErrorException);
+            Dictionary.Add(('*', State.EqualEqual), State.ErrorInLogicalExpression);
             /* 492 */
-            Dictionary.Add(('^', State.Less), State.ErrorException);
+            Dictionary.Add(('^', State.EqualEqual), State.ErrorInLogicalExpression);
             /* 493 */
-            Dictionary.Add(('{', State.Less), State.Indefinitely);
+            Dictionary.Add(('{', State.EqualEqual), State.ErrorInLogicalExpression);
             /* 494 */
-            Dictionary.Add(('}', State.Less), State.ErrorException);
+            Dictionary.Add(('}', State.EqualEqual), State.ErrorInLogicalExpression);
             /* 495 */
-            Dictionary.Add(('(', State.Less), State.Indefinitely);
+            Dictionary.Add(('(', State.EqualEqual), State.Indefinitely);
             /* 496 */
-            Dictionary.Add((')', State.Less), State.ErrorException);
+            Dictionary.Add((')', State.EqualEqual), State.ErrorInLogicalExpression);
             /* 497 */
-            Dictionary.Add(('[', State.Less), State.Indefinitely);
+            Dictionary.Add(('[', State.EqualEqual), State.ErrorInLogicalExpression);
             /* 498 */
-            Dictionary.Add((']', State.Less), State.ErrorException);
+            Dictionary.Add((']', State.EqualEqual), State.ErrorInLogicalExpression);
             /* 499 */
-            Dictionary.Add(('/', State.Less), State.ErrorException);
+            Dictionary.Add(('/', State.EqualEqual), State.ErrorInLogicalExpression);
             /* 500 */
-            Dictionary.Add(('&', State.Less), State.ErrorException);
+            Dictionary.Add(('&', State.EqualEqual), State.ErrorInLogicalExpression);
             /* 501 */
-            Dictionary.Add(('|', State.Less), State.ErrorException);
+            Dictionary.Add(('|', State.EqualEqual), State.ErrorInLogicalExpression);
             /* 502 */
-            Dictionary.Add(('\'', State.Less), State.Indefinitely);
+            Dictionary.Add(('\'', State.EqualEqual), State.Indefinitely);
             /* 503 */
-            Dictionary.Add(('!', State.Less), State.ErrorException);
+            Dictionary.Add(('!', State.EqualEqual), State.ErrorInLogicalExpression);
             /* 504 */
-            Dictionary.Add((';', State.Less), State.ErrorException);
+            Dictionary.Add((';', State.EqualEqual), State.ErrorInLogicalExpression);
             /* 505 */
-            Dictionary.Add(('0', State.LessEqual), State.Indefinitely);
+            Dictionary.Add(('@', State.EqualEqual), State.Indefinitely);
             /* 506 */
-            Dictionary.Add(('s', State.LessEqual), State.Indefinitely);
+            Dictionary.Add(('_', State.EqualEqual), State.Indefinitely);
             /* 507 */
-            Dictionary.Add(('=', State.LessEqual), State.ErrorException);
+            Dictionary.Add(('e', State.EqualEqual), State.Indefinitely);
             /* 508 */
-            Dictionary.Add(('>', State.LessEqual), State.ErrorException);
+            Dictionary.Add(('d', State.EqualEqual), State.Indefinitely);
             /* 509 */
-            Dictionary.Add(('<', State.LessEqual), State.ErrorException);
+            Dictionary.Add(('m', State.EqualEqual), State.Indefinitely);
             /* 510 */
-            Dictionary.Add((',', State.LessEqual), State.ErrorException);
+            Dictionary.Add(('f', State.EqualEqual), State.Indefinitely);
             /* 511 */
-            Dictionary.Add(('.', State.LessEqual), State.ErrorException);
+            Dictionary.Add(('\\', State.EqualEqual), State.ErrorInLogicalExpression);
             /* 512 */
-            Dictionary.Add(('"', State.LessEqual), State.Indefinitely);
+            Dictionary.Add(('n', State.EqualEqual), State.Indefinitely);
             /* 513 */
-            Dictionary.Add(('+', State.LessEqual), State.Indefinitely);
+            Dictionary.Add(('0', State.LogicInequality), State.Indefinitely);
             /* 514 */
-            Dictionary.Add(('-', State.LessEqual), State.Indefinitely);
+            Dictionary.Add(('s', State.LogicInequality), State.Indefinitely);
             /* 515 */
-            Dictionary.Add(('*', State.LessEqual), State.ErrorException);
+            Dictionary.Add(('=', State.LogicInequality), State.Inequality);
             /* 516 */
-            Dictionary.Add(('^', State.LessEqual), State.ErrorException);
+            Dictionary.Add(('>', State.LogicInequality), State.ErrorInLogicalExpression);
             /* 517 */
-            Dictionary.Add(('{', State.LessEqual), State.Indefinitely);
+            Dictionary.Add(('<', State.LogicInequality), State.ErrorInLogicalExpression);
             /* 518 */
-            Dictionary.Add(('}', State.LessEqual), State.ErrorException);
+            Dictionary.Add((',', State.LogicInequality), State.ErrorInLogicalExpression);
             /* 519 */
-            Dictionary.Add(('(', State.LessEqual), State.Indefinitely);
+            Dictionary.Add(('.', State.LogicInequality), State.ErrorInLogicalExpression);
             /* 520 */
-            Dictionary.Add((')', State.LessEqual), State.ErrorException);
+            Dictionary.Add(('"', State.LogicInequality), State.Indefinitely);
             /* 521 */
-            Dictionary.Add(('[', State.LessEqual), State.Indefinitely);
+            Dictionary.Add(('+', State.LogicInequality), State.Indefinitely);
             /* 522 */
-            Dictionary.Add((']', State.LessEqual), State.ErrorException);
+            Dictionary.Add(('-', State.LogicInequality), State.Indefinitely);
             /* 523 */
-            Dictionary.Add(('/', State.LessEqual), State.ErrorException);
+            Dictionary.Add(('*', State.LogicInequality), State.ErrorInLogicalExpression);
             /* 524 */
-            Dictionary.Add(('&', State.LessEqual), State.ErrorException);
+            Dictionary.Add(('^', State.LogicInequality), State.ErrorInLogicalExpression);
             /* 525 */
-            Dictionary.Add(('|', State.LessEqual), State.ErrorException);
+            Dictionary.Add(('{', State.LogicInequality), State.ErrorInLogicalExpression);
             /* 526 */
-            Dictionary.Add(('\'', State.LessEqual), State.Indefinitely);
+            Dictionary.Add(('}', State.LogicInequality), State.ErrorInLogicalExpression);
             /* 527 */
-            Dictionary.Add(('!', State.LessEqual), State.ErrorException);
+            Dictionary.Add(('(', State.LogicInequality), State.Indefinitely);
             /* 528 */
-            Dictionary.Add((';', State.LessEqual), State.ErrorException);
+            Dictionary.Add((')', State.LogicInequality), State.ErrorInLogicalExpression);
             /* 529 */
-            Dictionary.Add(('0', State.Ampersand), State.Indefinitely);
+            Dictionary.Add(('[', State.LogicInequality), State.ErrorInLogicalExpression);
             /* 530 */
-            Dictionary.Add(('s', State.Ampersand), State.Indefinitely);
+            Dictionary.Add((']', State.LogicInequality), State.ErrorInLogicalExpression);
             /* 531 */
-            Dictionary.Add(('=', State.Ampersand), State.ErrorException);
+            Dictionary.Add(('/', State.LogicInequality), State.ErrorInLogicalExpression);
             /* 532 */
-            Dictionary.Add(('>', State.Ampersand), State.ErrorException);
+            Dictionary.Add(('&', State.LogicInequality), State.ErrorInLogicalExpression);
             /* 533 */
-            Dictionary.Add(('<', State.Ampersand), State.ErrorException);
+            Dictionary.Add(('|', State.LogicInequality), State.ErrorInLogicalExpression);
             /* 534 */
-            Dictionary.Add((',', State.Ampersand), State.ErrorException);
+            Dictionary.Add(('\'', State.LogicInequality), State.Indefinitely);
             /* 535 */
-            Dictionary.Add(('.', State.Ampersand), State.ErrorException);
+            Dictionary.Add(('!', State.LogicInequality), State.ErrorInLogicalExpression);
             /* 536 */
-            Dictionary.Add(('"', State.Ampersand), State.Indefinitely);
+            Dictionary.Add((';', State.LogicInequality), State.ErrorInLogicalExpression);
             /* 537 */
-            Dictionary.Add(('+', State.Ampersand), State.Indefinitely);
+            Dictionary.Add(('@', State.LogicInequality), State.Indefinitely);
             /* 538 */
-            Dictionary.Add(('-', State.Ampersand), State.Indefinitely);
+            Dictionary.Add(('_', State.LogicInequality), State.Indefinitely);
             /* 539 */
-            Dictionary.Add(('*', State.Ampersand), State.ErrorException);
+            Dictionary.Add(('e', State.LogicInequality), State.Indefinitely);
             /* 540 */
-            Dictionary.Add(('^', State.Ampersand), State.ErrorException);
+            Dictionary.Add(('d', State.LogicInequality), State.Indefinitely);
             /* 541 */
-            Dictionary.Add(('{', State.Ampersand), State.ErrorException);
+            Dictionary.Add(('m', State.LogicInequality), State.Indefinitely);
             /* 542 */
-            Dictionary.Add(('}', State.Ampersand), State.ErrorException);
+            Dictionary.Add(('f', State.LogicInequality), State.Indefinitely);
             /* 543 */
-            Dictionary.Add(('(', State.Ampersand), State.Indefinitely);
+            Dictionary.Add(('\\', State.LogicInequality), State.ErrorInLogicalExpression);
             /* 544 */
-            Dictionary.Add((')', State.Ampersand), State.ErrorException);
+            Dictionary.Add(('n', State.LogicInequality), State.Indefinitely);
             /* 545 */
-            Dictionary.Add(('[', State.Ampersand), State.ErrorException);
+            Dictionary.Add(('0', State.Inequality), State.Indefinitely);
             /* 546 */
-            Dictionary.Add((']', State.Ampersand), State.ErrorException);
+            Dictionary.Add(('s', State.Inequality), State.Indefinitely);
             /* 547 */
-            Dictionary.Add(('/', State.Ampersand), State.ErrorException);
+            Dictionary.Add(('=', State.Inequality), State.ErrorInLogicalExpression);
             /* 548 */
-            Dictionary.Add(('&', State.Ampersand), State.DoubleAmpersand);
+            Dictionary.Add(('>', State.Inequality), State.ErrorInLogicalExpression);
             /* 549 */
-            Dictionary.Add(('|', State.Ampersand), State.ErrorException);
+            Dictionary.Add(('<', State.Inequality), State.ErrorInLogicalExpression);
             /* 550 */
-            Dictionary.Add(('\'', State.Ampersand), State.Indefinitely);
+            Dictionary.Add((',', State.Inequality), State.ErrorInLogicalExpression);
             /* 551 */
-            Dictionary.Add(('!', State.Ampersand), State.Indefinitely);
+            Dictionary.Add(('.', State.Inequality), State.ErrorInLogicalExpression);
             /* 552 */
-            Dictionary.Add((';', State.Ampersand), State.ErrorException);
+            Dictionary.Add(('"', State.Inequality), State.Indefinitely);
             /* 553 */
-            Dictionary.Add(('0', State.DoubleAmpersand), State.Indefinitely);
+            Dictionary.Add(('+', State.Inequality), State.Indefinitely);
             /* 554 */
-            Dictionary.Add(('s', State.DoubleAmpersand), State.Indefinitely);
+            Dictionary.Add(('-', State.Inequality), State.Indefinitely);
             /* 555 */
-            Dictionary.Add(('=', State.DoubleAmpersand), State.ErrorException);
+            Dictionary.Add(('*', State.Inequality), State.ErrorInLogicalExpression);
             /* 556 */
-            Dictionary.Add(('>', State.DoubleAmpersand), State.ErrorException);
+            Dictionary.Add(('^', State.Inequality), State.ErrorInLogicalExpression);
             /* 557 */
-            Dictionary.Add(('<', State.DoubleAmpersand), State.ErrorException);
+            Dictionary.Add(('{', State.Inequality), State.ErrorInLogicalExpression);
             /* 558 */
-            Dictionary.Add((',', State.DoubleAmpersand), State.ErrorException);
+            Dictionary.Add(('}', State.Inequality), State.ErrorInLogicalExpression);
             /* 559 */
-            Dictionary.Add(('.', State.DoubleAmpersand), State.ErrorException);
+            Dictionary.Add(('(', State.Inequality), State.Indefinitely);
             /* 560 */
-            Dictionary.Add(('"', State.DoubleAmpersand), State.Indefinitely);
+            Dictionary.Add((')', State.Inequality), State.ErrorInLogicalExpression);
             /* 561 */
-            Dictionary.Add(('+', State.DoubleAmpersand), State.Indefinitely);
+            Dictionary.Add(('[', State.Inequality), State.ErrorInLogicalExpression);
             /* 562 */
-            Dictionary.Add(('-', State.DoubleAmpersand), State.Indefinitely);
+            Dictionary.Add((']', State.Inequality), State.ErrorInLogicalExpression);
             /* 563 */
-            Dictionary.Add(('*', State.DoubleAmpersand), State.ErrorException);
+            Dictionary.Add(('/', State.Inequality), State.ErrorInLogicalExpression);
             /* 564 */
-            Dictionary.Add(('^', State.DoubleAmpersand), State.ErrorException);
+            Dictionary.Add(('&', State.Inequality), State.ErrorInLogicalExpression);
             /* 565 */
-            Dictionary.Add(('{', State.DoubleAmpersand), State.ErrorException);
+            Dictionary.Add(('|', State.Inequality), State.ErrorInLogicalExpression);
             /* 566 */
-            Dictionary.Add(('}', State.DoubleAmpersand), State.ErrorException);
+            Dictionary.Add(('\'', State.Inequality), State.Indefinitely);
             /* 567 */
-            Dictionary.Add(('(', State.DoubleAmpersand), State.Indefinitely);
+            Dictionary.Add(('!', State.Inequality), State.ErrorInLogicalExpression);
             /* 568 */
-            Dictionary.Add((')', State.DoubleAmpersand), State.ErrorException);
+            Dictionary.Add((';', State.Inequality), State.ErrorInLogicalExpression);
             /* 569 */
-            Dictionary.Add(('[', State.DoubleAmpersand), State.ErrorException);
+            Dictionary.Add(('@', State.Inequality), State.Indefinitely);
             /* 570 */
-            Dictionary.Add((']', State.DoubleAmpersand), State.ErrorException);
+            Dictionary.Add(('_', State.Inequality), State.Indefinitely);
             /* 571 */
-            Dictionary.Add(('/', State.DoubleAmpersand), State.ErrorException);
+            Dictionary.Add(('e', State.Inequality), State.Indefinitely);
             /* 572 */
-            Dictionary.Add(('&', State.DoubleAmpersand), State.ErrorException);
+            Dictionary.Add(('d', State.Inequality), State.Indefinitely);
             /* 573 */
-            Dictionary.Add(('|', State.DoubleAmpersand), State.ErrorException);
+            Dictionary.Add(('m', State.Inequality), State.Indefinitely);
             /* 574 */
-            Dictionary.Add(('\'', State.DoubleAmpersand), State.Indefinitely);
+            Dictionary.Add(('f', State.Inequality), State.Indefinitely);
             /* 575 */
-            Dictionary.Add(('!', State.DoubleAmpersand), State.Indefinitely);
+            Dictionary.Add(('\\', State.Inequality), State.ErrorInLogicalExpression);
             /* 576 */
-            Dictionary.Add((';', State.DoubleAmpersand), State.ErrorException);
+            Dictionary.Add(('n', State.Inequality), State.Indefinitely);
             /* 577 */
-            Dictionary.Add(('0', State.Or), State.Indefinitely);
+            Dictionary.Add(('0', State.More), State.Indefinitely);
             /* 578 */
-            Dictionary.Add(('s', State.Or), State.Indefinitely);
+            Dictionary.Add(('s', State.More), State.Indefinitely);
             /* 579 */
-            Dictionary.Add(('=', State.Or), State.ErrorException);
+            Dictionary.Add(('=', State.More), State.MoreEqual);
             /* 580 */
-            Dictionary.Add(('>', State.Or), State.ErrorException);
+            Dictionary.Add(('>', State.More), State.ShiftRight);
             /* 581 */
-            Dictionary.Add(('<', State.Or), State.ErrorException);
+            Dictionary.Add(('<', State.More), State.ErrorInLogicalExpression);
             /* 582 */
-            Dictionary.Add((',', State.Or), State.ErrorException);
+            Dictionary.Add((',', State.More), State.ErrorInLogicalExpression);
             /* 583 */
-            Dictionary.Add(('.', State.Or), State.ErrorException);
+            Dictionary.Add(('.', State.More), State.ErrorInLogicalExpression);
             /* 584 */
-            Dictionary.Add(('"', State.Or), State.Indefinitely);
+            Dictionary.Add(('"', State.More), State.Indefinitely);
             /* 585 */
-            Dictionary.Add(('+', State.Or), State.Indefinitely);
+            Dictionary.Add(('+', State.More), State.Indefinitely);
             /* 586 */
-            Dictionary.Add(('-', State.Or), State.Indefinitely);
+            Dictionary.Add(('-', State.More), State.Indefinitely);
             /* 587 */
-            Dictionary.Add(('*', State.Or), State.ErrorException);
+            Dictionary.Add(('*', State.More), State.ErrorInLogicalExpression);
             /* 588 */
-            Dictionary.Add(('^', State.Or), State.ErrorException);
+            Dictionary.Add(('^', State.More), State.ErrorInLogicalExpression);
             /* 589 */
-            Dictionary.Add(('{', State.Or), State.ErrorException);
+            Dictionary.Add(('{', State.More), State.ErrorInLogicalExpression);
             /* 590 */
-            Dictionary.Add(('}', State.Or), State.ErrorException);
+            Dictionary.Add(('}', State.More), State.ErrorInLogicalExpression);
             /* 591 */
-            Dictionary.Add(('(', State.Or), State.Indefinitely);
+            Dictionary.Add(('(', State.More), State.Indefinitely);
             /* 592 */
-            Dictionary.Add((')', State.Or), State.ErrorException);
+            Dictionary.Add((')', State.More), State.ErrorInLogicalExpression);
             /* 593 */
-            Dictionary.Add(('[', State.Or), State.ErrorException);
+            Dictionary.Add(('[', State.More), State.ErrorInLogicalExpression);
             /* 594 */
-            Dictionary.Add((']', State.Or), State.ErrorException);
+            Dictionary.Add((']', State.More), State.ErrorInLogicalExpression);
             /* 595 */
-            Dictionary.Add(('/', State.Or), State.ErrorException);
+            Dictionary.Add(('/', State.More), State.ErrorInLogicalExpression);
             /* 596 */
-            Dictionary.Add(('&', State.Or), State.ErrorException);
+            Dictionary.Add(('&', State.More), State.ErrorInLogicalExpression);
             /* 597 */
-            Dictionary.Add(('|', State.Or), State.DoubleOr);
+            Dictionary.Add(('|', State.More), State.ErrorInLogicalExpression);
             /* 598 */
-            Dictionary.Add(('\'', State.Or), State.Indefinitely);
+            Dictionary.Add(('\'', State.More), State.Indefinitely);
             /* 599 */
-            Dictionary.Add(('!', State.Or), State.Indefinitely);
+            Dictionary.Add(('!', State.More), State.ErrorInLogicalExpression);
             /* 600 */
-            Dictionary.Add((';', State.Or), State.ErrorException);
+            Dictionary.Add((';', State.More), State.ErrorInLogicalExpression);
             /* 601 */
-            Dictionary.Add(('0', State.DoubleOr), State.Indefinitely);
+            Dictionary.Add(('@', State.More), State.Indefinitely);
             /* 602 */
-            Dictionary.Add(('s', State.DoubleOr), State.Indefinitely);
+            Dictionary.Add(('_', State.More), State.Indefinitely);
             /* 603 */
-            Dictionary.Add(('=', State.DoubleOr), State.ErrorException);
+            Dictionary.Add(('e', State.More), State.Indefinitely);
             /* 604 */
-            Dictionary.Add(('>', State.DoubleOr), State.ErrorException);
+            Dictionary.Add(('d', State.More), State.Indefinitely);
             /* 605 */
-            Dictionary.Add(('<', State.DoubleOr), State.ErrorException);
+            Dictionary.Add(('m', State.More), State.Indefinitely);
             /* 606 */
-            Dictionary.Add((',', State.DoubleOr), State.ErrorException);
+            Dictionary.Add(('f', State.More), State.Indefinitely);
             /* 607 */
-            Dictionary.Add(('.', State.DoubleOr), State.ErrorException);
+            Dictionary.Add(('\\', State.More), State.ErrorInLogicalExpression);
             /* 608 */
-            Dictionary.Add(('"', State.DoubleOr), State.Indefinitely);
+            Dictionary.Add(('n', State.More), State.Indefinitely);
             /* 609 */
-            Dictionary.Add(('+', State.DoubleOr), State.Indefinitely);
+            Dictionary.Add(('0', State.MoreEqual), State.Indefinitely);
             /* 610 */
-            Dictionary.Add(('-', State.DoubleOr), State.Indefinitely);
+            Dictionary.Add(('s', State.MoreEqual), State.Indefinitely);
             /* 611 */
-            Dictionary.Add(('*', State.DoubleOr), State.ErrorException);
+            Dictionary.Add(('=', State.MoreEqual), State.ErrorInLogicalExpression);
             /* 612 */
-            Dictionary.Add(('^', State.DoubleOr), State.ErrorException);
+            Dictionary.Add(('>', State.MoreEqual), State.ErrorInLogicalExpression);
             /* 613 */
-            Dictionary.Add(('{', State.DoubleOr), State.ErrorException);
+            Dictionary.Add(('<', State.MoreEqual), State.ErrorInLogicalExpression);
             /* 614 */
-            Dictionary.Add(('}', State.DoubleOr), State.ErrorException);
+            Dictionary.Add((',', State.MoreEqual), State.ErrorInLogicalExpression);
             /* 615 */
-            Dictionary.Add(('(', State.DoubleOr), State.Indefinitely);
+            Dictionary.Add(('.', State.MoreEqual), State.ErrorInLogicalExpression);
             /* 616 */
-            Dictionary.Add((')', State.DoubleOr), State.ErrorException);
+            Dictionary.Add(('"', State.MoreEqual), State.Indefinitely);
             /* 617 */
-            Dictionary.Add(('[', State.DoubleOr), State.ErrorException);
+            Dictionary.Add(('+', State.MoreEqual), State.Indefinitely);
             /* 618 */
-            Dictionary.Add((']', State.DoubleOr), State.ErrorException);
+            Dictionary.Add(('-', State.MoreEqual), State.Indefinitely);
             /* 619 */
-            Dictionary.Add(('/', State.DoubleOr), State.ErrorException);
+            Dictionary.Add(('*', State.MoreEqual), State.ErrorInLogicalExpression);
             /* 620 */
-            Dictionary.Add(('&', State.DoubleOr), State.ErrorException);
+            Dictionary.Add(('^', State.MoreEqual), State.ErrorInLogicalExpression);
             /* 621 */
-            Dictionary.Add(('|', State.DoubleOr), State.ErrorException);
+            Dictionary.Add(('{', State.MoreEqual), State.ErrorInLogicalExpression);
             /* 622 */
-            Dictionary.Add(('\'', State.DoubleOr), State.Indefinitely);
+            Dictionary.Add(('}', State.MoreEqual), State.ErrorInLogicalExpression);
             /* 623 */
-            Dictionary.Add(('!', State.DoubleOr), State.Indefinitely);
+            Dictionary.Add(('(', State.MoreEqual), State.Indefinitely);
             /* 624 */
-            Dictionary.Add((';', State.DoubleOr), State.ErrorException);
+            Dictionary.Add((')', State.MoreEqual), State.ErrorInLogicalExpression);
             /* 625 */
-            Dictionary.Add(('0', State.Devision), State.Indefinitely);
+            Dictionary.Add(('[', State.MoreEqual), State.ErrorInLogicalExpression);
             /* 626 */
-            Dictionary.Add(('s', State.Devision), State.Indefinitely);
+            Dictionary.Add((']', State.MoreEqual), State.ErrorInLogicalExpression);
             /* 627 */
-            Dictionary.Add(('=', State.Devision), State.ErrorException);
+            Dictionary.Add(('/', State.MoreEqual), State.ErrorInLogicalExpression);
             /* 628 */
-            Dictionary.Add(('>', State.Devision), State.ErrorException);
+            Dictionary.Add(('&', State.MoreEqual), State.ErrorInLogicalExpression);
             /* 629 */
-            Dictionary.Add(('<', State.Devision), State.ErrorException);
+            Dictionary.Add(('|', State.MoreEqual), State.ErrorInLogicalExpression);
             /* 630 */
-            Dictionary.Add((',', State.Devision), State.ErrorException);
+            Dictionary.Add(('\'', State.MoreEqual), State.Indefinitely);
             /* 631 */
-            Dictionary.Add(('.', State.Devision), State.ErrorException);
+            Dictionary.Add(('!', State.MoreEqual), State.ErrorInLogicalExpression);
             /* 632 */
-            Dictionary.Add(('"', State.Devision), State.ErrorException);
+            Dictionary.Add((';', State.MoreEqual), State.ErrorInLogicalExpression);
             /* 633 */
-            Dictionary.Add(('+', State.Devision), State.ErrorException);
+            Dictionary.Add(('@', State.MoreEqual), State.Indefinitely);
             /* 634 */
-            Dictionary.Add(('-', State.Devision), State.ErrorException);
+            Dictionary.Add(('_', State.MoreEqual), State.Indefinitely);
             /* 635 */
-            Dictionary.Add(('*', State.Devision), State.DevisionMultiplication);
+            Dictionary.Add(('e', State.MoreEqual), State.Indefinitely);
             /* 636 */
-            Dictionary.Add(('^', State.Devision), State.ErrorException);
+            Dictionary.Add(('d', State.MoreEqual), State.Indefinitely);
             /* 637 */
-            Dictionary.Add(('{', State.Devision), State.ErrorException);
+            Dictionary.Add(('m', State.MoreEqual), State.Indefinitely);
             /* 638 */
-            Dictionary.Add(('}', State.Devision), State.ErrorException);
+            Dictionary.Add(('f', State.MoreEqual), State.Indefinitely);
             /* 639 */
-            Dictionary.Add(('(', State.Devision), State.ErrorException);
+            Dictionary.Add(('\\', State.MoreEqual), State.ErrorInLogicalExpression);
             /* 640 */
-            Dictionary.Add((')', State.Devision), State.ErrorException);
+            Dictionary.Add(('n', State.MoreEqual), State.Indefinitely);
             /* 641 */
-            Dictionary.Add(('[', State.Devision), State.ErrorException);
+            Dictionary.Add(('0', State.Less), State.Indefinitely);
             /* 642 */
-            Dictionary.Add((']', State.Devision), State.ErrorException);
+            Dictionary.Add(('s', State.Less), State.Indefinitely);
             /* 643 */
-            Dictionary.Add(('/', State.Devision), State.Comment);
+            Dictionary.Add(('=', State.Less), State.LessEqual);
             /* 644 */
-            Dictionary.Add(('&', State.Devision), State.ErrorException);
+            Dictionary.Add(('>', State.Less), State.ErrorInLogicalExpression);
             /* 645 */
-            Dictionary.Add(('|', State.Devision), State.ErrorException);
+            Dictionary.Add(('<', State.Less), State.ShiftLeft);
             /* 646 */
-            Dictionary.Add(('\'', State.Devision), State.ErrorException);
+            Dictionary.Add((',', State.Less), State.ErrorInLogicalExpression);
             /* 647 */
-            Dictionary.Add(('!', State.Devision), State.ErrorException);
+            Dictionary.Add(('.', State.Less), State.ErrorInLogicalExpression);
             /* 648 */
-            Dictionary.Add((';', State.Devision), State.ErrorException);
+            Dictionary.Add(('"', State.Less), State.Indefinitely);
             /* 649 */
-            Dictionary.Add(('0', State.Comment), State.Indefinitely);
+            Dictionary.Add(('+', State.Less), State.Indefinitely);
             /* 650 */
-            Dictionary.Add(('s', State.Comment), State.Indefinitely);
+            Dictionary.Add(('-', State.Less), State.Indefinitely);
             /* 651 */
-            Dictionary.Add(('=', State.Comment), State.Indefinitely);
+            Dictionary.Add(('*', State.Less), State.ErrorInLogicalExpression);
             /* 652 */
-            Dictionary.Add(('>', State.Comment), State.Indefinitely);
+            Dictionary.Add(('^', State.Less), State.ErrorInLogicalExpression);
             /* 653 */
-            Dictionary.Add(('<', State.Comment), State.Indefinitely);
+            Dictionary.Add(('{', State.Less), State.ErrorInLogicalExpression);
             /* 654 */
-            Dictionary.Add((',', State.Comment), State.Indefinitely);
+            Dictionary.Add(('}', State.Less), State.ErrorInLogicalExpression);
             /* 655 */
-            Dictionary.Add(('.', State.Comment), State.Indefinitely);
+            Dictionary.Add(('(', State.Less), State.Indefinitely);
             /* 656 */
-            Dictionary.Add(('"', State.Comment), State.Indefinitely);
+            Dictionary.Add((')', State.Less), State.ErrorInLogicalExpression);
             /* 657 */
-            Dictionary.Add(('+', State.Comment), State.Indefinitely);
+            Dictionary.Add(('[', State.Less), State.ErrorInLogicalExpression);
             /* 658 */
-            Dictionary.Add(('-', State.Comment), State.Indefinitely);
+            Dictionary.Add((']', State.Less), State.ErrorInLogicalExpression);
             /* 659 */
-            Dictionary.Add(('*', State.Comment), State.Indefinitely);
+            Dictionary.Add(('/', State.Less), State.ErrorInLogicalExpression);
             /* 660 */
-            Dictionary.Add(('^', State.Comment), State.Indefinitely);
+            Dictionary.Add(('&', State.Less), State.ErrorInLogicalExpression);
             /* 661 */
-            Dictionary.Add(('{', State.Comment), State.Indefinitely);
+            Dictionary.Add(('|', State.Less), State.ErrorInLogicalExpression);
             /* 662 */
-            Dictionary.Add(('}', State.Comment), State.Indefinitely);
+            Dictionary.Add(('\'', State.Less), State.Indefinitely);
             /* 663 */
-            Dictionary.Add(('(', State.Comment), State.Indefinitely);
+            Dictionary.Add(('!', State.Less), State.ErrorInLogicalExpression);
             /* 664 */
-            Dictionary.Add((')', State.Comment), State.Indefinitely);
+            Dictionary.Add((';', State.Less), State.ErrorInLogicalExpression);
             /* 665 */
-            Dictionary.Add(('[', State.Comment), State.Indefinitely);
+            Dictionary.Add(('@', State.Less), State.Indefinitely);
             /* 666 */
-            Dictionary.Add((']', State.Comment), State.Indefinitely);
+            Dictionary.Add(('_', State.Less), State.Indefinitely);
             /* 667 */
-            Dictionary.Add(('/', State.Comment), State.Indefinitely);
+            Dictionary.Add(('e', State.Less), State.Indefinitely);
             /* 668 */
-            Dictionary.Add(('&', State.Comment), State.Indefinitely);
+            Dictionary.Add(('d', State.Less), State.Indefinitely);
             /* 669 */
-            Dictionary.Add(('|', State.Comment), State.Indefinitely);
+            Dictionary.Add(('m', State.Less), State.Indefinitely);
             /* 670 */
-            Dictionary.Add(('\'', State.Comment), State.Indefinitely);
+            Dictionary.Add(('f', State.Less), State.Indefinitely);
             /* 671 */
-            Dictionary.Add(('!', State.Comment), State.Indefinitely);
+            Dictionary.Add(('\\', State.Less), State.ErrorInLogicalExpression);
             /* 672 */
-            Dictionary.Add((';', State.Comment), State.Indefinitely);
+            Dictionary.Add(('n', State.Less), State.Indefinitely);
             /* 673 */
-            Dictionary.Add(('0', State.Acute), State.HalfChar);
+            Dictionary.Add(('0', State.LessEqual), State.Indefinitely);
             /* 674 */
-            Dictionary.Add(('s', State.Acute), State.HalfChar);
+            Dictionary.Add(('s', State.LessEqual), State.Indefinitely);
             /* 675 */
-            Dictionary.Add(('=', State.Acute), State.HalfChar);
+            Dictionary.Add(('=', State.LessEqual), State.ErrorInLogicalExpression);
             /* 676 */
-            Dictionary.Add(('>', State.Acute), State.HalfChar);
+            Dictionary.Add(('>', State.LessEqual), State.ErrorInLogicalExpression);
             /* 677 */
-            Dictionary.Add(('<', State.Acute), State.HalfChar);
+            Dictionary.Add(('<', State.LessEqual), State.ErrorInLogicalExpression);
             /* 678 */
-            Dictionary.Add((',', State.Acute), State.HalfChar);
+            Dictionary.Add((',', State.LessEqual), State.ErrorInLogicalExpression);
             /* 679 */
-            Dictionary.Add(('.', State.Acute), State.HalfChar);
+            Dictionary.Add(('.', State.LessEqual), State.ErrorInLogicalExpression);
             /* 680 */
-            Dictionary.Add(('"', State.Acute), State.HalfChar);
+            Dictionary.Add(('"', State.LessEqual), State.Indefinitely);
             /* 681 */
-            Dictionary.Add(('+', State.Acute), State.HalfChar);
+            Dictionary.Add(('+', State.LessEqual), State.Indefinitely);
             /* 682 */
-            Dictionary.Add(('-', State.Acute), State.HalfChar);
+            Dictionary.Add(('-', State.LessEqual), State.Indefinitely);
             /* 683 */
-            Dictionary.Add(('*', State.Acute), State.HalfChar);
+            Dictionary.Add(('*', State.LessEqual), State.ErrorInLogicalExpression);
             /* 684 */
-            Dictionary.Add(('^', State.Acute), State.HalfChar);
+            Dictionary.Add(('^', State.LessEqual), State.ErrorInLogicalExpression);
             /* 685 */
-            Dictionary.Add(('{', State.Acute), State.HalfChar);
+            Dictionary.Add(('{', State.LessEqual), State.ErrorInLogicalExpression);
             /* 686 */
-            Dictionary.Add(('}', State.Acute), State.HalfChar);
+            Dictionary.Add(('}', State.LessEqual), State.ErrorInLogicalExpression);
             /* 687 */
-            Dictionary.Add(('(', State.Acute), State.HalfChar);
+            Dictionary.Add(('(', State.LessEqual), State.Indefinitely);
             /* 688 */
-            Dictionary.Add((')', State.Acute), State.HalfChar);
+            Dictionary.Add((')', State.LessEqual), State.ErrorInLogicalExpression);
             /* 689 */
-            Dictionary.Add(('[', State.Acute), State.HalfChar);
+            Dictionary.Add(('[', State.LessEqual), State.ErrorInLogicalExpression);
             /* 690 */
-            Dictionary.Add((']', State.Acute), State.HalfChar);
+            Dictionary.Add((']', State.LessEqual), State.ErrorInLogicalExpression);
             /* 691 */
-            Dictionary.Add(('/', State.Acute), State.HalfChar);
+            Dictionary.Add(('/', State.LessEqual), State.ErrorInLogicalExpression);
             /* 692 */
-            Dictionary.Add(('&', State.Acute), State.HalfChar);
+            Dictionary.Add(('&', State.LessEqual), State.ErrorInLogicalExpression);
             /* 693 */
-            Dictionary.Add(('|', State.Acute), State.HalfChar);
+            Dictionary.Add(('|', State.LessEqual), State.ErrorInLogicalExpression);
             /* 694 */
-            Dictionary.Add(('\'', State.Acute), State.Char);
+            Dictionary.Add(('\'', State.LessEqual), State.Indefinitely);
             /* 695 */
-            Dictionary.Add(('!', State.Acute), State.HalfChar);
+            Dictionary.Add(('!', State.LessEqual), State.ErrorInLogicalExpression);
             /* 696 */
-            Dictionary.Add((';', State.Acute), State.HalfChar);
+            Dictionary.Add((';', State.LessEqual), State.ErrorInLogicalExpression);
             /* 697 */
-            Dictionary.Add(('0', State.HalfChar), State.ErrorException);
+            Dictionary.Add(('@', State.LessEqual), State.Indefinitely);
             /* 698 */
-            Dictionary.Add(('s', State.HalfChar), State.ErrorException);
+            Dictionary.Add(('_', State.LessEqual), State.Indefinitely);
             /* 699 */
-            Dictionary.Add(('=', State.HalfChar), State.ErrorException);
+            Dictionary.Add(('e', State.LessEqual), State.Indefinitely);
             /* 700 */
-            Dictionary.Add(('>', State.HalfChar), State.ErrorException);
+            Dictionary.Add(('d', State.LessEqual), State.Indefinitely);
             /* 701 */
-            Dictionary.Add(('<', State.HalfChar), State.ErrorException);
+            Dictionary.Add(('m', State.LessEqual), State.Indefinitely);
             /* 702 */
-            Dictionary.Add((',', State.HalfChar), State.ErrorException);
+            Dictionary.Add(('f', State.LessEqual), State.Indefinitely);
             /* 703 */
-            Dictionary.Add(('.', State.HalfChar), State.ErrorException);
+            Dictionary.Add(('\\', State.LessEqual), State.ErrorInLogicalExpression);
             /* 704 */
-            Dictionary.Add(('"', State.HalfChar), State.ErrorException);
+            Dictionary.Add(('n', State.LessEqual), State.Indefinitely);
             /* 705 */
-            Dictionary.Add(('+', State.HalfChar), State.ErrorException);
+            Dictionary.Add(('0', State.Ampersand), State.Indefinitely);
             /* 706 */
-            Dictionary.Add(('-', State.HalfChar), State.ErrorException);
+            Dictionary.Add(('s', State.Ampersand), State.Indefinitely);
             /* 707 */
-            Dictionary.Add(('*', State.HalfChar), State.ErrorException);
+            Dictionary.Add(('=', State.Ampersand), State.ErrorInLogicalExpression);
             /* 708 */
-            Dictionary.Add(('^', State.HalfChar), State.ErrorException);
+            Dictionary.Add(('>', State.Ampersand), State.ErrorInLogicalExpression);
             /* 709 */
-            Dictionary.Add(('{', State.HalfChar), State.ErrorException);
+            Dictionary.Add(('<', State.Ampersand), State.ErrorInLogicalExpression);
             /* 710 */
-            Dictionary.Add(('}', State.HalfChar), State.ErrorException);
+            Dictionary.Add((',', State.Ampersand), State.ErrorInLogicalExpression);
             /* 711 */
-            Dictionary.Add(('(', State.HalfChar), State.ErrorException);
+            Dictionary.Add(('.', State.Ampersand), State.ErrorInLogicalExpression);
             /* 712 */
-            Dictionary.Add((')', State.HalfChar), State.ErrorException);
+            Dictionary.Add(('"', State.Ampersand), State.Indefinitely);
             /* 713 */
-            Dictionary.Add(('[', State.HalfChar), State.ErrorException);
+            Dictionary.Add(('+', State.Ampersand), State.Indefinitely);
             /* 714 */
-            Dictionary.Add((']', State.HalfChar), State.ErrorException);
+            Dictionary.Add(('-', State.Ampersand), State.Indefinitely);
             /* 715 */
-            Dictionary.Add(('/', State.HalfChar), State.ErrorException);
+            Dictionary.Add(('*', State.Ampersand), State.ErrorInLogicalExpression);
             /* 716 */
-            Dictionary.Add(('&', State.HalfChar), State.ErrorException);
+            Dictionary.Add(('^', State.Ampersand), State.ErrorInLogicalExpression);
             /* 717 */
-            Dictionary.Add(('|', State.HalfChar), State.ErrorException);
+            Dictionary.Add(('{', State.Ampersand), State.ErrorInLogicalExpression);
             /* 718 */
-            Dictionary.Add(('\'', State.HalfChar), State.Char);
+            Dictionary.Add(('}', State.Ampersand), State.ErrorInLogicalExpression);
             /* 719 */
-            Dictionary.Add(('!', State.HalfChar), State.ErrorException);
+            Dictionary.Add(('(', State.Ampersand), State.Indefinitely);
             /* 720 */
-            Dictionary.Add((';', State.HalfChar), State.ErrorException);
+            Dictionary.Add((')', State.Ampersand), State.ErrorInLogicalExpression);
             /* 721 */
-            Dictionary.Add(('0', State.Char), State.Indefinitely);
+            Dictionary.Add(('[', State.Ampersand), State.ErrorInLogicalExpression);
             /* 722 */
-            Dictionary.Add(('s', State.Char), State.Indefinitely);
+            Dictionary.Add((']', State.Ampersand), State.ErrorInLogicalExpression);
             /* 723 */
-            Dictionary.Add(('=', State.Char), State.Indefinitely);
+            Dictionary.Add(('/', State.Ampersand), State.ErrorInLogicalExpression);
             /* 724 */
-            Dictionary.Add(('>', State.Char), State.Indefinitely);
+            Dictionary.Add(('&', State.Ampersand), State.DoubleAmpersand);
             /* 725 */
-            Dictionary.Add(('<', State.Char), State.Indefinitely);
+            Dictionary.Add(('|', State.Ampersand), State.ErrorInLogicalExpression);
             /* 726 */
-            Dictionary.Add((',', State.Char), State.Indefinitely);
+            Dictionary.Add(('\'', State.Ampersand), State.Indefinitely);
             /* 727 */
-            Dictionary.Add(('.', State.Char), State.Indefinitely);
+            Dictionary.Add(('!', State.Ampersand), State.Indefinitely);
             /* 728 */
-            Dictionary.Add(('"', State.Char), State.Indefinitely);
+            Dictionary.Add((';', State.Ampersand), State.ErrorInLogicalExpression);
             /* 729 */
-            Dictionary.Add(('+', State.Char), State.Indefinitely);
+            Dictionary.Add(('@', State.Ampersand), State.Indefinitely);
             /* 730 */
-            Dictionary.Add(('-', State.Char), State.Indefinitely);
+            Dictionary.Add(('_', State.Ampersand), State.Indefinitely);
             /* 731 */
-            Dictionary.Add(('*', State.Char), State.Indefinitely);
+            Dictionary.Add(('e', State.Ampersand), State.Indefinitely);
             /* 732 */
-            Dictionary.Add(('^', State.Char), State.Indefinitely);
+            Dictionary.Add(('d', State.Ampersand), State.Indefinitely);
             /* 733 */
-            Dictionary.Add(('{', State.Char), State.Indefinitely);
+            Dictionary.Add(('m', State.Ampersand), State.Indefinitely);
             /* 734 */
-            Dictionary.Add(('}', State.Char), State.Indefinitely);
+            Dictionary.Add(('f', State.Ampersand), State.Indefinitely);
             /* 735 */
-            Dictionary.Add(('(', State.Char), State.Indefinitely);
+            Dictionary.Add(('\\', State.Ampersand), State.ErrorInLogicalExpression);
             /* 736 */
-            Dictionary.Add((')', State.Char), State.Indefinitely);
+            Dictionary.Add(('n', State.Ampersand), State.Indefinitely);
             /* 737 */
-            Dictionary.Add(('[', State.Char), State.Indefinitely);
+            Dictionary.Add(('0', State.DoubleAmpersand), State.Indefinitely);
             /* 738 */
-            Dictionary.Add((']', State.Char), State.Indefinitely);
+            Dictionary.Add(('s', State.DoubleAmpersand), State.Indefinitely);
             /* 739 */
-            Dictionary.Add(('/', State.Char), State.Indefinitely);
+            Dictionary.Add(('=', State.DoubleAmpersand), State.ErrorInLogicalExpression);
             /* 740 */
-            Dictionary.Add(('&', State.Char), State.Indefinitely);
+            Dictionary.Add(('>', State.DoubleAmpersand), State.ErrorInLogicalExpression);
             /* 741 */
-            Dictionary.Add(('|', State.Char), State.Indefinitely);
+            Dictionary.Add(('<', State.DoubleAmpersand), State.ErrorInLogicalExpression);
             /* 742 */
-            Dictionary.Add(('\'', State.Char), State.Indefinitely);
+            Dictionary.Add((',', State.DoubleAmpersand), State.ErrorInLogicalExpression);
             /* 743 */
-            Dictionary.Add(('!', State.Char), State.Indefinitely);
+            Dictionary.Add(('.', State.DoubleAmpersand), State.ErrorInLogicalExpression);
             /* 744 */
-            Dictionary.Add((';', State.Char), State.Indefinitely);
+            Dictionary.Add(('"', State.DoubleAmpersand), State.Indefinitely);
             /* 745 */
-            Dictionary.Add(('0', State.String), State.Indefinitely);
+            Dictionary.Add(('+', State.DoubleAmpersand), State.Indefinitely);
             /* 746 */
-            Dictionary.Add(('s', State.String), State.Indefinitely);
+            Dictionary.Add(('-', State.DoubleAmpersand), State.Indefinitely);
             /* 747 */
-            Dictionary.Add(('=', State.String), State.Indefinitely);
+            Dictionary.Add(('*', State.DoubleAmpersand), State.ErrorInLogicalExpression);
             /* 748 */
-            Dictionary.Add(('>', State.String), State.Indefinitely);
+            Dictionary.Add(('^', State.DoubleAmpersand), State.ErrorInLogicalExpression);
             /* 749 */
-            Dictionary.Add(('<', State.String), State.Indefinitely);
+            Dictionary.Add(('{', State.DoubleAmpersand), State.ErrorInLogicalExpression);
             /* 750 */
-            Dictionary.Add((',', State.String), State.Indefinitely);
+            Dictionary.Add(('}', State.DoubleAmpersand), State.ErrorInLogicalExpression);
             /* 751 */
-            Dictionary.Add(('.', State.String), State.Indefinitely);
+            Dictionary.Add(('(', State.DoubleAmpersand), State.Indefinitely);
             /* 752 */
-            Dictionary.Add(('"', State.String), State.Indefinitely);
+            Dictionary.Add((')', State.DoubleAmpersand), State.ErrorInLogicalExpression);
             /* 753 */
-            Dictionary.Add(('+', State.String), State.Indefinitely);
+            Dictionary.Add(('[', State.DoubleAmpersand), State.ErrorInLogicalExpression);
             /* 754 */
-            Dictionary.Add(('-', State.String), State.Indefinitely);
+            Dictionary.Add((']', State.DoubleAmpersand), State.ErrorInLogicalExpression);
             /* 755 */
-            Dictionary.Add(('*', State.String), State.Indefinitely);
+            Dictionary.Add(('/', State.DoubleAmpersand), State.ErrorInLogicalExpression);
             /* 756 */
-            Dictionary.Add(('^', State.String), State.Indefinitely);
+            Dictionary.Add(('&', State.DoubleAmpersand), State.ErrorInLogicalExpression);
             /* 757 */
-            Dictionary.Add(('{', State.String), State.Indefinitely);
+            Dictionary.Add(('|', State.DoubleAmpersand), State.ErrorInLogicalExpression);
             /* 758 */
-            Dictionary.Add(('}', State.String), State.Indefinitely);
+            Dictionary.Add(('\'', State.DoubleAmpersand), State.Indefinitely);
             /* 759 */
-            Dictionary.Add(('(', State.String), State.Indefinitely);
+            Dictionary.Add(('!', State.DoubleAmpersand), State.Indefinitely);
             /* 760 */
-            Dictionary.Add((')', State.String), State.Indefinitely);
+            Dictionary.Add((';', State.DoubleAmpersand), State.ErrorInLogicalExpression);
             /* 761 */
-            Dictionary.Add(('[', State.String), State.Indefinitely);
+            Dictionary.Add(('@', State.DoubleAmpersand), State.Indefinitely);
             /* 762 */
-            Dictionary.Add((']', State.String), State.Indefinitely);
+            Dictionary.Add(('_', State.DoubleAmpersand), State.Indefinitely);
             /* 763 */
-            Dictionary.Add(('/', State.String), State.Indefinitely);
+            Dictionary.Add(('e', State.DoubleAmpersand), State.Indefinitely);
             /* 764 */
-            Dictionary.Add(('&', State.String), State.Indefinitely);
+            Dictionary.Add(('d', State.DoubleAmpersand), State.Indefinitely);
             /* 765 */
-            Dictionary.Add(('|', State.String), State.Indefinitely);
+            Dictionary.Add(('m', State.DoubleAmpersand), State.Indefinitely);
             /* 766 */
-            Dictionary.Add(('\'', State.String), State.Indefinitely);
+            Dictionary.Add(('f', State.DoubleAmpersand), State.Indefinitely);
             /* 767 */
-            Dictionary.Add(('!', State.String), State.Indefinitely);
+            Dictionary.Add(('\\', State.DoubleAmpersand), State.ErrorInLogicalExpression);
             /* 768 */
-            Dictionary.Add((';', State.String), State.Indefinitely);
+            Dictionary.Add(('n', State.DoubleAmpersand), State.Indefinitely);
             /* 769 */
-            Dictionary.Add(('0', State.ShiftRight), State.Indefinitely);
+            Dictionary.Add(('0', State.Or), State.Indefinitely);
             /* 770 */
-            Dictionary.Add(('s', State.ShiftRight), State.Indefinitely);
+            Dictionary.Add(('s', State.Or), State.Indefinitely);
             /* 771 */
-            Dictionary.Add(('=', State.ShiftRight), State.ErrorException);
+            Dictionary.Add(('=', State.Or), State.ErrorInLogicalExpression);
             /* 772 */
-            Dictionary.Add(('>', State.ShiftRight), State.ErrorException);
+            Dictionary.Add(('>', State.Or), State.ErrorInLogicalExpression);
             /* 773 */
-            Dictionary.Add(('<', State.ShiftRight), State.ErrorException);
+            Dictionary.Add(('<', State.Or), State.ErrorInLogicalExpression);
             /* 774 */
-            Dictionary.Add((',', State.ShiftRight), State.ErrorException);
+            Dictionary.Add((',', State.Or), State.ErrorInLogicalExpression);
             /* 775 */
-            Dictionary.Add(('.', State.ShiftRight), State.ErrorException);
+            Dictionary.Add(('.', State.Or), State.ErrorInLogicalExpression);
             /* 776 */
-            Dictionary.Add(('"', State.ShiftRight), State.ErrorException);
+            Dictionary.Add(('"', State.Or), State.Indefinitely);
             /* 777 */
-            Dictionary.Add(('+', State.ShiftRight), State.Indefinitely);
+            Dictionary.Add(('+', State.Or), State.Indefinitely);
             /* 778 */
-            Dictionary.Add(('-', State.ShiftRight), State.Indefinitely);
+            Dictionary.Add(('-', State.Or), State.Indefinitely);
             /* 779 */
-            Dictionary.Add(('*', State.ShiftRight), State.ErrorException);
+            Dictionary.Add(('*', State.Or), State.ErrorInLogicalExpression);
             /* 780 */
-            Dictionary.Add(('^', State.ShiftRight), State.ErrorException);
+            Dictionary.Add(('^', State.Or), State.ErrorInLogicalExpression);
             /* 781 */
-            Dictionary.Add(('{', State.ShiftRight), State.Indefinitely);
+            Dictionary.Add(('{', State.Or), State.ErrorInLogicalExpression);
             /* 782 */
-            Dictionary.Add(('}', State.ShiftRight), State.ErrorException);
+            Dictionary.Add(('}', State.Or), State.ErrorInLogicalExpression);
             /* 783 */
-            Dictionary.Add(('(', State.ShiftRight), State.Indefinitely);
+            Dictionary.Add(('(', State.Or), State.Indefinitely);
             /* 784 */
-            Dictionary.Add((')', State.ShiftRight), State.ErrorException);
+            Dictionary.Add((')', State.Or), State.ErrorInLogicalExpression);
             /* 785 */
-            Dictionary.Add(('[', State.ShiftRight), State.Indefinitely);
+            Dictionary.Add(('[', State.Or), State.ErrorInLogicalExpression);
             /* 786 */
-            Dictionary.Add((']', State.ShiftRight), State.ErrorException);
+            Dictionary.Add((']', State.Or), State.ErrorInLogicalExpression);
             /* 787 */
-            Dictionary.Add(('/', State.ShiftRight), State.ErrorException);
+            Dictionary.Add(('/', State.Or), State.ErrorInLogicalExpression);
             /* 788 */
-            Dictionary.Add(('&', State.ShiftRight), State.ErrorException);
+            Dictionary.Add(('&', State.Or), State.ErrorInLogicalExpression);
             /* 789 */
-            Dictionary.Add(('|', State.ShiftRight), State.ErrorException);
+            Dictionary.Add(('|', State.Or), State.DoubleOr);
             /* 790 */
-            Dictionary.Add(('\'', State.ShiftRight), State.Indefinitely);
+            Dictionary.Add(('\'', State.Or), State.Indefinitely);
             /* 791 */
-            Dictionary.Add(('!', State.ShiftRight), State.ErrorException);
+            Dictionary.Add(('!', State.Or), State.Indefinitely);
             /* 792 */
-            Dictionary.Add((';', State.ShiftRight), State.ErrorException);
+            Dictionary.Add((';', State.Or), State.ErrorInLogicalExpression);
             /* 793 */
-            Dictionary.Add(('0', State.ShiftLeft), State.Indefinitely);
+            Dictionary.Add(('@', State.Or), State.Indefinitely);
             /* 794 */
-            Dictionary.Add(('s', State.ShiftLeft), State.Indefinitely);
+            Dictionary.Add(('_', State.Or), State.Indefinitely);
             /* 795 */
-            Dictionary.Add(('=', State.ShiftLeft), State.ErrorException);
+            Dictionary.Add(('e', State.Or), State.Indefinitely);
             /* 796 */
-            Dictionary.Add(('>', State.ShiftLeft), State.ErrorException);
+            Dictionary.Add(('d', State.Or), State.Indefinitely);
             /* 797 */
-            Dictionary.Add(('<', State.ShiftLeft), State.ErrorException);
+            Dictionary.Add(('m', State.Or), State.Indefinitely);
             /* 798 */
-            Dictionary.Add((',', State.ShiftLeft), State.ErrorException);
+            Dictionary.Add(('f', State.Or), State.Indefinitely);
             /* 799 */
-            Dictionary.Add(('.', State.ShiftLeft), State.ErrorException);
+            Dictionary.Add(('\\', State.Or), State.ErrorInLogicalExpression);
             /* 800 */
-            Dictionary.Add(('"', State.ShiftLeft), State.ErrorException);
+            Dictionary.Add(('n', State.Or), State.Indefinitely);
             /* 801 */
-            Dictionary.Add(('+', State.ShiftLeft), State.Indefinitely);
+            Dictionary.Add(('0', State.DoubleOr), State.Indefinitely);
             /* 802 */
-            Dictionary.Add(('-', State.ShiftLeft), State.Indefinitely);
+            Dictionary.Add(('s', State.DoubleOr), State.Indefinitely);
             /* 803 */
-            Dictionary.Add(('*', State.ShiftLeft), State.ErrorException);
+            Dictionary.Add(('=', State.DoubleOr), State.ErrorInLogicalExpression);
             /* 804 */
-            Dictionary.Add(('^', State.ShiftLeft), State.ErrorException);
+            Dictionary.Add(('>', State.DoubleOr), State.ErrorInLogicalExpression);
             /* 805 */
-            Dictionary.Add(('{', State.ShiftLeft), State.Indefinitely);
+            Dictionary.Add(('<', State.DoubleOr), State.ErrorInLogicalExpression);
             /* 806 */
-            Dictionary.Add(('}', State.ShiftLeft), State.ErrorException);
+            Dictionary.Add((',', State.DoubleOr), State.ErrorInLogicalExpression);
             /* 807 */
-            Dictionary.Add(('(', State.ShiftLeft), State.Indefinitely);
+            Dictionary.Add(('.', State.DoubleOr), State.ErrorInLogicalExpression);
             /* 808 */
-            Dictionary.Add((')', State.ShiftLeft), State.ErrorException);
+            Dictionary.Add(('"', State.DoubleOr), State.Indefinitely);
             /* 809 */
-            Dictionary.Add(('[', State.ShiftLeft), State.Indefinitely);
+            Dictionary.Add(('+', State.DoubleOr), State.Indefinitely);
             /* 810 */
-            Dictionary.Add((']', State.ShiftLeft), State.ErrorException);
+            Dictionary.Add(('-', State.DoubleOr), State.Indefinitely);
             /* 811 */
-            Dictionary.Add(('/', State.ShiftLeft), State.ErrorException);
+            Dictionary.Add(('*', State.DoubleOr), State.ErrorInLogicalExpression);
             /* 812 */
-            Dictionary.Add(('&', State.ShiftLeft), State.ErrorException);
+            Dictionary.Add(('^', State.DoubleOr), State.ErrorInLogicalExpression);
             /* 813 */
-            Dictionary.Add(('|', State.ShiftLeft), State.ErrorException);
+            Dictionary.Add(('{', State.DoubleOr), State.ErrorInLogicalExpression);
             /* 814 */
-            Dictionary.Add(('\'', State.ShiftLeft), State.Indefinitely);
+            Dictionary.Add(('}', State.DoubleOr), State.ErrorInLogicalExpression);
             /* 815 */
-            Dictionary.Add(('!', State.ShiftLeft), State.ErrorException);
+            Dictionary.Add(('(', State.DoubleOr), State.Indefinitely);
             /* 816 */
-            Dictionary.Add((';', State.ShiftLeft), State.ErrorException);
+            Dictionary.Add((')', State.DoubleOr), State.ErrorInLogicalExpression);
             /* 817 */
-            Dictionary.Add(('0', State.IntPoint), State.Double);
+            Dictionary.Add(('[', State.DoubleOr), State.ErrorInLogicalExpression);
             /* 818 */
-            Dictionary.Add(('s', State.IntPoint), State.IntDoubleOperator);
+            Dictionary.Add((']', State.DoubleOr), State.ErrorInLogicalExpression);
             /* 819 */
-            Dictionary.Add(('=', State.IntPoint), State.Indefinitely);
+            Dictionary.Add(('/', State.DoubleOr), State.ErrorInLogicalExpression);
             /* 820 */
-            Dictionary.Add(('>', State.IntPoint), State.Indefinitely);
+            Dictionary.Add(('&', State.DoubleOr), State.ErrorInLogicalExpression);
             /* 821 */
-            Dictionary.Add(('<', State.IntPoint), State.Indefinitely);
+            Dictionary.Add(('|', State.DoubleOr), State.ErrorInLogicalExpression);
             /* 822 */
-            Dictionary.Add((',', State.IntPoint), State.IntDoubleOperator);
+            Dictionary.Add(('\'', State.DoubleOr), State.Indefinitely);
             /* 823 */
-            Dictionary.Add(('.', State.IntPoint), State.IntDoubleOperator);
+            Dictionary.Add(('!', State.DoubleOr), State.Indefinitely);
             /* 824 */
-            Dictionary.Add(('"', State.IntPoint), State.ErrorException);
+            Dictionary.Add((';', State.DoubleOr), State.ErrorInLogicalExpression);
             /* 825 */
-            Dictionary.Add(('+', State.IntPoint), State.Indefinitely);
+            Dictionary.Add(('@', State.DoubleOr), State.Indefinitely);
             /* 826 */
-            Dictionary.Add(('-', State.IntPoint), State.Indefinitely);
+            Dictionary.Add(('_', State.DoubleOr), State.Indefinitely);
             /* 827 */
-            Dictionary.Add(('*', State.IntPoint), State.Indefinitely);
+            Dictionary.Add(('e', State.DoubleOr), State.Indefinitely);
             /* 828 */
-            Dictionary.Add(('^', State.IntPoint), State.Indefinitely);
+            Dictionary.Add(('d', State.DoubleOr), State.Indefinitely);
             /* 829 */
-            Dictionary.Add(('{', State.IntPoint), State.ErrorException);
+            Dictionary.Add(('m', State.DoubleOr), State.Indefinitely);
             /* 830 */
-            Dictionary.Add(('}', State.IntPoint), State.Indefinitely);
+            Dictionary.Add(('f', State.DoubleOr), State.Indefinitely);
             /* 831 */
-            Dictionary.Add(('(', State.IntPoint), State.ErrorException);
+            Dictionary.Add(('\\', State.DoubleOr), State.ErrorInLogicalExpression);
             /* 832 */
-            Dictionary.Add((')', State.IntPoint), State.Indefinitely);
+            Dictionary.Add(('n', State.DoubleOr), State.Indefinitely);
             /* 833 */
-            Dictionary.Add(('[', State.IntPoint), State.ErrorException);
+            Dictionary.Add(('0', State.Devision), State.Indefinitely);
             /* 834 */
-            Dictionary.Add((']', State.IntPoint), State.Indefinitely);
+            Dictionary.Add(('s', State.Devision), State.Indefinitely);
             /* 835 */
-            Dictionary.Add(('/', State.IntPoint), State.Indefinitely);
+            Dictionary.Add(('=', State.Devision), State.ErrorInOperator);
             /* 836 */
-            Dictionary.Add(('&', State.IntPoint), State.Indefinitely);
+            Dictionary.Add(('>', State.Devision), State.ErrorInOperator);
             /* 837 */
-            Dictionary.Add(('|', State.IntPoint), State.Indefinitely);
+            Dictionary.Add(('<', State.Devision), State.ErrorInOperator);
             /* 838 */
-            Dictionary.Add(('\'', State.IntPoint), State.ErrorException);
+            Dictionary.Add((',', State.Devision), State.ErrorInOperator);
             /* 839 */
-            Dictionary.Add(('!', State.IntPoint), State.ErrorException);
+            Dictionary.Add(('.', State.Devision), State.ErrorInOperator);
             /* 840 */
-            Dictionary.Add((';', State.IntPoint), State.IntDoubleOperator);
+            Dictionary.Add(('"', State.Devision), State.ErrorInOperator);
             /* 841 */
-            Dictionary.Add(('0', State.IntDoubleOperator), State.Indefinitely);
+            Dictionary.Add(('+', State.Devision), State.ErrorInOperator);
             /* 842 */
-            Dictionary.Add(('s', State.IntDoubleOperator), State.Indefinitely);
+            Dictionary.Add(('-', State.Devision), State.ErrorInOperator);
             /* 843 */
-            Dictionary.Add(('=', State.IntDoubleOperator), State.Indefinitely);
+            Dictionary.Add(('*', State.Devision), State.DevisionMultiplication);
             /* 844 */
-            Dictionary.Add(('>', State.IntDoubleOperator), State.Indefinitely);
+            Dictionary.Add(('^', State.Devision), State.ErrorInOperator);
             /* 845 */
-            Dictionary.Add(('<', State.IntDoubleOperator), State.Indefinitely);
+            Dictionary.Add(('{', State.Devision), State.ErrorInOperator);
             /* 846 */
-            Dictionary.Add((',', State.IntDoubleOperator), State.Indefinitely);
+            Dictionary.Add(('}', State.Devision), State.ErrorInOperator);
             /* 847 */
-            Dictionary.Add(('.', State.IntDoubleOperator), State.Indefinitely);
+            Dictionary.Add(('(', State.Devision), State.ErrorInOperator);
             /* 848 */
-            Dictionary.Add(('"', State.IntDoubleOperator), State.Indefinitely);
+            Dictionary.Add((')', State.Devision), State.ErrorInOperator);
             /* 849 */
-            Dictionary.Add(('+', State.IntDoubleOperator), State.Indefinitely);
+            Dictionary.Add(('[', State.Devision), State.ErrorInOperator);
             /* 850 */
-            Dictionary.Add(('-', State.IntDoubleOperator), State.Indefinitely);
+            Dictionary.Add((']', State.Devision), State.ErrorInOperator);
             /* 851 */
-            Dictionary.Add(('*', State.IntDoubleOperator), State.Indefinitely);
+            Dictionary.Add(('/', State.Devision), State.Comment);
             /* 852 */
-            Dictionary.Add(('^', State.IntDoubleOperator), State.Indefinitely);
+            Dictionary.Add(('&', State.Devision), State.ErrorInOperator);
             /* 853 */
-            Dictionary.Add(('{', State.IntDoubleOperator), State.Indefinitely);
+            Dictionary.Add(('|', State.Devision), State.ErrorInOperator);
             /* 854 */
-            Dictionary.Add(('}', State.IntDoubleOperator), State.Indefinitely);
+            Dictionary.Add(('\'', State.Devision), State.ErrorInOperator);
             /* 855 */
-            Dictionary.Add(('(', State.IntDoubleOperator), State.Indefinitely);
+            Dictionary.Add(('!', State.Devision), State.ErrorInOperator);
             /* 856 */
-            Dictionary.Add((')', State.IntDoubleOperator), State.Indefinitely);
+            Dictionary.Add((';', State.Devision), State.ErrorInOperator);
             /* 857 */
-            Dictionary.Add(('[', State.IntDoubleOperator), State.Indefinitely);
+            Dictionary.Add(('@', State.Devision), State.Indefinitely);
             /* 858 */
-            Dictionary.Add((']', State.IntDoubleOperator), State.Indefinitely);
+            Dictionary.Add(('_', State.Devision), State.Indefinitely);
             /* 859 */
-            Dictionary.Add(('/', State.IntDoubleOperator), State.Indefinitely);
+            Dictionary.Add(('e', State.Devision), State.Indefinitely);
             /* 860 */
-            Dictionary.Add(('&', State.IntDoubleOperator), State.Indefinitely);
+            Dictionary.Add(('d', State.Devision), State.Indefinitely);
             /* 861 */
-            Dictionary.Add(('|', State.IntDoubleOperator), State.Indefinitely);
+            Dictionary.Add(('m', State.Devision), State.Indefinitely);
             /* 862 */
-            Dictionary.Add(('\'', State.IntDoubleOperator), State.Indefinitely);
+            Dictionary.Add(('f', State.Devision), State.Indefinitely);
             /* 863 */
-            Dictionary.Add(('!', State.IntDoubleOperator), State.Indefinitely);
+            Dictionary.Add(('\\', State.Devision), State.ErrorInOperator);
             /* 864 */
+            Dictionary.Add(('n', State.Devision), State.Indefinitely);
+            /* 865 */
+            Dictionary.Add(('0', State.Comment), State.Indefinitely);
+            /* 866 */
+            Dictionary.Add(('s', State.Comment), State.Indefinitely);
+            /* 867 */
+            Dictionary.Add(('=', State.Comment), State.Indefinitely);
+            /* 868 */
+            Dictionary.Add(('>', State.Comment), State.Indefinitely);
+            /* 869 */
+            Dictionary.Add(('<', State.Comment), State.Indefinitely);
+            /* 870 */
+            Dictionary.Add((',', State.Comment), State.Indefinitely);
+            /* 871 */
+            Dictionary.Add(('.', State.Comment), State.Indefinitely);
+            /* 872 */
+            Dictionary.Add(('"', State.Comment), State.Indefinitely);
+            /* 873 */
+            Dictionary.Add(('+', State.Comment), State.Indefinitely);
+            /* 874 */
+            Dictionary.Add(('-', State.Comment), State.Indefinitely);
+            /* 875 */
+            Dictionary.Add(('*', State.Comment), State.Indefinitely);
+            /* 876 */
+            Dictionary.Add(('^', State.Comment), State.Indefinitely);
+            /* 877 */
+            Dictionary.Add(('{', State.Comment), State.Indefinitely);
+            /* 878 */
+            Dictionary.Add(('}', State.Comment), State.Indefinitely);
+            /* 879 */
+            Dictionary.Add(('(', State.Comment), State.Indefinitely);
+            /* 880 */
+            Dictionary.Add((')', State.Comment), State.Indefinitely);
+            /* 881 */
+            Dictionary.Add(('[', State.Comment), State.Indefinitely);
+            /* 882 */
+            Dictionary.Add((']', State.Comment), State.Indefinitely);
+            /* 883 */
+            Dictionary.Add(('/', State.Comment), State.Indefinitely);
+            /* 884 */
+            Dictionary.Add(('&', State.Comment), State.Indefinitely);
+            /* 885 */
+            Dictionary.Add(('|', State.Comment), State.Indefinitely);
+            /* 886 */
+            Dictionary.Add(('\'', State.Comment), State.Indefinitely);
+            /* 887 */
+            Dictionary.Add(('!', State.Comment), State.Indefinitely);
+            /* 888 */
+            Dictionary.Add((';', State.Comment), State.Indefinitely);
+            /* 889 */
+            Dictionary.Add(('@', State.Comment), State.Indefinitely);
+            /* 890 */
+            Dictionary.Add(('_', State.Comment), State.Indefinitely);
+            /* 891 */
+            Dictionary.Add(('e', State.Comment), State.Indefinitely);
+            /* 892 */
+            Dictionary.Add(('d', State.Comment), State.Indefinitely);
+            /* 893 */
+            Dictionary.Add(('m', State.Comment), State.Indefinitely);
+            /* 894 */
+            Dictionary.Add(('f', State.Comment), State.Indefinitely);
+            /* 895 */
+            Dictionary.Add(('\\', State.Comment), State.Indefinitely);
+            /* 896 */
+            Dictionary.Add(('n', State.Comment), State.Indefinitely);
+            /* 897 */
+            Dictionary.Add(('0', State.Acute), State.HalfChar);
+            /* 898 */
+            Dictionary.Add(('s', State.Acute), State.HalfChar);
+            /* 899 */
+            Dictionary.Add(('=', State.Acute), State.HalfChar);
+            /* 900 */
+            Dictionary.Add(('>', State.Acute), State.HalfChar);
+            /* 901 */
+            Dictionary.Add(('<', State.Acute), State.HalfChar);
+            /* 902 */
+            Dictionary.Add((',', State.Acute), State.HalfChar);
+            /* 903 */
+            Dictionary.Add(('.', State.Acute), State.HalfChar);
+            /* 904 */
+            Dictionary.Add(('"', State.Acute), State.HalfChar);
+            /* 905 */
+            Dictionary.Add(('+', State.Acute), State.HalfChar);
+            /* 906 */
+            Dictionary.Add(('-', State.Acute), State.HalfChar);
+            /* 907 */
+            Dictionary.Add(('*', State.Acute), State.HalfChar);
+            /* 908 */
+            Dictionary.Add(('^', State.Acute), State.HalfChar);
+            /* 909 */
+            Dictionary.Add(('{', State.Acute), State.HalfChar);
+            /* 910 */
+            Dictionary.Add(('}', State.Acute), State.HalfChar);
+            /* 911 */
+            Dictionary.Add(('(', State.Acute), State.HalfChar);
+            /* 912 */
+            Dictionary.Add((')', State.Acute), State.HalfChar);
+            /* 913 */
+            Dictionary.Add(('[', State.Acute), State.HalfChar);
+            /* 914 */
+            Dictionary.Add((']', State.Acute), State.HalfChar);
+            /* 915 */
+            Dictionary.Add(('/', State.Acute), State.HalfChar);
+            /* 916 */
+            Dictionary.Add(('&', State.Acute), State.HalfChar);
+            /* 917 */
+            Dictionary.Add(('|', State.Acute), State.HalfChar);
+            /* 918 */
+            Dictionary.Add(('\'', State.Acute), State.CharException);
+            /* 919 */
+            Dictionary.Add(('!', State.Acute), State.HalfChar);
+            /* 920 */
+            Dictionary.Add((';', State.Acute), State.HalfChar);
+            /* 921 */
+            Dictionary.Add(('@', State.Acute), State.HalfChar);
+            /* 922 */
+            Dictionary.Add(('_', State.Acute), State.HalfChar);
+            /* 923 */
+            Dictionary.Add(('e', State.Acute), State.HalfChar);
+            /* 924 */
+            Dictionary.Add(('d', State.Acute), State.HalfChar);
+            /* 925 */
+            Dictionary.Add(('m', State.Acute), State.HalfChar);
+            /* 926 */
+            Dictionary.Add(('f', State.Acute), State.HalfChar);
+            /* 927 */
+            Dictionary.Add(('\\', State.Acute), State.CharWithBackSlash);
+            /* 928 */
+            Dictionary.Add(('n', State.Acute), State.HalfChar);
+            /* 929 */
+            Dictionary.Add(('0', State.HalfChar), State.CharException);
+            /* 930 */
+            Dictionary.Add(('s', State.HalfChar), State.CharException);
+            /* 931 */
+            Dictionary.Add(('=', State.HalfChar), State.CharException);
+            /* 932 */
+            Dictionary.Add(('>', State.HalfChar), State.CharException);
+            /* 933 */
+            Dictionary.Add(('<', State.HalfChar), State.CharException);
+            /* 934 */
+            Dictionary.Add((',', State.HalfChar), State.CharException);
+            /* 935 */
+            Dictionary.Add(('.', State.HalfChar), State.CharException);
+            /* 936 */
+            Dictionary.Add(('"', State.HalfChar), State.CharException);
+            /* 937 */
+            Dictionary.Add(('+', State.HalfChar), State.CharException);
+            /* 938 */
+            Dictionary.Add(('-', State.HalfChar), State.CharException);
+            /* 939 */
+            Dictionary.Add(('*', State.HalfChar), State.CharException);
+            /* 940 */
+            Dictionary.Add(('^', State.HalfChar), State.CharException);
+            /* 941 */
+            Dictionary.Add(('{', State.HalfChar), State.CharException);
+            /* 942 */
+            Dictionary.Add(('}', State.HalfChar), State.CharException);
+            /* 943 */
+            Dictionary.Add(('(', State.HalfChar), State.CharException);
+            /* 944 */
+            Dictionary.Add((')', State.HalfChar), State.CharException);
+            /* 945 */
+            Dictionary.Add(('[', State.HalfChar), State.CharException);
+            /* 946 */
+            Dictionary.Add((']', State.HalfChar), State.CharException);
+            /* 947 */
+            Dictionary.Add(('/', State.HalfChar), State.CharException);
+            /* 948 */
+            Dictionary.Add(('&', State.HalfChar), State.CharException);
+            /* 949 */
+            Dictionary.Add(('|', State.HalfChar), State.CharException);
+            /* 950 */
+            Dictionary.Add(('\'', State.HalfChar), State.Char);
+            /* 951 */
+            Dictionary.Add(('!', State.HalfChar), State.CharException);
+            /* 952 */
+            Dictionary.Add((';', State.HalfChar), State.CharException);
+            /* 953 */
+            Dictionary.Add(('@', State.HalfChar), State.CharException);
+            /* 954 */
+            Dictionary.Add(('_', State.HalfChar), State.CharException);
+            /* 955 */
+            Dictionary.Add(('e', State.HalfChar), State.CharException);
+            /* 956 */
+            Dictionary.Add(('d', State.HalfChar), State.CharException);
+            /* 957 */
+            Dictionary.Add(('m', State.HalfChar), State.CharException);
+            /* 958 */
+            Dictionary.Add(('f', State.HalfChar), State.CharException);
+            /* 959 */
+            Dictionary.Add(('\\', State.HalfChar), State.CharException);
+            /* 960 */
+            Dictionary.Add(('n', State.HalfChar), State.CharException);
+            /* 961 */
+            Dictionary.Add(('0', State.Char), State.Indefinitely);
+            /* 962 */
+            Dictionary.Add(('s', State.Char), State.Indefinitely);
+            /* 963 */
+            Dictionary.Add(('=', State.Char), State.Indefinitely);
+            /* 964 */
+            Dictionary.Add(('>', State.Char), State.Indefinitely);
+            /* 965 */
+            Dictionary.Add(('<', State.Char), State.Indefinitely);
+            /* 966 */
+            Dictionary.Add((',', State.Char), State.Indefinitely);
+            /* 967 */
+            Dictionary.Add(('.', State.Char), State.Indefinitely);
+            /* 968 */
+            Dictionary.Add(('"', State.Char), State.Indefinitely);
+            /* 969 */
+            Dictionary.Add(('+', State.Char), State.Indefinitely);
+            /* 970 */
+            Dictionary.Add(('-', State.Char), State.Indefinitely);
+            /* 971 */
+            Dictionary.Add(('*', State.Char), State.Indefinitely);
+            /* 972 */
+            Dictionary.Add(('^', State.Char), State.Indefinitely);
+            /* 973 */
+            Dictionary.Add(('{', State.Char), State.Indefinitely);
+            /* 974 */
+            Dictionary.Add(('}', State.Char), State.Indefinitely);
+            /* 975 */
+            Dictionary.Add(('(', State.Char), State.Indefinitely);
+            /* 976 */
+            Dictionary.Add((')', State.Char), State.Indefinitely);
+            /* 977 */
+            Dictionary.Add(('[', State.Char), State.Indefinitely);
+            /* 978 */
+            Dictionary.Add((']', State.Char), State.Indefinitely);
+            /* 979 */
+            Dictionary.Add(('/', State.Char), State.Indefinitely);
+            /* 980 */
+            Dictionary.Add(('&', State.Char), State.Indefinitely);
+            /* 981 */
+            Dictionary.Add(('|', State.Char), State.Indefinitely);
+            /* 982 */
+            Dictionary.Add(('\'', State.Char), State.Indefinitely);
+            /* 983 */
+            Dictionary.Add(('!', State.Char), State.Indefinitely);
+            /* 984 */
+            Dictionary.Add((';', State.Char), State.Indefinitely);
+            /* 985 */
+            Dictionary.Add(('@', State.Char), State.Indefinitely);
+            /* 986 */
+            Dictionary.Add(('_', State.Char), State.Indefinitely);
+            /* 987 */
+            Dictionary.Add(('e', State.Char), State.Indefinitely);
+            /* 988 */
+            Dictionary.Add(('d', State.Char), State.Indefinitely);
+            /* 989 */
+            Dictionary.Add(('m', State.Char), State.Indefinitely);
+            /* 990 */
+            Dictionary.Add(('f', State.Char), State.Indefinitely);
+            /* 991 */
+            Dictionary.Add(('\\', State.Char), State.Indefinitely);
+            /* 992 */
+            Dictionary.Add(('n', State.Char), State.Indefinitely);
+            /* 993 */
+            Dictionary.Add(('0', State.String), State.Indefinitely);
+            /* 994 */
+            Dictionary.Add(('s', State.String), State.Indefinitely);
+            /* 995 */
+            Dictionary.Add(('=', State.String), State.Indefinitely);
+            /* 996 */
+            Dictionary.Add(('>', State.String), State.Indefinitely);
+            /* 997 */
+            Dictionary.Add(('<', State.String), State.Indefinitely);
+            /* 998 */
+            Dictionary.Add((',', State.String), State.Indefinitely);
+            /* 999 */
+            Dictionary.Add(('.', State.String), State.Indefinitely);
+            /* 1000 */
+            Dictionary.Add(('"', State.String), State.Indefinitely);
+            /* 1001 */
+            Dictionary.Add(('+', State.String), State.Indefinitely);
+            /* 1002 */
+            Dictionary.Add(('-', State.String), State.Indefinitely);
+            /* 1003 */
+            Dictionary.Add(('*', State.String), State.Indefinitely);
+            /* 1004 */
+            Dictionary.Add(('^', State.String), State.Indefinitely);
+            /* 1005 */
+            Dictionary.Add(('{', State.String), State.Indefinitely);
+            /* 1006 */
+            Dictionary.Add(('}', State.String), State.Indefinitely);
+            /* 1007 */
+            Dictionary.Add(('(', State.String), State.Indefinitely);
+            /* 1008 */
+            Dictionary.Add((')', State.String), State.Indefinitely);
+            /* 1009 */
+            Dictionary.Add(('[', State.String), State.Indefinitely);
+            /* 1010 */
+            Dictionary.Add((']', State.String), State.Indefinitely);
+            /* 1011 */
+            Dictionary.Add(('/', State.String), State.Indefinitely);
+            /* 1012 */
+            Dictionary.Add(('&', State.String), State.Indefinitely);
+            /* 1013 */
+            Dictionary.Add(('|', State.String), State.Indefinitely);
+            /* 1014 */
+            Dictionary.Add(('\'', State.String), State.Indefinitely);
+            /* 1015 */
+            Dictionary.Add(('!', State.String), State.Indefinitely);
+            /* 1016 */
+            Dictionary.Add((';', State.String), State.Indefinitely);
+            /* 1017 */
+            Dictionary.Add(('@', State.String), State.Indefinitely);
+            /* 1018 */
+            Dictionary.Add(('_', State.String), State.Indefinitely);
+            /* 1019 */
+            Dictionary.Add(('e', State.String), State.Indefinitely);
+            /* 1020 */
+            Dictionary.Add(('d', State.String), State.Indefinitely);
+            /* 1021 */
+            Dictionary.Add(('m', State.String), State.Indefinitely);
+            /* 1022 */
+            Dictionary.Add(('f', State.String), State.Indefinitely);
+            /* 1023 */
+            Dictionary.Add(('\\', State.String), State.Indefinitely);
+            /* 1024 */
+            Dictionary.Add(('n', State.String), State.Indefinitely);
+            /* 1025 */
+            Dictionary.Add(('0', State.ShiftRight), State.Indefinitely);
+            /* 1026 */
+            Dictionary.Add(('s', State.ShiftRight), State.Indefinitely);
+            /* 1027 */
+            Dictionary.Add(('=', State.ShiftRight), State.ShiftException);
+            /* 1028 */
+            Dictionary.Add(('>', State.ShiftRight), State.ShiftException);
+            /* 1029 */
+            Dictionary.Add(('<', State.ShiftRight), State.ShiftException);
+            /* 1030 */
+            Dictionary.Add((',', State.ShiftRight), State.ShiftException);
+            /* 1031 */
+            Dictionary.Add(('.', State.ShiftRight), State.ShiftException);
+            /* 1032 */
+            Dictionary.Add(('"', State.ShiftRight), State.ShiftException);
+            /* 1033 */
+            Dictionary.Add(('+', State.ShiftRight), State.Indefinitely);
+            /* 1034 */
+            Dictionary.Add(('-', State.ShiftRight), State.Indefinitely);
+            /* 1035 */
+            Dictionary.Add(('*', State.ShiftRight), State.ShiftException);
+            /* 1036 */
+            Dictionary.Add(('^', State.ShiftRight), State.ShiftException);
+            /* 1037 */
+            Dictionary.Add(('{', State.ShiftRight), State.ShiftException);
+            /* 1038 */
+            Dictionary.Add(('}', State.ShiftRight), State.ShiftException);
+            /* 1039 */
+            Dictionary.Add(('(', State.ShiftRight), State.Indefinitely);
+            /* 1040 */
+            Dictionary.Add((')', State.ShiftRight), State.ShiftException);
+            /* 1041 */
+            Dictionary.Add(('[', State.ShiftRight), State.ShiftException);
+            /* 1042 */
+            Dictionary.Add((']', State.ShiftRight), State.ShiftException);
+            /* 1043 */
+            Dictionary.Add(('/', State.ShiftRight), State.ShiftException);
+            /* 1044 */
+            Dictionary.Add(('&', State.ShiftRight), State.ShiftException);
+            /* 1045 */
+            Dictionary.Add(('|', State.ShiftRight), State.ShiftException);
+            /* 1046 */
+            Dictionary.Add(('\'', State.ShiftRight), State.ShiftException);
+            /* 1047 */
+            Dictionary.Add(('!', State.ShiftRight), State.ShiftException);
+            /* 1048 */
+            Dictionary.Add((';', State.ShiftRight), State.ShiftException);
+            /* 1049 */
+            Dictionary.Add(('@', State.ShiftRight), State.Indefinitely);
+            /* 1050 */
+            Dictionary.Add(('_', State.ShiftRight), State.Indefinitely);
+            /* 1051 */
+            Dictionary.Add(('e', State.ShiftRight), State.Indefinitely);
+            /* 1052 */
+            Dictionary.Add(('d', State.ShiftRight), State.Indefinitely);
+            /* 1053 */
+            Dictionary.Add(('m', State.ShiftRight), State.Indefinitely);
+            /* 1054 */
+            Dictionary.Add(('f', State.ShiftRight), State.Indefinitely);
+            /* 1055 */
+            Dictionary.Add(('\\', State.ShiftRight), State.ShiftException);
+            /* 1056 */
+            Dictionary.Add(('n', State.ShiftRight), State.Indefinitely);
+            /* 1057 */
+            Dictionary.Add(('0', State.ShiftLeft), State.Indefinitely);
+            /* 1058 */
+            Dictionary.Add(('s', State.ShiftLeft), State.Indefinitely);
+            /* 1059 */
+            Dictionary.Add(('=', State.ShiftLeft), State.ShiftException);
+            /* 1060 */
+            Dictionary.Add(('>', State.ShiftLeft), State.ShiftException);
+            /* 1061 */
+            Dictionary.Add(('<', State.ShiftLeft), State.ShiftException);
+            /* 1062 */
+            Dictionary.Add((',', State.ShiftLeft), State.ShiftException);
+            /* 1063 */
+            Dictionary.Add(('.', State.ShiftLeft), State.ShiftException);
+            /* 1064 */
+            Dictionary.Add(('"', State.ShiftLeft), State.ShiftException);
+            /* 1065 */
+            Dictionary.Add(('+', State.ShiftLeft), State.Indefinitely);
+            /* 1066 */
+            Dictionary.Add(('-', State.ShiftLeft), State.Indefinitely);
+            /* 1067 */
+            Dictionary.Add(('*', State.ShiftLeft), State.ShiftException);
+            /* 1068 */
+            Dictionary.Add(('^', State.ShiftLeft), State.ShiftException);
+            /* 1069 */
+            Dictionary.Add(('{', State.ShiftLeft), State.ShiftException);
+            /* 1070 */
+            Dictionary.Add(('}', State.ShiftLeft), State.ShiftException);
+            /* 1071 */
+            Dictionary.Add(('(', State.ShiftLeft), State.Indefinitely);
+            /* 1072 */
+            Dictionary.Add((')', State.ShiftLeft), State.ShiftException);
+            /* 1073 */
+            Dictionary.Add(('[', State.ShiftLeft), State.ShiftException);
+            /* 1074 */
+            Dictionary.Add((']', State.ShiftLeft), State.ShiftException);
+            /* 1075 */
+            Dictionary.Add(('/', State.ShiftLeft), State.ShiftException);
+            /* 1076 */
+            Dictionary.Add(('&', State.ShiftLeft), State.ShiftException);
+            /* 1077 */
+            Dictionary.Add(('|', State.ShiftLeft), State.ShiftException);
+            /* 1078 */
+            Dictionary.Add(('\'', State.ShiftLeft), State.ShiftException);
+            /* 1079 */
+            Dictionary.Add(('!', State.ShiftLeft), State.ShiftException);
+            /* 1080 */
+            Dictionary.Add((';', State.ShiftLeft), State.ShiftException);
+            /* 1081 */
+            Dictionary.Add(('@', State.ShiftLeft), State.Indefinitely);
+            /* 1082 */
+            Dictionary.Add(('_', State.ShiftLeft), State.Indefinitely);
+            /* 1083 */
+            Dictionary.Add(('e', State.ShiftLeft), State.Indefinitely);
+            /* 1084 */
+            Dictionary.Add(('d', State.ShiftLeft), State.Indefinitely);
+            /* 1085 */
+            Dictionary.Add(('m', State.ShiftLeft), State.Indefinitely);
+            /* 1086 */
+            Dictionary.Add(('f', State.ShiftLeft), State.Indefinitely);
+            /* 1087 */
+            Dictionary.Add(('\\', State.ShiftLeft), State.ShiftException);
+            /* 1088 */
+            Dictionary.Add(('n', State.ShiftLeft), State.Indefinitely);
+            /* 1089 */
+            Dictionary.Add(('0', State.IntPoint), State.Double);
+            /* 1090 */
+            Dictionary.Add(('s', State.IntPoint), State.NumberException);
+            /* 1091 */
+            Dictionary.Add(('=', State.IntPoint), State.NumberException);
+            /* 1092 */
+            Dictionary.Add(('>', State.IntPoint), State.NumberException);
+            /* 1093 */
+            Dictionary.Add(('<', State.IntPoint), State.NumberException);
+            /* 1094 */
+            Dictionary.Add((',', State.IntPoint), State.NumberException);
+            /* 1095 */
+            Dictionary.Add(('.', State.IntPoint), State.NumberException);
+            /* 1096 */
+            Dictionary.Add(('"', State.IntPoint), State.NumberException);
+            /* 1097 */
+            Dictionary.Add(('+', State.IntPoint), State.NumberException);
+            /* 1098 */
+            Dictionary.Add(('-', State.IntPoint), State.NumberException);
+            /* 1099 */
+            Dictionary.Add(('*', State.IntPoint), State.NumberException);
+            /* 1100 */
+            Dictionary.Add(('^', State.IntPoint), State.NumberException);
+            /* 1101 */
+            Dictionary.Add(('{', State.IntPoint), State.NumberException);
+            /* 1102 */
+            Dictionary.Add(('}', State.IntPoint), State.NumberException);
+            /* 1103 */
+            Dictionary.Add(('(', State.IntPoint), State.NumberException);
+            /* 1104 */
+            Dictionary.Add((')', State.IntPoint), State.NumberException);
+            /* 1105 */
+            Dictionary.Add(('[', State.IntPoint), State.NumberException);
+            /* 1106 */
+            Dictionary.Add((']', State.IntPoint), State.NumberException);
+            /* 1107 */
+            Dictionary.Add(('/', State.IntPoint), State.NumberException);
+            /* 1108 */
+            Dictionary.Add(('&', State.IntPoint), State.NumberException);
+            /* 1109 */
+            Dictionary.Add(('|', State.IntPoint), State.NumberException);
+            /* 1110 */
+            Dictionary.Add(('\'', State.IntPoint), State.NumberException);
+            /* 1111 */
+            Dictionary.Add(('!', State.IntPoint), State.NumberException);
+            /* 1112 */
+            Dictionary.Add((';', State.IntPoint), State.NumberException);
+            /* 1113 */
+            Dictionary.Add(('@', State.IntPoint), State.NumberException);
+            /* 1114 */
+            Dictionary.Add(('_', State.IntPoint), State.NumberException);
+            /* 1115 */
+            Dictionary.Add(('e', State.IntPoint), State.NumberException);
+            /* 1116 */
+            Dictionary.Add(('d', State.IntPoint), State.NumberException);
+            /* 1117 */
+            Dictionary.Add(('m', State.IntPoint), State.NumberException);
+            /* 1118 */
+            Dictionary.Add(('f', State.IntPoint), State.NumberException);
+            /* 1119 */
+            Dictionary.Add(('\\', State.IntPoint), State.NumberException);
+            /* 1120 */
+            Dictionary.Add(('n', State.IntPoint), State.NumberException);
+            /* 1121 */
+            Dictionary.Add(('0', State.IntDoubleOperator), State.Indefinitely);
+            /* 1122 */
+            Dictionary.Add(('s', State.IntDoubleOperator), State.Indefinitely);
+            /* 1123 */
+            Dictionary.Add(('=', State.IntDoubleOperator), State.Indefinitely);
+            /* 1124 */
+            Dictionary.Add(('>', State.IntDoubleOperator), State.Indefinitely);
+            /* 1125 */
+            Dictionary.Add(('<', State.IntDoubleOperator), State.Indefinitely);
+            /* 1126 */
+            Dictionary.Add((',', State.IntDoubleOperator), State.Indefinitely);
+            /* 1127 */
+            Dictionary.Add(('.', State.IntDoubleOperator), State.Indefinitely);
+            /* 1128 */
+            Dictionary.Add(('"', State.IntDoubleOperator), State.Indefinitely);
+            /* 1129 */
+            Dictionary.Add(('+', State.IntDoubleOperator), State.Indefinitely);
+            /* 1130 */
+            Dictionary.Add(('-', State.IntDoubleOperator), State.Indefinitely);
+            /* 1131 */
+            Dictionary.Add(('*', State.IntDoubleOperator), State.Indefinitely);
+            /* 1132 */
+            Dictionary.Add(('^', State.IntDoubleOperator), State.Indefinitely);
+            /* 1133 */
+            Dictionary.Add(('{', State.IntDoubleOperator), State.Indefinitely);
+            /* 1134 */
+            Dictionary.Add(('}', State.IntDoubleOperator), State.Indefinitely);
+            /* 1135 */
+            Dictionary.Add(('(', State.IntDoubleOperator), State.Indefinitely);
+            /* 1136 */
+            Dictionary.Add((')', State.IntDoubleOperator), State.Indefinitely);
+            /* 1137 */
+            Dictionary.Add(('[', State.IntDoubleOperator), State.Indefinitely);
+            /* 1138 */
+            Dictionary.Add((']', State.IntDoubleOperator), State.Indefinitely);
+            /* 1139 */
+            Dictionary.Add(('/', State.IntDoubleOperator), State.Indefinitely);
+            /* 1140 */
+            Dictionary.Add(('&', State.IntDoubleOperator), State.Indefinitely);
+            /* 1141 */
+            Dictionary.Add(('|', State.IntDoubleOperator), State.Indefinitely);
+            /* 1142 */
+            Dictionary.Add(('\'', State.IntDoubleOperator), State.Indefinitely);
+            /* 1143 */
+            Dictionary.Add(('!', State.IntDoubleOperator), State.Indefinitely);
+            /* 1144 */
             Dictionary.Add((';', State.IntDoubleOperator), State.Indefinitely);
+            /* 1145 */
+            Dictionary.Add(('@', State.IntDoubleOperator), State.Indefinitely);
+            /* 1146 */
+            Dictionary.Add(('_', State.IntDoubleOperator), State.Indefinitely);
+            /* 1147 */
+            Dictionary.Add(('e', State.IntDoubleOperator), State.Indefinitely);
+            /* 1148 */
+            Dictionary.Add(('d', State.IntDoubleOperator), State.Indefinitely);
+            /* 1149 */
+            Dictionary.Add(('m', State.IntDoubleOperator), State.Indefinitely);
+            /* 1150 */
+            Dictionary.Add(('f', State.IntDoubleOperator), State.Indefinitely);
+            /* 1151 */
+            Dictionary.Add(('\\', State.IntDoubleOperator), State.Indefinitely);
+            /* 1152 */
+            Dictionary.Add(('n', State.IntDoubleOperator), State.Indefinitely);
+            /* 1153 */
+            Dictionary.Add(('0', State.DevisionMultiplication), State.DevisionMultiplication);
+            /* 1154 */
+            Dictionary.Add(('s', State.DevisionMultiplication), State.DevisionMultiplication);
+            /* 1155 */
+            Dictionary.Add(('=', State.DevisionMultiplication), State.DevisionMultiplication);
+            /* 1156 */
+            Dictionary.Add(('>', State.DevisionMultiplication), State.DevisionMultiplication);
+            /* 1157 */
+            Dictionary.Add(('<', State.DevisionMultiplication), State.DevisionMultiplication);
+            /* 1158 */
+            Dictionary.Add((',', State.DevisionMultiplication), State.DevisionMultiplication);
+            /* 1159 */
+            Dictionary.Add(('.', State.DevisionMultiplication), State.DevisionMultiplication);
+            /* 1160 */
+            Dictionary.Add(('"', State.DevisionMultiplication), State.DevisionMultiplication);
+            /* 1161 */
+            Dictionary.Add(('+', State.DevisionMultiplication), State.DevisionMultiplication);
+            /* 1162 */
+            Dictionary.Add(('-', State.DevisionMultiplication), State.DevisionMultiplication);
+            /* 1163 */
+            Dictionary.Add(('*', State.DevisionMultiplication), State.MultiComment);
+            /* 1164 */
+            Dictionary.Add(('^', State.DevisionMultiplication), State.DevisionMultiplication);
+            /* 1165 */
+            Dictionary.Add(('{', State.DevisionMultiplication), State.DevisionMultiplication);
+            /* 1166 */
+            Dictionary.Add(('}', State.DevisionMultiplication), State.DevisionMultiplication);
+            /* 1167 */
+            Dictionary.Add(('(', State.DevisionMultiplication), State.DevisionMultiplication);
+            /* 1168 */
+            Dictionary.Add((')', State.DevisionMultiplication), State.DevisionMultiplication);
+            /* 1169 */
+            Dictionary.Add(('[', State.DevisionMultiplication), State.DevisionMultiplication);
+            /* 1170 */
+            Dictionary.Add((']', State.DevisionMultiplication), State.DevisionMultiplication);
+            /* 1171 */
+            Dictionary.Add(('/', State.DevisionMultiplication), State.DevisionMultiplication);
+            /* 1172 */
+            Dictionary.Add(('&', State.DevisionMultiplication), State.DevisionMultiplication);
+            /* 1173 */
+            Dictionary.Add(('|', State.DevisionMultiplication), State.DevisionMultiplication);
+            /* 1174 */
+            Dictionary.Add(('\'', State.DevisionMultiplication), State.DevisionMultiplication);
+            /* 1175 */
+            Dictionary.Add(('!', State.DevisionMultiplication), State.DevisionMultiplication);
+            /* 1176 */
+            Dictionary.Add((';', State.DevisionMultiplication), State.DevisionMultiplication);
+            /* 1177 */
+            Dictionary.Add(('@', State.DevisionMultiplication), State.DevisionMultiplication);
+            /* 1178 */
+            Dictionary.Add(('_', State.DevisionMultiplication), State.DevisionMultiplication);
+            /* 1179 */
+            Dictionary.Add(('e', State.DevisionMultiplication), State.DevisionMultiplication);
+            /* 1180 */
+            Dictionary.Add(('d', State.DevisionMultiplication), State.DevisionMultiplication);
+            /* 1181 */
+            Dictionary.Add(('m', State.DevisionMultiplication), State.DevisionMultiplication);
+            /* 1182 */
+            Dictionary.Add(('f', State.DevisionMultiplication), State.DevisionMultiplication);
+            /* 1183 */
+            Dictionary.Add(('\\', State.DevisionMultiplication), State.DevisionMultiplication);
+            /* 1184 */
+            Dictionary.Add(('n', State.DevisionMultiplication), State.DevisionMultiplication);
+            /* 1185 */
+            Dictionary.Add(('0', State.MultiComment), State.DevisionMultiplication);
+            /* 1186 */
+            Dictionary.Add(('s', State.MultiComment), State.DevisionMultiplication);
+            /* 1187 */
+            Dictionary.Add(('=', State.MultiComment), State.DevisionMultiplication);
+            /* 1188 */
+            Dictionary.Add(('>', State.MultiComment), State.DevisionMultiplication);
+            /* 1189 */
+            Dictionary.Add(('<', State.MultiComment), State.DevisionMultiplication);
+            /* 1190 */
+            Dictionary.Add((',', State.MultiComment), State.DevisionMultiplication);
+            /* 1191 */
+            Dictionary.Add(('.', State.MultiComment), State.DevisionMultiplication);
+            /* 1192 */
+            Dictionary.Add(('"', State.MultiComment), State.DevisionMultiplication);
+            /* 1193 */
+            Dictionary.Add(('+', State.MultiComment), State.DevisionMultiplication);
+            /* 1194 */
+            Dictionary.Add(('-', State.MultiComment), State.DevisionMultiplication);
+            /* 1195 */
+            Dictionary.Add(('*', State.MultiComment), State.MultiComment);
+            /* 1196 */
+            Dictionary.Add(('^', State.MultiComment), State.DevisionMultiplication);
+            /* 1197 */
+            Dictionary.Add(('{', State.MultiComment), State.DevisionMultiplication);
+            /* 1198 */
+            Dictionary.Add(('}', State.MultiComment), State.DevisionMultiplication);
+            /* 1199 */
+            Dictionary.Add(('(', State.MultiComment), State.DevisionMultiplication);
+            /* 1200 */
+            Dictionary.Add((')', State.MultiComment), State.DevisionMultiplication);
+            /* 1201 */
+            Dictionary.Add(('[', State.MultiComment), State.DevisionMultiplication);
+            /* 1202 */
+            Dictionary.Add((']', State.MultiComment), State.DevisionMultiplication);
+            /* 1203 */
+            Dictionary.Add(('/', State.MultiComment), State.FinishMultipleComment);
+            /* 1204 */
+            Dictionary.Add(('&', State.MultiComment), State.DevisionMultiplication);
+            /* 1205 */
+            Dictionary.Add(('|', State.MultiComment), State.DevisionMultiplication);
+            /* 1206 */
+            Dictionary.Add(('\'', State.MultiComment), State.DevisionMultiplication);
+            /* 1207 */
+            Dictionary.Add(('!', State.MultiComment), State.DevisionMultiplication);
+            /* 1208 */
+            Dictionary.Add((';', State.MultiComment), State.DevisionMultiplication);
+            /* 1209 */
+            Dictionary.Add(('@', State.MultiComment), State.DevisionMultiplication);
+            /* 1210 */
+            Dictionary.Add(('_', State.MultiComment), State.DevisionMultiplication);
+            /* 1211 */
+            Dictionary.Add(('e', State.MultiComment), State.DevisionMultiplication);
+            /* 1212 */
+            Dictionary.Add(('d', State.MultiComment), State.DevisionMultiplication);
+            /* 1213 */
+            Dictionary.Add(('m', State.MultiComment), State.DevisionMultiplication);
+            /* 1214 */
+            Dictionary.Add(('f', State.MultiComment), State.DevisionMultiplication);
+            /* 1215 */
+            Dictionary.Add(('\\', State.MultiComment), State.DevisionMultiplication);
+            /* 1216 */
+            Dictionary.Add(('n', State.MultiComment), State.DevisionMultiplication);
+            /* 1217 */
+            Dictionary.Add(('0', State.Dog), State.ErrorInIdentifier);
+            /* 1218 */
+            Dictionary.Add(('s', State.Dog), State.Identifier);
+            /* 1219 */
+            Dictionary.Add(('=', State.Dog), State.ErrorInIdentifier);
+            /* 1220 */
+            Dictionary.Add(('>', State.Dog), State.ErrorInIdentifier);
+            /* 1221 */
+            Dictionary.Add(('<', State.Dog), State.ErrorInIdentifier);
+            /* 1222 */
+            Dictionary.Add((',', State.Dog), State.ErrorInIdentifier);
+            /* 1223 */
+            Dictionary.Add(('.', State.Dog), State.ErrorInIdentifier);
+            /* 1224 */
+            Dictionary.Add(('"', State.Dog), State.SpeekDog);
+            /* 1225 */
+            Dictionary.Add(('+', State.Dog), State.ErrorInIdentifier);
+            /* 1226 */
+            Dictionary.Add(('-', State.Dog), State.ErrorInIdentifier);
+            /* 1227 */
+            Dictionary.Add(('*', State.Dog), State.ErrorInIdentifier);
+            /* 1228 */
+            Dictionary.Add(('^', State.Dog), State.ErrorInIdentifier);
+            /* 1229 */
+            Dictionary.Add(('{', State.Dog), State.ErrorInIdentifier);
+            /* 1230 */
+            Dictionary.Add(('}', State.Dog), State.ErrorInIdentifier);
+            /* 1231 */
+            Dictionary.Add(('(', State.Dog), State.ErrorInIdentifier);
+            /* 1232 */
+            Dictionary.Add((')', State.Dog), State.ErrorInIdentifier);
+            /* 1233 */
+            Dictionary.Add(('[', State.Dog), State.ErrorInIdentifier);
+            /* 1234 */
+            Dictionary.Add((']', State.Dog), State.ErrorInIdentifier);
+            /* 1235 */
+            Dictionary.Add(('/', State.Dog), State.ErrorInIdentifier);
+            /* 1236 */
+            Dictionary.Add(('&', State.Dog), State.ErrorInIdentifier);
+            /* 1237 */
+            Dictionary.Add(('|', State.Dog), State.ErrorInIdentifier);
+            /* 1238 */
+            Dictionary.Add(('\'', State.Dog), State.ErrorInIdentifier);
+            /* 1239 */
+            Dictionary.Add(('!', State.Dog), State.ErrorInIdentifier);
+            /* 1240 */
+            Dictionary.Add((';', State.Dog), State.ErrorInIdentifier);
+            /* 1241 */
+            Dictionary.Add(('@', State.Dog), State.ErrorInIdentifier);
+            /* 1242 */
+            Dictionary.Add(('_', State.Dog), State.Identifier);
+            /* 1243 */
+            Dictionary.Add(('e', State.Dog), State.Identifier);
+            /* 1244 */
+            Dictionary.Add(('d', State.Dog), State.Identifier);
+            /* 1245 */
+            Dictionary.Add(('m', State.Dog), State.Identifier);
+            /* 1246 */
+            Dictionary.Add(('f', State.Dog), State.Identifier);
+            /* 1247 */
+            Dictionary.Add(('\\', State.Dog), State.ErrorInIdentifier);
+            /* 1248 */
+            Dictionary.Add(('n', State.Dog), State.Identifier);
+            /* 1249 */
+            Dictionary.Add(('0', State.BackSlashException), State.Indefinitely);
+            /* 1250 */
+            Dictionary.Add(('s', State.BackSlashException), State.Indefinitely);
+            /* 1251 */
+            Dictionary.Add(('=', State.BackSlashException), State.Indefinitely);
+            /* 1252 */
+            Dictionary.Add(('>', State.BackSlashException), State.Indefinitely);
+            /* 1253 */
+            Dictionary.Add(('<', State.BackSlashException), State.Indefinitely);
+            /* 1254 */
+            Dictionary.Add((',', State.BackSlashException), State.Indefinitely);
+            /* 1255 */
+            Dictionary.Add(('.', State.BackSlashException), State.Indefinitely);
+            /* 1256 */
+            Dictionary.Add(('"', State.BackSlashException), State.Indefinitely);
+            /* 1257 */
+            Dictionary.Add(('+', State.BackSlashException), State.Indefinitely);
+            /* 1258 */
+            Dictionary.Add(('-', State.BackSlashException), State.Indefinitely);
+            /* 1259 */
+            Dictionary.Add(('*', State.BackSlashException), State.Indefinitely);
+            /* 1260 */
+            Dictionary.Add(('^', State.BackSlashException), State.Indefinitely);
+            /* 1261 */
+            Dictionary.Add(('{', State.BackSlashException), State.Indefinitely);
+            /* 1262 */
+            Dictionary.Add(('}', State.BackSlashException), State.Indefinitely);
+            /* 1263 */
+            Dictionary.Add(('(', State.BackSlashException), State.Indefinitely);
+            /* 1264 */
+            Dictionary.Add((')', State.BackSlashException), State.Indefinitely);
+            /* 1265 */
+            Dictionary.Add(('[', State.BackSlashException), State.Indefinitely);
+            /* 1266 */
+            Dictionary.Add((']', State.BackSlashException), State.Indefinitely);
+            /* 1267 */
+            Dictionary.Add(('/', State.BackSlashException), State.Indefinitely);
+            /* 1268 */
+            Dictionary.Add(('&', State.BackSlashException), State.Indefinitely);
+            /* 1269 */
+            Dictionary.Add(('|', State.BackSlashException), State.Indefinitely);
+            /* 1270 */
+            Dictionary.Add(('\'', State.BackSlashException), State.Indefinitely);
+            /* 1271 */
+            Dictionary.Add(('!', State.BackSlashException), State.Indefinitely);
+            /* 1272 */
+            Dictionary.Add((';', State.BackSlashException), State.Indefinitely);
+            /* 1273 */
+            Dictionary.Add(('@', State.BackSlashException), State.Indefinitely);
+            /* 1274 */
+            Dictionary.Add(('_', State.BackSlashException), State.Indefinitely);
+            /* 1275 */
+            Dictionary.Add(('e', State.BackSlashException), State.Indefinitely);
+            /* 1276 */
+            Dictionary.Add(('d', State.BackSlashException), State.Indefinitely);
+            /* 1277 */
+            Dictionary.Add(('m', State.BackSlashException), State.Indefinitely);
+            /* 1278 */
+            Dictionary.Add(('f', State.BackSlashException), State.Indefinitely);
+            /* 1279 */
+            Dictionary.Add(('\\', State.BackSlashException), State.Indefinitely);
+            /* 1280 */
+            Dictionary.Add(('n', State.BackSlashException), State.Indefinitely);
+            /* 1281 */
+            Dictionary.Add(('0', State.InvalidCharacter), State.Indefinitely);
+            /* 1282 */
+            Dictionary.Add(('s', State.InvalidCharacter), State.Indefinitely);
+            /* 1283 */
+            Dictionary.Add(('=', State.InvalidCharacter), State.Indefinitely);
+            /* 1284 */
+            Dictionary.Add(('>', State.InvalidCharacter), State.Indefinitely);
+            /* 1285 */
+            Dictionary.Add(('<', State.InvalidCharacter), State.Indefinitely);
+            /* 1286 */
+            Dictionary.Add((',', State.InvalidCharacter), State.Indefinitely);
+            /* 1287 */
+            Dictionary.Add(('.', State.InvalidCharacter), State.Indefinitely);
+            /* 1288 */
+            Dictionary.Add(('"', State.InvalidCharacter), State.Indefinitely);
+            /* 1289 */
+            Dictionary.Add(('+', State.InvalidCharacter), State.Indefinitely);
+            /* 1290 */
+            Dictionary.Add(('-', State.InvalidCharacter), State.Indefinitely);
+            /* 1291 */
+            Dictionary.Add(('*', State.InvalidCharacter), State.Indefinitely);
+            /* 1292 */
+            Dictionary.Add(('^', State.InvalidCharacter), State.Indefinitely);
+            /* 1293 */
+            Dictionary.Add(('{', State.InvalidCharacter), State.Indefinitely);
+            /* 1294 */
+            Dictionary.Add(('}', State.InvalidCharacter), State.Indefinitely);
+            /* 1295 */
+            Dictionary.Add(('(', State.InvalidCharacter), State.Indefinitely);
+            /* 1296 */
+            Dictionary.Add((')', State.InvalidCharacter), State.Indefinitely);
+            /* 1297 */
+            Dictionary.Add(('[', State.InvalidCharacter), State.Indefinitely);
+            /* 1298 */
+            Dictionary.Add((']', State.InvalidCharacter), State.Indefinitely);
+            /* 1299 */
+            Dictionary.Add(('/', State.InvalidCharacter), State.Indefinitely);
+            /* 1300 */
+            Dictionary.Add(('&', State.InvalidCharacter), State.Indefinitely);
+            /* 1301 */
+            Dictionary.Add(('|', State.InvalidCharacter), State.Indefinitely);
+            /* 1302 */
+            Dictionary.Add(('\'', State.InvalidCharacter), State.Indefinitely);
+            /* 1303 */
+            Dictionary.Add(('!', State.InvalidCharacter), State.Indefinitely);
+            /* 1304 */
+            Dictionary.Add((';', State.InvalidCharacter), State.Indefinitely);
+            /* 1305 */
+            Dictionary.Add(('@', State.InvalidCharacter), State.Indefinitely);
+            /* 1306 */
+            Dictionary.Add(('_', State.InvalidCharacter), State.Indefinitely);
+            /* 1307 */
+            Dictionary.Add(('e', State.InvalidCharacter), State.Indefinitely);
+            /* 1308 */
+            Dictionary.Add(('d', State.InvalidCharacter), State.Indefinitely);
+            /* 1309 */
+            Dictionary.Add(('m', State.InvalidCharacter), State.Indefinitely);
+            /* 1310 */
+            Dictionary.Add(('f', State.InvalidCharacter), State.Indefinitely);
+            /* 1311 */
+            Dictionary.Add(('\\', State.InvalidCharacter), State.Indefinitely);
+            /* 1312 */
+            Dictionary.Add(('n', State.InvalidCharacter), State.Indefinitely);
+            /* 1313 */
+            Dictionary.Add(('0', State.ExponentaInt), State.ExponentaIntNumberToDouble);
+            /* 1314 */
+            Dictionary.Add(('s', State.ExponentaInt), State.NumberException);
+            /* 1315 */
+            Dictionary.Add(('=', State.ExponentaInt), State.NumberException);
+            /* 1316 */
+            Dictionary.Add(('>', State.ExponentaInt), State.NumberException);
+            /* 1317 */
+            Dictionary.Add(('<', State.ExponentaInt), State.NumberException);
+            /* 1318 */
+            Dictionary.Add((',', State.ExponentaInt), State.NumberException);
+            /* 1319 */
+            Dictionary.Add(('.', State.ExponentaInt), State.NumberException);
+            /* 1320 */
+            Dictionary.Add(('"', State.ExponentaInt), State.NumberException);
+            /* 1321 */
+            Dictionary.Add(('+', State.ExponentaInt), State.ExponentaIntPlus);
+            /* 1322 */
+            Dictionary.Add(('-', State.ExponentaInt), State.ExponentaIntMinus);
+            /* 1323 */
+            Dictionary.Add(('*', State.ExponentaInt), State.NumberException);
+            /* 1324 */
+            Dictionary.Add(('^', State.ExponentaInt), State.NumberException);
+            /* 1325 */
+            Dictionary.Add(('{', State.ExponentaInt), State.NumberException);
+            /* 1326 */
+            Dictionary.Add(('}', State.ExponentaInt), State.NumberException);
+            /* 1327 */
+            Dictionary.Add(('(', State.ExponentaInt), State.NumberException);
+            /* 1328 */
+            Dictionary.Add((')', State.ExponentaInt), State.NumberException);
+            /* 1329 */
+            Dictionary.Add(('[', State.ExponentaInt), State.NumberException);
+            /* 1330 */
+            Dictionary.Add((']', State.ExponentaInt), State.NumberException);
+            /* 1331 */
+            Dictionary.Add(('/', State.ExponentaInt), State.NumberException);
+            /* 1332 */
+            Dictionary.Add(('&', State.ExponentaInt), State.NumberException);
+            /* 1333 */
+            Dictionary.Add(('|', State.ExponentaInt), State.NumberException);
+            /* 1334 */
+            Dictionary.Add(('\'', State.ExponentaInt), State.NumberException);
+            /* 1335 */
+            Dictionary.Add(('!', State.ExponentaInt), State.NumberException);
+            /* 1336 */
+            Dictionary.Add((';', State.ExponentaInt), State.NumberException);
+            /* 1337 */
+            Dictionary.Add(('@', State.ExponentaInt), State.NumberException);
+            /* 1338 */
+            Dictionary.Add(('_', State.ExponentaInt), State.NumberException);
+            /* 1339 */
+            Dictionary.Add(('e', State.ExponentaInt), State.NumberException);
+            /* 1340 */
+            Dictionary.Add(('d', State.ExponentaInt), State.NumberException);
+            /* 1341 */
+            Dictionary.Add(('m', State.ExponentaInt), State.NumberException);
+            /* 1342 */
+            Dictionary.Add(('f', State.ExponentaInt), State.NumberException);
+            /* 1343 */
+            Dictionary.Add(('\\', State.ExponentaInt), State.NumberException);
+            /* 1344 */
+            Dictionary.Add(('n', State.ExponentaInt), State.NumberException);
+            /* 1345 */
+            Dictionary.Add(('0', State.DoubleD), State.Indefinitely);
+            /* 1346 */
+            Dictionary.Add(('s', State.DoubleD), State.Indefinitely);
+            /* 1347 */
+            Dictionary.Add(('=', State.DoubleD), State.Indefinitely);
+            /* 1348 */
+            Dictionary.Add(('>', State.DoubleD), State.Indefinitely);
+            /* 1349 */
+            Dictionary.Add(('<', State.DoubleD), State.Indefinitely);
+            /* 1350 */
+            Dictionary.Add((',', State.DoubleD), State.NumberException);
+            /* 1351 */
+            Dictionary.Add(('.', State.DoubleD), State.DoublePoint);
+            /* 1352 */
+            Dictionary.Add(('"', State.DoubleD), State.NumberException);
+            /* 1353 */
+            Dictionary.Add(('+', State.DoubleD), State.Indefinitely);
+            /* 1354 */
+            Dictionary.Add(('-', State.DoubleD), State.Indefinitely);
+            /* 1355 */
+            Dictionary.Add(('*', State.DoubleD), State.Indefinitely);
+            /* 1356 */
+            Dictionary.Add(('^', State.DoubleD), State.Indefinitely);
+            /* 1357 */
+            Dictionary.Add(('{', State.DoubleD), State.NumberException);
+            /* 1358 */
+            Dictionary.Add(('}', State.DoubleD), State.Indefinitely);
+            /* 1359 */
+            Dictionary.Add(('(', State.DoubleD), State.NumberException);
+            /* 1360 */
+            Dictionary.Add((')', State.DoubleD), State.Indefinitely);
+            /* 1361 */
+            Dictionary.Add(('[', State.DoubleD), State.NumberException);
+            /* 1362 */
+            Dictionary.Add((']', State.DoubleD), State.Indefinitely);
+            /* 1363 */
+            Dictionary.Add(('/', State.DoubleD), State.Indefinitely);
+            /* 1364 */
+            Dictionary.Add(('&', State.DoubleD), State.Indefinitely);
+            /* 1365 */
+            Dictionary.Add(('|', State.DoubleD), State.Indefinitely);
+            /* 1366 */
+            Dictionary.Add(('\'', State.DoubleD), State.NumberException);
+            /* 1367 */
+            Dictionary.Add(('!', State.DoubleD), State.Indefinitely);
+            /* 1368 */
+            Dictionary.Add((';', State.DoubleD), State.Indefinitely);
+            /* 1369 */
+            Dictionary.Add(('@', State.DoubleD), State.NumberException);
+            /* 1370 */
+            Dictionary.Add(('_', State.DoubleD), State.NumberException);
+            /* 1371 */
+            Dictionary.Add(('e', State.DoubleD), State.NumberException);
+            /* 1372 */
+            Dictionary.Add(('d', State.DoubleD), State.NumberException);
+            /* 1373 */
+            Dictionary.Add(('m', State.DoubleD), State.NumberException);
+            /* 1374 */
+            Dictionary.Add(('f', State.DoubleD), State.NumberException);
+            /* 1375 */
+            Dictionary.Add(('\\', State.DoubleD), State.NumberException);
+            /* 1376 */
+            Dictionary.Add(('n', State.DoubleD), State.NumberException);
+            /* 1377 */
+            Dictionary.Add(('0', State.Decimal), State.NumberException);
+            /* 1378 */
+            Dictionary.Add(('s', State.Decimal), State.NumberException);
+            /* 1379 */
+            Dictionary.Add(('=', State.Decimal), State.Indefinitely);
+            /* 1380 */
+            Dictionary.Add(('>', State.Decimal), State.Indefinitely);
+            /* 1381 */
+            Dictionary.Add(('<', State.Decimal), State.Indefinitely);
+            /* 1382 */
+            Dictionary.Add((',', State.Decimal), State.NumberException);
+            /* 1383 */
+            Dictionary.Add(('.', State.Decimal), State.DoublePoint);
+            /* 1384 */
+            Dictionary.Add(('"', State.Decimal), State.NumberException);
+            /* 1385 */
+            Dictionary.Add(('+', State.Decimal), State.Indefinitely);
+            /* 1386 */
+            Dictionary.Add(('-', State.Decimal), State.Indefinitely);
+            /* 1387 */
+            Dictionary.Add(('*', State.Decimal), State.Indefinitely);
+            /* 1388 */
+            Dictionary.Add(('^', State.Decimal), State.Indefinitely);
+            /* 1389 */
+            Dictionary.Add(('{', State.Decimal), State.NumberException);
+            /* 1390 */
+            Dictionary.Add(('}', State.Decimal), State.Indefinitely);
+            /* 1391 */
+            Dictionary.Add(('(', State.Decimal), State.NumberException);
+            /* 1392 */
+            Dictionary.Add((')', State.Decimal), State.Indefinitely);
+            /* 1393 */
+            Dictionary.Add(('[', State.Decimal), State.NumberException);
+            /* 1394 */
+            Dictionary.Add((']', State.Decimal), State.Indefinitely);
+            /* 1395 */
+            Dictionary.Add(('/', State.Decimal), State.Indefinitely);
+            /* 1396 */
+            Dictionary.Add(('&', State.Decimal), State.Indefinitely);
+            /* 1397 */
+            Dictionary.Add(('|', State.Decimal), State.Indefinitely);
+            /* 1398 */
+            Dictionary.Add(('\'', State.Decimal), State.NumberException);
+            /* 1399 */
+            Dictionary.Add(('!', State.Decimal), State.Indefinitely);
+            /* 1400 */
+            Dictionary.Add((';', State.Decimal), State.Indefinitely);
+            /* 1401 */
+            Dictionary.Add(('@', State.Decimal), State.NumberException);
+            /* 1402 */
+            Dictionary.Add(('_', State.Decimal), State.NumberException);
+            /* 1403 */
+            Dictionary.Add(('e', State.Decimal), State.NumberException);
+            /* 1404 */
+            Dictionary.Add(('d', State.Decimal), State.NumberException);
+            /* 1405 */
+            Dictionary.Add(('m', State.Decimal), State.NumberException);
+            /* 1406 */
+            Dictionary.Add(('f', State.Decimal), State.NumberException);
+            /* 1407 */
+            Dictionary.Add(('\\', State.Decimal), State.NumberException);
+            /* 1408 */
+            Dictionary.Add(('n', State.Decimal), State.NumberException);
+            /* 1409 */
+            Dictionary.Add(('0', State.Float), State.NumberException);
+            /* 1410 */
+            Dictionary.Add(('s', State.Float), State.NumberException);
+            /* 1411 */
+            Dictionary.Add(('=', State.Float), State.Indefinitely);
+            /* 1412 */
+            Dictionary.Add(('>', State.Float), State.Indefinitely);
+            /* 1413 */
+            Dictionary.Add(('<', State.Float), State.Indefinitely);
+            /* 1414 */
+            Dictionary.Add((',', State.Float), State.NumberException);
+            /* 1415 */
+            Dictionary.Add(('.', State.Float), State.DoublePoint);
+            /* 1416 */
+            Dictionary.Add(('"', State.Float), State.NumberException);
+            /* 1417 */
+            Dictionary.Add(('+', State.Float), State.Indefinitely);
+            /* 1418 */
+            Dictionary.Add(('-', State.Float), State.Indefinitely);
+            /* 1419 */
+            Dictionary.Add(('*', State.Float), State.Indefinitely);
+            /* 1420 */
+            Dictionary.Add(('^', State.Float), State.Indefinitely);
+            /* 1421 */
+            Dictionary.Add(('{', State.Float), State.NumberException);
+            /* 1422 */
+            Dictionary.Add(('}', State.Float), State.Indefinitely);
+            /* 1423 */
+            Dictionary.Add(('(', State.Float), State.NumberException);
+            /* 1424 */
+            Dictionary.Add((')', State.Float), State.Indefinitely);
+            /* 1425 */
+            Dictionary.Add(('[', State.Float), State.NumberException);
+            /* 1426 */
+            Dictionary.Add((']', State.Float), State.Indefinitely);
+            /* 1427 */
+            Dictionary.Add(('/', State.Float), State.Indefinitely);
+            /* 1428 */
+            Dictionary.Add(('&', State.Float), State.Indefinitely);
+            /* 1429 */
+            Dictionary.Add(('|', State.Float), State.Indefinitely);
+            /* 1430 */
+            Dictionary.Add(('\'', State.Float), State.NumberException);
+            /* 1431 */
+            Dictionary.Add(('!', State.Float), State.Indefinitely);
+            /* 1432 */
+            Dictionary.Add((';', State.Float), State.Indefinitely);
+            /* 1433 */
+            Dictionary.Add(('@', State.Float), State.NumberException);
+            /* 1434 */
+            Dictionary.Add(('_', State.Float), State.NumberException);
+            /* 1435 */
+            Dictionary.Add(('e', State.Float), State.NumberException);
+            /* 1436 */
+            Dictionary.Add(('d', State.Float), State.NumberException);
+            /* 1437 */
+            Dictionary.Add(('m', State.Float), State.NumberException);
+            /* 1438 */
+            Dictionary.Add(('f', State.Float), State.NumberException);
+            /* 1439 */
+            Dictionary.Add(('\\', State.Float), State.NumberException);
+            /* 1440 */
+            Dictionary.Add(('n', State.Float), State.NumberException);
+            /* 1441 */
+            Dictionary.Add(('0', State.Int_), State.Int);
+            /* 1442 */
+            Dictionary.Add(('s', State.Int_), State.NumberException);
+            /* 1443 */
+            Dictionary.Add(('=', State.Int_), State.NumberException);
+            /* 1444 */
+            Dictionary.Add(('>', State.Int_), State.NumberException);
+            /* 1445 */
+            Dictionary.Add(('<', State.Int_), State.NumberException);
+            /* 1446 */
+            Dictionary.Add((',', State.Int_), State.NumberException);
+            /* 1447 */
+            Dictionary.Add(('.', State.Int_), State.NumberException);
+            /* 1448 */
+            Dictionary.Add(('"', State.Int_), State.NumberException);
+            /* 1449 */
+            Dictionary.Add(('+', State.Int_), State.NumberException);
+            /* 1450 */
+            Dictionary.Add(('-', State.Int_), State.NumberException);
+            /* 1451 */
+            Dictionary.Add(('*', State.Int_), State.NumberException);
+            /* 1452 */
+            Dictionary.Add(('^', State.Int_), State.NumberException);
+            /* 1453 */
+            Dictionary.Add(('{', State.Int_), State.NumberException);
+            /* 1454 */
+            Dictionary.Add(('}', State.Int_), State.NumberException);
+            /* 1455 */
+            Dictionary.Add(('(', State.Int_), State.NumberException);
+            /* 1456 */
+            Dictionary.Add((')', State.Int_), State.NumberException);
+            /* 1457 */
+            Dictionary.Add(('[', State.Int_), State.NumberException);
+            /* 1458 */
+            Dictionary.Add((']', State.Int_), State.NumberException);
+            /* 1459 */
+            Dictionary.Add(('/', State.Int_), State.NumberException);
+            /* 1460 */
+            Dictionary.Add(('&', State.Int_), State.NumberException);
+            /* 1461 */
+            Dictionary.Add(('|', State.Int_), State.NumberException);
+            /* 1462 */
+            Dictionary.Add(('\'', State.Int_), State.NumberException);
+            /* 1463 */
+            Dictionary.Add(('!', State.Int_), State.NumberException);
+            /* 1464 */
+            Dictionary.Add((';', State.Int_), State.NumberException);
+            /* 1465 */
+            Dictionary.Add(('@', State.Int_), State.NumberException);
+            /* 1466 */
+            Dictionary.Add(('_', State.Int_), State.Int_);
+            /* 1467 */
+            Dictionary.Add(('e', State.Int_), State.NumberException);
+            /* 1468 */
+            Dictionary.Add(('d', State.Int_), State.NumberException);
+            /* 1469 */
+            Dictionary.Add(('m', State.Int_), State.NumberException);
+            /* 1470 */
+            Dictionary.Add(('f', State.Int_), State.NumberException);
+            /* 1471 */
+            Dictionary.Add(('\\', State.Int_), State.NumberException);
+            /* 1472 */
+            Dictionary.Add(('n', State.Int_), State.NumberException);
+            /* 1473 */
+            Dictionary.Add(('0', State.ErrorInIdentifier), State.Indefinitely);
+            /* 1474 */
+            Dictionary.Add(('s', State.ErrorInIdentifier), State.Indefinitely);
+            /* 1475 */
+            Dictionary.Add(('=', State.ErrorInIdentifier), State.Indefinitely);
+            /* 1476 */
+            Dictionary.Add(('>', State.ErrorInIdentifier), State.Indefinitely);
+            /* 1477 */
+            Dictionary.Add(('<', State.ErrorInIdentifier), State.Indefinitely);
+            /* 1478 */
+            Dictionary.Add((',', State.ErrorInIdentifier), State.Indefinitely);
+            /* 1479 */
+            Dictionary.Add(('.', State.ErrorInIdentifier), State.Indefinitely);
+            /* 1480 */
+            Dictionary.Add(('"', State.ErrorInIdentifier), State.Indefinitely);
+            /* 1481 */
+            Dictionary.Add(('+', State.ErrorInIdentifier), State.Indefinitely);
+            /* 1482 */
+            Dictionary.Add(('-', State.ErrorInIdentifier), State.Indefinitely);
+            /* 1483 */
+            Dictionary.Add(('*', State.ErrorInIdentifier), State.Indefinitely);
+            /* 1484 */
+            Dictionary.Add(('^', State.ErrorInIdentifier), State.Indefinitely);
+            /* 1485 */
+            Dictionary.Add(('{', State.ErrorInIdentifier), State.Indefinitely);
+            /* 1486 */
+            Dictionary.Add(('}', State.ErrorInIdentifier), State.Indefinitely);
+            /* 1487 */
+            Dictionary.Add(('(', State.ErrorInIdentifier), State.Indefinitely);
+            /* 1488 */
+            Dictionary.Add((')', State.ErrorInIdentifier), State.Indefinitely);
+            /* 1489 */
+            Dictionary.Add(('[', State.ErrorInIdentifier), State.Indefinitely);
+            /* 1490 */
+            Dictionary.Add((']', State.ErrorInIdentifier), State.Indefinitely);
+            /* 1491 */
+            Dictionary.Add(('/', State.ErrorInIdentifier), State.Indefinitely);
+            /* 1492 */
+            Dictionary.Add(('&', State.ErrorInIdentifier), State.Indefinitely);
+            /* 1493 */
+            Dictionary.Add(('|', State.ErrorInIdentifier), State.Indefinitely);
+            /* 1494 */
+            Dictionary.Add(('\'', State.ErrorInIdentifier), State.Indefinitely);
+            /* 1495 */
+            Dictionary.Add(('!', State.ErrorInIdentifier), State.Indefinitely);
+            /* 1496 */
+            Dictionary.Add((';', State.ErrorInIdentifier), State.Indefinitely);
+            /* 1497 */
+            Dictionary.Add(('@', State.ErrorInIdentifier), State.Indefinitely);
+            /* 1498 */
+            Dictionary.Add(('_', State.ErrorInIdentifier), State.Indefinitely);
+            /* 1499 */
+            Dictionary.Add(('e', State.ErrorInIdentifier), State.Indefinitely);
+            /* 1500 */
+            Dictionary.Add(('d', State.ErrorInIdentifier), State.Indefinitely);
+            /* 1501 */
+            Dictionary.Add(('m', State.ErrorInIdentifier), State.Indefinitely);
+            /* 1502 */
+            Dictionary.Add(('f', State.ErrorInIdentifier), State.Indefinitely);
+            /* 1503 */
+            Dictionary.Add(('\\', State.ErrorInIdentifier), State.Indefinitely);
+            /* 1504 */
+            Dictionary.Add(('n', State.ErrorInIdentifier), State.Indefinitely);
+            /* 1505 */
+            Dictionary.Add(('0', State.NumberException), State.Indefinitely);
+            /* 1506 */
+            Dictionary.Add(('s', State.NumberException), State.Indefinitely);
+            /* 1507 */
+            Dictionary.Add(('=', State.NumberException), State.Indefinitely);
+            /* 1508 */
+            Dictionary.Add(('>', State.NumberException), State.Indefinitely);
+            /* 1509 */
+            Dictionary.Add(('<', State.NumberException), State.Indefinitely);
+            /* 1510 */
+            Dictionary.Add((',', State.NumberException), State.Indefinitely);
+            /* 1511 */
+            Dictionary.Add(('.', State.NumberException), State.Indefinitely);
+            /* 1512 */
+            Dictionary.Add(('"', State.NumberException), State.Indefinitely);
+            /* 1513 */
+            Dictionary.Add(('+', State.NumberException), State.Indefinitely);
+            /* 1514 */
+            Dictionary.Add(('-', State.NumberException), State.Indefinitely);
+            /* 1515 */
+            Dictionary.Add(('*', State.NumberException), State.Indefinitely);
+            /* 1516 */
+            Dictionary.Add(('^', State.NumberException), State.Indefinitely);
+            /* 1517 */
+            Dictionary.Add(('{', State.NumberException), State.Indefinitely);
+            /* 1518 */
+            Dictionary.Add(('}', State.NumberException), State.Indefinitely);
+            /* 1519 */
+            Dictionary.Add(('(', State.NumberException), State.Indefinitely);
+            /* 1520 */
+            Dictionary.Add((')', State.NumberException), State.Indefinitely);
+            /* 1521 */
+            Dictionary.Add(('[', State.NumberException), State.Indefinitely);
+            /* 1522 */
+            Dictionary.Add((']', State.NumberException), State.Indefinitely);
+            /* 1523 */
+            Dictionary.Add(('/', State.NumberException), State.Indefinitely);
+            /* 1524 */
+            Dictionary.Add(('&', State.NumberException), State.Indefinitely);
+            /* 1525 */
+            Dictionary.Add(('|', State.NumberException), State.Indefinitely);
+            /* 1526 */
+            Dictionary.Add(('\'', State.NumberException), State.Indefinitely);
+            /* 1527 */
+            Dictionary.Add(('!', State.NumberException), State.Indefinitely);
+            /* 1528 */
+            Dictionary.Add((';', State.NumberException), State.Indefinitely);
+            /* 1529 */
+            Dictionary.Add(('@', State.NumberException), State.Indefinitely);
+            /* 1530 */
+            Dictionary.Add(('_', State.NumberException), State.Indefinitely);
+            /* 1531 */
+            Dictionary.Add(('e', State.NumberException), State.Indefinitely);
+            /* 1532 */
+            Dictionary.Add(('d', State.NumberException), State.Indefinitely);
+            /* 1533 */
+            Dictionary.Add(('m', State.NumberException), State.Indefinitely);
+            /* 1534 */
+            Dictionary.Add(('f', State.NumberException), State.Indefinitely);
+            /* 1535 */
+            Dictionary.Add(('\\', State.NumberException), State.Indefinitely);
+            /* 1536 */
+            Dictionary.Add(('n', State.NumberException), State.Indefinitely);
+            /* 1537 */
+            Dictionary.Add(('0', State.Double_), State.Double);
+            /* 1538 */
+            Dictionary.Add(('s', State.Double_), State.NumberException);
+            /* 1539 */
+            Dictionary.Add(('=', State.Double_), State.NumberException);
+            /* 1540 */
+            Dictionary.Add(('>', State.Double_), State.NumberException);
+            /* 1541 */
+            Dictionary.Add(('<', State.Double_), State.NumberException);
+            /* 1542 */
+            Dictionary.Add((',', State.Double_), State.NumberException);
+            /* 1543 */
+            Dictionary.Add(('.', State.Double_), State.NumberException);
+            /* 1544 */
+            Dictionary.Add(('"', State.Double_), State.NumberException);
+            /* 1545 */
+            Dictionary.Add(('+', State.Double_), State.NumberException);
+            /* 1546 */
+            Dictionary.Add(('-', State.Double_), State.NumberException);
+            /* 1547 */
+            Dictionary.Add(('*', State.Double_), State.NumberException);
+            /* 1548 */
+            Dictionary.Add(('^', State.Double_), State.NumberException);
+            /* 1549 */
+            Dictionary.Add(('{', State.Double_), State.NumberException);
+            /* 1550 */
+            Dictionary.Add(('}', State.Double_), State.NumberException);
+            /* 1551 */
+            Dictionary.Add(('(', State.Double_), State.NumberException);
+            /* 1552 */
+            Dictionary.Add((')', State.Double_), State.NumberException);
+            /* 1553 */
+            Dictionary.Add(('[', State.Double_), State.NumberException);
+            /* 1554 */
+            Dictionary.Add((']', State.Double_), State.NumberException);
+            /* 1555 */
+            Dictionary.Add(('/', State.Double_), State.NumberException);
+            /* 1556 */
+            Dictionary.Add(('&', State.Double_), State.NumberException);
+            /* 1557 */
+            Dictionary.Add(('|', State.Double_), State.NumberException);
+            /* 1558 */
+            Dictionary.Add(('\'', State.Double_), State.NumberException);
+            /* 1559 */
+            Dictionary.Add(('!', State.Double_), State.NumberException);
+            /* 1560 */
+            Dictionary.Add((';', State.Double_), State.NumberException);
+            /* 1561 */
+            Dictionary.Add(('@', State.Double_), State.NumberException);
+            /* 1562 */
+            Dictionary.Add(('_', State.Double_), State.Double_);
+            /* 1563 */
+            Dictionary.Add(('e', State.Double_), State.NumberException);
+            /* 1564 */
+            Dictionary.Add(('d', State.Double_), State.NumberException);
+            /* 1565 */
+            Dictionary.Add(('m', State.Double_), State.NumberException);
+            /* 1566 */
+            Dictionary.Add(('f', State.Double_), State.NumberException);
+            /* 1567 */
+            Dictionary.Add(('\\', State.Double_), State.NumberException);
+            /* 1568 */
+            Dictionary.Add(('n', State.Double_), State.NumberException);
+            /* 1569 */
+            Dictionary.Add(('0', State.ExponentaDouble), State.ExponentaIntNumberToDouble);
+            /* 1570 */
+            Dictionary.Add(('s', State.ExponentaDouble), State.NumberException);
+            /* 1571 */
+            Dictionary.Add(('=', State.ExponentaDouble), State.NumberException);
+            /* 1572 */
+            Dictionary.Add(('>', State.ExponentaDouble), State.NumberException);
+            /* 1573 */
+            Dictionary.Add(('<', State.ExponentaDouble), State.NumberException);
+            /* 1574 */
+            Dictionary.Add((',', State.ExponentaDouble), State.NumberException);
+            /* 1575 */
+            Dictionary.Add(('.', State.ExponentaDouble), State.NumberException);
+            /* 1576 */
+            Dictionary.Add(('"', State.ExponentaDouble), State.NumberException);
+            /* 1577 */
+            Dictionary.Add(('+', State.ExponentaDouble), State.ExponentaIntPlus);
+            /* 1578 */
+            Dictionary.Add(('-', State.ExponentaDouble), State.ExponentaIntMinus);
+            /* 1579 */
+            Dictionary.Add(('*', State.ExponentaDouble), State.NumberException);
+            /* 1580 */
+            Dictionary.Add(('^', State.ExponentaDouble), State.NumberException);
+            /* 1581 */
+            Dictionary.Add(('{', State.ExponentaDouble), State.NumberException);
+            /* 1582 */
+            Dictionary.Add(('}', State.ExponentaDouble), State.NumberException);
+            /* 1583 */
+            Dictionary.Add(('(', State.ExponentaDouble), State.NumberException);
+            /* 1584 */
+            Dictionary.Add((')', State.ExponentaDouble), State.NumberException);
+            /* 1585 */
+            Dictionary.Add(('[', State.ExponentaDouble), State.NumberException);
+            /* 1586 */
+            Dictionary.Add((']', State.ExponentaDouble), State.NumberException);
+            /* 1587 */
+            Dictionary.Add(('/', State.ExponentaDouble), State.NumberException);
+            /* 1588 */
+            Dictionary.Add(('&', State.ExponentaDouble), State.NumberException);
+            /* 1589 */
+            Dictionary.Add(('|', State.ExponentaDouble), State.NumberException);
+            /* 1590 */
+            Dictionary.Add(('\'', State.ExponentaDouble), State.NumberException);
+            /* 1591 */
+            Dictionary.Add(('!', State.ExponentaDouble), State.NumberException);
+            /* 1592 */
+            Dictionary.Add((';', State.ExponentaDouble), State.NumberException);
+            /* 1593 */
+            Dictionary.Add(('@', State.ExponentaDouble), State.NumberException);
+            /* 1594 */
+            Dictionary.Add(('_', State.ExponentaDouble), State.NumberException);
+            /* 1595 */
+            Dictionary.Add(('e', State.ExponentaDouble), State.NumberException);
+            /* 1596 */
+            Dictionary.Add(('d', State.ExponentaDouble), State.NumberException);
+            /* 1597 */
+            Dictionary.Add(('m', State.ExponentaDouble), State.NumberException);
+            /* 1598 */
+            Dictionary.Add(('f', State.ExponentaDouble), State.NumberException);
+            /* 1599 */
+            Dictionary.Add(('\\', State.ExponentaDouble), State.NumberException);
+            /* 1600 */
+            Dictionary.Add(('n', State.ExponentaDouble), State.NumberException);
+            /* 1601 */
+            Dictionary.Add(('0', State.DoubleToDouble), State.NumberException);
+            /* 1602 */
+            Dictionary.Add(('s', State.DoubleToDouble), State.NumberException);
+            /* 1603 */
+            Dictionary.Add(('=', State.DoubleToDouble), State.Indefinitely);
+            /* 1604 */
+            Dictionary.Add(('>', State.DoubleToDouble), State.Indefinitely);
+            /* 1605 */
+            Dictionary.Add(('<', State.DoubleToDouble), State.Indefinitely);
+            /* 1606 */
+            Dictionary.Add((',', State.DoubleToDouble), State.Indefinitely);
+            /* 1607 */
+            Dictionary.Add(('.', State.DoubleToDouble), State.DoublePoint);
+            /* 1608 */
+            Dictionary.Add(('"', State.DoubleToDouble), State.Indefinitely);
+            /* 1609 */
+            Dictionary.Add(('+', State.DoubleToDouble), State.Indefinitely);
+            /* 1610 */
+            Dictionary.Add(('-', State.DoubleToDouble), State.Indefinitely);
+            /* 1611 */
+            Dictionary.Add(('*', State.DoubleToDouble), State.Indefinitely);
+            /* 1612 */
+            Dictionary.Add(('^', State.DoubleToDouble), State.Indefinitely);
+            /* 1613 */
+            Dictionary.Add(('{', State.DoubleToDouble), State.Indefinitely);
+            /* 1614 */
+            Dictionary.Add(('}', State.DoubleToDouble), State.Indefinitely);
+            /* 1615 */
+            Dictionary.Add(('(', State.DoubleToDouble), State.Indefinitely);
+            /* 1616 */
+            Dictionary.Add((')', State.DoubleToDouble), State.Indefinitely);
+            /* 1617 */
+            Dictionary.Add(('[', State.DoubleToDouble), State.Indefinitely);
+            /* 1618 */
+            Dictionary.Add((']', State.DoubleToDouble), State.Indefinitely);
+            /* 1619 */
+            Dictionary.Add(('/', State.DoubleToDouble), State.Indefinitely);
+            /* 1620 */
+            Dictionary.Add(('&', State.DoubleToDouble), State.Indefinitely);
+            /* 1621 */
+            Dictionary.Add(('|', State.DoubleToDouble), State.Indefinitely);
+            /* 1622 */
+            Dictionary.Add(('\'', State.DoubleToDouble), State.Indefinitely);
+            /* 1623 */
+            Dictionary.Add(('!', State.DoubleToDouble), State.Indefinitely);
+            /* 1624 */
+            Dictionary.Add((';', State.DoubleToDouble), State.Indefinitely);
+            /* 1625 */
+            Dictionary.Add(('@', State.DoubleToDouble), State.Indefinitely);
+            /* 1626 */
+            Dictionary.Add(('_', State.DoubleToDouble), State.Indefinitely);
+            /* 1627 */
+            Dictionary.Add(('e', State.DoubleToDouble), State.Indefinitely);
+            /* 1628 */
+            Dictionary.Add(('d', State.DoubleToDouble), State.Indefinitely);
+            /* 1629 */
+            Dictionary.Add(('m', State.DoubleToDouble), State.Indefinitely);
+            /* 1630 */
+            Dictionary.Add(('f', State.DoubleToDouble), State.Indefinitely);
+            /* 1631 */
+            Dictionary.Add(('\\', State.DoubleToDouble), State.Indefinitely);
+            /* 1632 */
+            Dictionary.Add(('n', State.DoubleToDouble), State.Indefinitely);
+            /* 1633 */
+            Dictionary.Add(('0', State.DoubleToDecimal), State.NumberException);
+            /* 1634 */
+            Dictionary.Add(('s', State.DoubleToDecimal), State.NumberException);
+            /* 1635 */
+            Dictionary.Add(('=', State.DoubleToDecimal), State.Indefinitely);
+            /* 1636 */
+            Dictionary.Add(('>', State.DoubleToDecimal), State.Indefinitely);
+            /* 1637 */
+            Dictionary.Add(('<', State.DoubleToDecimal), State.Indefinitely);
+            /* 1638 */
+            Dictionary.Add((',', State.DoubleToDecimal), State.Indefinitely);
+            /* 1639 */
+            Dictionary.Add(('.', State.DoubleToDecimal), State.DoublePoint);
+            /* 1640 */
+            Dictionary.Add(('"', State.DoubleToDecimal), State.Indefinitely);
+            /* 1641 */
+            Dictionary.Add(('+', State.DoubleToDecimal), State.Indefinitely);
+            /* 1642 */
+            Dictionary.Add(('-', State.DoubleToDecimal), State.Indefinitely);
+            /* 1643 */
+            Dictionary.Add(('*', State.DoubleToDecimal), State.Indefinitely);
+            /* 1644 */
+            Dictionary.Add(('^', State.DoubleToDecimal), State.Indefinitely);
+            /* 1645 */
+            Dictionary.Add(('{', State.DoubleToDecimal), State.Indefinitely);
+            /* 1646 */
+            Dictionary.Add(('}', State.DoubleToDecimal), State.Indefinitely);
+            /* 1647 */
+            Dictionary.Add(('(', State.DoubleToDecimal), State.Indefinitely);
+            /* 1648 */
+            Dictionary.Add((')', State.DoubleToDecimal), State.Indefinitely);
+            /* 1649 */
+            Dictionary.Add(('[', State.DoubleToDecimal), State.Indefinitely);
+            /* 1650 */
+            Dictionary.Add((']', State.DoubleToDecimal), State.Indefinitely);
+            /* 1651 */
+            Dictionary.Add(('/', State.DoubleToDecimal), State.Indefinitely);
+            /* 1652 */
+            Dictionary.Add(('&', State.DoubleToDecimal), State.Indefinitely);
+            /* 1653 */
+            Dictionary.Add(('|', State.DoubleToDecimal), State.Indefinitely);
+            /* 1654 */
+            Dictionary.Add(('\'', State.DoubleToDecimal), State.Indefinitely);
+            /* 1655 */
+            Dictionary.Add(('!', State.DoubleToDecimal), State.Indefinitely);
+            /* 1656 */
+            Dictionary.Add((';', State.DoubleToDecimal), State.Indefinitely);
+            /* 1657 */
+            Dictionary.Add(('@', State.DoubleToDecimal), State.Indefinitely);
+            /* 1658 */
+            Dictionary.Add(('_', State.DoubleToDecimal), State.Indefinitely);
+            /* 1659 */
+            Dictionary.Add(('e', State.DoubleToDecimal), State.Indefinitely);
+            /* 1660 */
+            Dictionary.Add(('d', State.DoubleToDecimal), State.Indefinitely);
+            /* 1661 */
+            Dictionary.Add(('m', State.DoubleToDecimal), State.Indefinitely);
+            /* 1662 */
+            Dictionary.Add(('f', State.DoubleToDecimal), State.Indefinitely);
+            /* 1663 */
+            Dictionary.Add(('\\', State.DoubleToDecimal), State.Indefinitely);
+            /* 1664 */
+            Dictionary.Add(('n', State.DoubleToDecimal), State.Indefinitely);
+            /* 1665 */
+            Dictionary.Add(('0', State.DoubleToFloat), State.NumberException);
+            /* 1666 */
+            Dictionary.Add(('s', State.DoubleToFloat), State.NumberException);
+            /* 1667 */
+            Dictionary.Add(('=', State.DoubleToFloat), State.Indefinitely);
+            /* 1668 */
+            Dictionary.Add(('>', State.DoubleToFloat), State.Indefinitely);
+            /* 1669 */
+            Dictionary.Add(('<', State.DoubleToFloat), State.Indefinitely);
+            /* 1670 */
+            Dictionary.Add((',', State.DoubleToFloat), State.Indefinitely);
+            /* 1671 */
+            Dictionary.Add(('.', State.DoubleToFloat), State.DoublePoint);
+            /* 1672 */
+            Dictionary.Add(('"', State.DoubleToFloat), State.Indefinitely);
+            /* 1673 */
+            Dictionary.Add(('+', State.DoubleToFloat), State.Indefinitely);
+            /* 1674 */
+            Dictionary.Add(('-', State.DoubleToFloat), State.Indefinitely);
+            /* 1675 */
+            Dictionary.Add(('*', State.DoubleToFloat), State.Indefinitely);
+            /* 1676 */
+            Dictionary.Add(('^', State.DoubleToFloat), State.Indefinitely);
+            /* 1677 */
+            Dictionary.Add(('{', State.DoubleToFloat), State.Indefinitely);
+            /* 1678 */
+            Dictionary.Add(('}', State.DoubleToFloat), State.Indefinitely);
+            /* 1679 */
+            Dictionary.Add(('(', State.DoubleToFloat), State.Indefinitely);
+            /* 1680 */
+            Dictionary.Add((')', State.DoubleToFloat), State.Indefinitely);
+            /* 1681 */
+            Dictionary.Add(('[', State.DoubleToFloat), State.Indefinitely);
+            /* 1682 */
+            Dictionary.Add((']', State.DoubleToFloat), State.Indefinitely);
+            /* 1683 */
+            Dictionary.Add(('/', State.DoubleToFloat), State.Indefinitely);
+            /* 1684 */
+            Dictionary.Add(('&', State.DoubleToFloat), State.Indefinitely);
+            /* 1685 */
+            Dictionary.Add(('|', State.DoubleToFloat), State.Indefinitely);
+            /* 1686 */
+            Dictionary.Add(('\'', State.DoubleToFloat), State.Indefinitely);
+            /* 1687 */
+            Dictionary.Add(('!', State.DoubleToFloat), State.Indefinitely);
+            /* 1688 */
+            Dictionary.Add((';', State.DoubleToFloat), State.Indefinitely);
+            /* 1689 */
+            Dictionary.Add(('@', State.DoubleToFloat), State.Indefinitely);
+            /* 1690 */
+            Dictionary.Add(('_', State.DoubleToFloat), State.Indefinitely);
+            /* 1691 */
+            Dictionary.Add(('e', State.DoubleToFloat), State.Indefinitely);
+            /* 1692 */
+            Dictionary.Add(('d', State.DoubleToFloat), State.Indefinitely);
+            /* 1693 */
+            Dictionary.Add(('m', State.DoubleToFloat), State.Indefinitely);
+            /* 1694 */
+            Dictionary.Add(('f', State.DoubleToFloat), State.Indefinitely);
+            /* 1695 */
+            Dictionary.Add(('\\', State.DoubleToFloat), State.Indefinitely);
+            /* 1696 */
+            Dictionary.Add(('n', State.DoubleToFloat), State.Indefinitely);
+            /* 1697 */
+            Dictionary.Add(('0', State.DoublePoint), State.NumberException);
+            /* 1698 */
+            Dictionary.Add(('s', State.DoublePoint), State.Indefinitely);
+            /* 1699 */
+            Dictionary.Add(('=', State.DoublePoint), State.NumberException);
+            /* 1700 */
+            Dictionary.Add(('>', State.DoublePoint), State.NumberException);
+            /* 1701 */
+            Dictionary.Add(('<', State.DoublePoint), State.NumberException);
+            /* 1702 */
+            Dictionary.Add((',', State.DoublePoint), State.NumberException);
+            /* 1703 */
+            Dictionary.Add(('.', State.DoublePoint), State.NumberException);
+            /* 1704 */
+            Dictionary.Add(('"', State.DoublePoint), State.NumberException);
+            /* 1705 */
+            Dictionary.Add(('+', State.DoublePoint), State.NumberException);
+            /* 1706 */
+            Dictionary.Add(('-', State.DoublePoint), State.NumberException);
+            /* 1707 */
+            Dictionary.Add(('*', State.DoublePoint), State.NumberException);
+            /* 1708 */
+            Dictionary.Add(('^', State.DoublePoint), State.NumberException);
+            /* 1709 */
+            Dictionary.Add(('{', State.DoublePoint), State.NumberException);
+            /* 1710 */
+            Dictionary.Add(('}', State.DoublePoint), State.NumberException);
+            /* 1711 */
+            Dictionary.Add(('(', State.DoublePoint), State.NumberException);
+            /* 1712 */
+            Dictionary.Add((')', State.DoublePoint), State.NumberException);
+            /* 1713 */
+            Dictionary.Add(('[', State.DoublePoint), State.NumberException);
+            /* 1714 */
+            Dictionary.Add((']', State.DoublePoint), State.NumberException);
+            /* 1715 */
+            Dictionary.Add(('/', State.DoublePoint), State.NumberException);
+            /* 1716 */
+            Dictionary.Add(('&', State.DoublePoint), State.NumberException);
+            /* 1717 */
+            Dictionary.Add(('|', State.DoublePoint), State.NumberException);
+            /* 1718 */
+            Dictionary.Add(('\'', State.DoublePoint), State.NumberException);
+            /* 1719 */
+            Dictionary.Add(('!', State.DoublePoint), State.NumberException);
+            /* 1720 */
+            Dictionary.Add((';', State.DoublePoint), State.NumberException);
+            /* 1721 */
+            Dictionary.Add(('@', State.DoublePoint), State.NumberException);
+            /* 1722 */
+            Dictionary.Add(('_', State.DoublePoint), State.NumberException);
+            /* 1723 */
+            Dictionary.Add(('e', State.DoublePoint), State.NumberException);
+            /* 1724 */
+            Dictionary.Add(('d', State.DoublePoint), State.NumberException);
+            /* 1725 */
+            Dictionary.Add(('m', State.DoublePoint), State.NumberException);
+            /* 1726 */
+            Dictionary.Add(('f', State.DoublePoint), State.NumberException);
+            /* 1727 */
+            Dictionary.Add(('\\', State.DoublePoint), State.NumberException);
+            /* 1728 */
+            Dictionary.Add(('n', State.DoublePoint), State.NumberException);
+            /* 1729 */
+            Dictionary.Add(('0', State.ErrorInOperator), State.Indefinitely);
+            /* 1730 */
+            Dictionary.Add(('s', State.ErrorInOperator), State.Indefinitely);
+            /* 1731 */
+            Dictionary.Add(('=', State.ErrorInOperator), State.Indefinitely);
+            /* 1732 */
+            Dictionary.Add(('>', State.ErrorInOperator), State.Indefinitely);
+            /* 1733 */
+            Dictionary.Add(('<', State.ErrorInOperator), State.Indefinitely);
+            /* 1734 */
+            Dictionary.Add((',', State.ErrorInOperator), State.Indefinitely);
+            /* 1735 */
+            Dictionary.Add(('.', State.ErrorInOperator), State.Indefinitely);
+            /* 1736 */
+            Dictionary.Add(('"', State.ErrorInOperator), State.Indefinitely);
+            /* 1737 */
+            Dictionary.Add(('+', State.ErrorInOperator), State.Indefinitely);
+            /* 1738 */
+            Dictionary.Add(('-', State.ErrorInOperator), State.Indefinitely);
+            /* 1739 */
+            Dictionary.Add(('*', State.ErrorInOperator), State.Indefinitely);
+            /* 1740 */
+            Dictionary.Add(('^', State.ErrorInOperator), State.Indefinitely);
+            /* 1741 */
+            Dictionary.Add(('{', State.ErrorInOperator), State.Indefinitely);
+            /* 1742 */
+            Dictionary.Add(('}', State.ErrorInOperator), State.Indefinitely);
+            /* 1743 */
+            Dictionary.Add(('(', State.ErrorInOperator), State.Indefinitely);
+            /* 1744 */
+            Dictionary.Add((')', State.ErrorInOperator), State.Indefinitely);
+            /* 1745 */
+            Dictionary.Add(('[', State.ErrorInOperator), State.Indefinitely);
+            /* 1746 */
+            Dictionary.Add((']', State.ErrorInOperator), State.Indefinitely);
+            /* 1747 */
+            Dictionary.Add(('/', State.ErrorInOperator), State.Indefinitely);
+            /* 1748 */
+            Dictionary.Add(('&', State.ErrorInOperator), State.Indefinitely);
+            /* 1749 */
+            Dictionary.Add(('|', State.ErrorInOperator), State.Indefinitely);
+            /* 1750 */
+            Dictionary.Add(('\'', State.ErrorInOperator), State.Indefinitely);
+            /* 1751 */
+            Dictionary.Add(('!', State.ErrorInOperator), State.Indefinitely);
+            /* 1752 */
+            Dictionary.Add((';', State.ErrorInOperator), State.Indefinitely);
+            /* 1753 */
+            Dictionary.Add(('@', State.ErrorInOperator), State.Indefinitely);
+            /* 1754 */
+            Dictionary.Add(('_', State.ErrorInOperator), State.Indefinitely);
+            /* 1755 */
+            Dictionary.Add(('e', State.ErrorInOperator), State.Indefinitely);
+            /* 1756 */
+            Dictionary.Add(('d', State.ErrorInOperator), State.Indefinitely);
+            /* 1757 */
+            Dictionary.Add(('m', State.ErrorInOperator), State.Indefinitely);
+            /* 1758 */
+            Dictionary.Add(('f', State.ErrorInOperator), State.Indefinitely);
+            /* 1759 */
+            Dictionary.Add(('\\', State.ErrorInOperator), State.Indefinitely);
+            /* 1760 */
+            Dictionary.Add(('n', State.ErrorInOperator), State.Indefinitely);
+            /* 1761 */
+            Dictionary.Add(('0', State.ErrorInEterator), State.Indefinitely);
+            /* 1762 */
+            Dictionary.Add(('s', State.ErrorInEterator), State.Indefinitely);
+            /* 1763 */
+            Dictionary.Add(('=', State.ErrorInEterator), State.Indefinitely);
+            /* 1764 */
+            Dictionary.Add(('>', State.ErrorInEterator), State.Indefinitely);
+            /* 1765 */
+            Dictionary.Add(('<', State.ErrorInEterator), State.Indefinitely);
+            /* 1766 */
+            Dictionary.Add((',', State.ErrorInEterator), State.Indefinitely);
+            /* 1767 */
+            Dictionary.Add(('.', State.ErrorInEterator), State.Indefinitely);
+            /* 1768 */
+            Dictionary.Add(('"', State.ErrorInEterator), State.Indefinitely);
+            /* 1769 */
+            Dictionary.Add(('+', State.ErrorInEterator), State.Indefinitely);
+            /* 1770 */
+            Dictionary.Add(('-', State.ErrorInEterator), State.Indefinitely);
+            /* 1771 */
+            Dictionary.Add(('*', State.ErrorInEterator), State.Indefinitely);
+            /* 1772 */
+            Dictionary.Add(('^', State.ErrorInEterator), State.Indefinitely);
+            /* 1773 */
+            Dictionary.Add(('{', State.ErrorInEterator), State.Indefinitely);
+            /* 1774 */
+            Dictionary.Add(('}', State.ErrorInEterator), State.Indefinitely);
+            /* 1775 */
+            Dictionary.Add(('(', State.ErrorInEterator), State.Indefinitely);
+            /* 1776 */
+            Dictionary.Add((')', State.ErrorInEterator), State.Indefinitely);
+            /* 1777 */
+            Dictionary.Add(('[', State.ErrorInEterator), State.Indefinitely);
+            /* 1778 */
+            Dictionary.Add((']', State.ErrorInEterator), State.Indefinitely);
+            /* 1779 */
+            Dictionary.Add(('/', State.ErrorInEterator), State.Indefinitely);
+            /* 1780 */
+            Dictionary.Add(('&', State.ErrorInEterator), State.Indefinitely);
+            /* 1781 */
+            Dictionary.Add(('|', State.ErrorInEterator), State.Indefinitely);
+            /* 1782 */
+            Dictionary.Add(('\'', State.ErrorInEterator), State.Indefinitely);
+            /* 1783 */
+            Dictionary.Add(('!', State.ErrorInEterator), State.Indefinitely);
+            /* 1784 */
+            Dictionary.Add((';', State.ErrorInEterator), State.Indefinitely);
+            /* 1785 */
+            Dictionary.Add(('@', State.ErrorInEterator), State.Indefinitely);
+            /* 1786 */
+            Dictionary.Add(('_', State.ErrorInEterator), State.Indefinitely);
+            /* 1787 */
+            Dictionary.Add(('e', State.ErrorInEterator), State.Indefinitely);
+            /* 1788 */
+            Dictionary.Add(('d', State.ErrorInEterator), State.Indefinitely);
+            /* 1789 */
+            Dictionary.Add(('m', State.ErrorInEterator), State.Indefinitely);
+            /* 1790 */
+            Dictionary.Add(('f', State.ErrorInEterator), State.Indefinitely);
+            /* 1791 */
+            Dictionary.Add(('\\', State.ErrorInEterator), State.Indefinitely);
+            /* 1792 */
+            Dictionary.Add(('n', State.ErrorInEterator), State.Indefinitely);
+            /* 1793 */
+            Dictionary.Add(('0', State.ErrorInLogicalExpression), State.Indefinitely);
+            /* 1794 */
+            Dictionary.Add(('s', State.ErrorInLogicalExpression), State.Indefinitely);
+            /* 1795 */
+            Dictionary.Add(('=', State.ErrorInLogicalExpression), State.Indefinitely);
+            /* 1796 */
+            Dictionary.Add(('>', State.ErrorInLogicalExpression), State.Indefinitely);
+            /* 1797 */
+            Dictionary.Add(('<', State.ErrorInLogicalExpression), State.Indefinitely);
+            /* 1798 */
+            Dictionary.Add((',', State.ErrorInLogicalExpression), State.Indefinitely);
+            /* 1799 */
+            Dictionary.Add(('.', State.ErrorInLogicalExpression), State.Indefinitely);
+            /* 1800 */
+            Dictionary.Add(('"', State.ErrorInLogicalExpression), State.Indefinitely);
+            /* 1801 */
+            Dictionary.Add(('+', State.ErrorInLogicalExpression), State.Indefinitely);
+            /* 1802 */
+            Dictionary.Add(('-', State.ErrorInLogicalExpression), State.Indefinitely);
+            /* 1803 */
+            Dictionary.Add(('*', State.ErrorInLogicalExpression), State.Indefinitely);
+            /* 1804 */
+            Dictionary.Add(('^', State.ErrorInLogicalExpression), State.Indefinitely);
+            /* 1805 */
+            Dictionary.Add(('{', State.ErrorInLogicalExpression), State.Indefinitely);
+            /* 1806 */
+            Dictionary.Add(('}', State.ErrorInLogicalExpression), State.Indefinitely);
+            /* 1807 */
+            Dictionary.Add(('(', State.ErrorInLogicalExpression), State.Indefinitely);
+            /* 1808 */
+            Dictionary.Add((')', State.ErrorInLogicalExpression), State.Indefinitely);
+            /* 1809 */
+            Dictionary.Add(('[', State.ErrorInLogicalExpression), State.Indefinitely);
+            /* 1810 */
+            Dictionary.Add((']', State.ErrorInLogicalExpression), State.Indefinitely);
+            /* 1811 */
+            Dictionary.Add(('/', State.ErrorInLogicalExpression), State.Indefinitely);
+            /* 1812 */
+            Dictionary.Add(('&', State.ErrorInLogicalExpression), State.Indefinitely);
+            /* 1813 */
+            Dictionary.Add(('|', State.ErrorInLogicalExpression), State.Indefinitely);
+            /* 1814 */
+            Dictionary.Add(('\'', State.ErrorInLogicalExpression), State.Indefinitely);
+            /* 1815 */
+            Dictionary.Add(('!', State.ErrorInLogicalExpression), State.Indefinitely);
+            /* 1816 */
+            Dictionary.Add((';', State.ErrorInLogicalExpression), State.Indefinitely);
+            /* 1817 */
+            Dictionary.Add(('@', State.ErrorInLogicalExpression), State.Indefinitely);
+            /* 1818 */
+            Dictionary.Add(('_', State.ErrorInLogicalExpression), State.Indefinitely);
+            /* 1819 */
+            Dictionary.Add(('e', State.ErrorInLogicalExpression), State.Indefinitely);
+            /* 1820 */
+            Dictionary.Add(('d', State.ErrorInLogicalExpression), State.Indefinitely);
+            /* 1821 */
+            Dictionary.Add(('m', State.ErrorInLogicalExpression), State.Indefinitely);
+            /* 1822 */
+            Dictionary.Add(('f', State.ErrorInLogicalExpression), State.Indefinitely);
+            /* 1823 */
+            Dictionary.Add(('\\', State.ErrorInLogicalExpression), State.Indefinitely);
+            /* 1824 */
+            Dictionary.Add(('n', State.ErrorInLogicalExpression), State.Indefinitely);
+            /* 1825 */
+            Dictionary.Add(('0', State.FinishMultipleComment), State.Indefinitely);
+            /* 1826 */
+            Dictionary.Add(('s', State.FinishMultipleComment), State.Indefinitely);
+            /* 1827 */
+            Dictionary.Add(('=', State.FinishMultipleComment), State.Indefinitely);
+            /* 1828 */
+            Dictionary.Add(('>', State.FinishMultipleComment), State.Indefinitely);
+            /* 1829 */
+            Dictionary.Add(('<', State.FinishMultipleComment), State.Indefinitely);
+            /* 1830 */
+            Dictionary.Add((',', State.FinishMultipleComment), State.Indefinitely);
+            /* 1831 */
+            Dictionary.Add(('.', State.FinishMultipleComment), State.Indefinitely);
+            /* 1832 */
+            Dictionary.Add(('"', State.FinishMultipleComment), State.Indefinitely);
+            /* 1833 */
+            Dictionary.Add(('+', State.FinishMultipleComment), State.Indefinitely);
+            /* 1834 */
+            Dictionary.Add(('-', State.FinishMultipleComment), State.Indefinitely);
+            /* 1835 */
+            Dictionary.Add(('*', State.FinishMultipleComment), State.Indefinitely);
+            /* 1836 */
+            Dictionary.Add(('^', State.FinishMultipleComment), State.Indefinitely);
+            /* 1837 */
+            Dictionary.Add(('{', State.FinishMultipleComment), State.Indefinitely);
+            /* 1838 */
+            Dictionary.Add(('}', State.FinishMultipleComment), State.Indefinitely);
+            /* 1839 */
+            Dictionary.Add(('(', State.FinishMultipleComment), State.Indefinitely);
+            /* 1840 */
+            Dictionary.Add((')', State.FinishMultipleComment), State.Indefinitely);
+            /* 1841 */
+            Dictionary.Add(('[', State.FinishMultipleComment), State.Indefinitely);
+            /* 1842 */
+            Dictionary.Add((']', State.FinishMultipleComment), State.Indefinitely);
+            /* 1843 */
+            Dictionary.Add(('/', State.FinishMultipleComment), State.Indefinitely);
+            /* 1844 */
+            Dictionary.Add(('&', State.FinishMultipleComment), State.Indefinitely);
+            /* 1845 */
+            Dictionary.Add(('|', State.FinishMultipleComment), State.Indefinitely);
+            /* 1846 */
+            Dictionary.Add(('\'', State.FinishMultipleComment), State.Indefinitely);
+            /* 1847 */
+            Dictionary.Add(('!', State.FinishMultipleComment), State.Indefinitely);
+            /* 1848 */
+            Dictionary.Add((';', State.FinishMultipleComment), State.Indefinitely);
+            /* 1849 */
+            Dictionary.Add(('@', State.FinishMultipleComment), State.Indefinitely);
+            /* 1850 */
+            Dictionary.Add(('_', State.FinishMultipleComment), State.Indefinitely);
+            /* 1851 */
+            Dictionary.Add(('e', State.FinishMultipleComment), State.Indefinitely);
+            /* 1852 */
+            Dictionary.Add(('d', State.FinishMultipleComment), State.Indefinitely);
+            /* 1853 */
+            Dictionary.Add(('m', State.FinishMultipleComment), State.Indefinitely);
+            /* 1854 */
+            Dictionary.Add(('f', State.FinishMultipleComment), State.Indefinitely);
+            /* 1855 */
+            Dictionary.Add(('\\', State.FinishMultipleComment), State.Indefinitely);
+            /* 1856 */
+            Dictionary.Add(('n', State.FinishMultipleComment), State.Indefinitely);
+            /* 1857 */
+            Dictionary.Add(('0', State.CharException), State.Indefinitely);
+            /* 1858 */
+            Dictionary.Add(('s', State.CharException), State.Indefinitely);
+            /* 1859 */
+            Dictionary.Add(('=', State.CharException), State.Indefinitely);
+            /* 1860 */
+            Dictionary.Add(('>', State.CharException), State.Indefinitely);
+            /* 1861 */
+            Dictionary.Add(('<', State.CharException), State.Indefinitely);
+            /* 1862 */
+            Dictionary.Add((',', State.CharException), State.Indefinitely);
+            /* 1863 */
+            Dictionary.Add(('.', State.CharException), State.Indefinitely);
+            /* 1864 */
+            Dictionary.Add(('"', State.CharException), State.Indefinitely);
+            /* 1865 */
+            Dictionary.Add(('+', State.CharException), State.Indefinitely);
+            /* 1866 */
+            Dictionary.Add(('-', State.CharException), State.Indefinitely);
+            /* 1867 */
+            Dictionary.Add(('*', State.CharException), State.Indefinitely);
+            /* 1868 */
+            Dictionary.Add(('^', State.CharException), State.Indefinitely);
+            /* 1869 */
+            Dictionary.Add(('{', State.CharException), State.Indefinitely);
+            /* 1870 */
+            Dictionary.Add(('}', State.CharException), State.Indefinitely);
+            /* 1871 */
+            Dictionary.Add(('(', State.CharException), State.Indefinitely);
+            /* 1872 */
+            Dictionary.Add((')', State.CharException), State.Indefinitely);
+            /* 1873 */
+            Dictionary.Add(('[', State.CharException), State.Indefinitely);
+            /* 1874 */
+            Dictionary.Add((']', State.CharException), State.Indefinitely);
+            /* 1875 */
+            Dictionary.Add(('/', State.CharException), State.Indefinitely);
+            /* 1876 */
+            Dictionary.Add(('&', State.CharException), State.Indefinitely);
+            /* 1877 */
+            Dictionary.Add(('|', State.CharException), State.Indefinitely);
+            /* 1878 */
+            Dictionary.Add(('\'', State.CharException), State.Indefinitely);
+            /* 1879 */
+            Dictionary.Add(('!', State.CharException), State.Indefinitely);
+            /* 1880 */
+            Dictionary.Add((';', State.CharException), State.Indefinitely);
+            /* 1881 */
+            Dictionary.Add(('@', State.CharException), State.Indefinitely);
+            /* 1882 */
+            Dictionary.Add(('_', State.CharException), State.Indefinitely);
+            /* 1883 */
+            Dictionary.Add(('e', State.CharException), State.Indefinitely);
+            /* 1884 */
+            Dictionary.Add(('d', State.CharException), State.Indefinitely);
+            /* 1885 */
+            Dictionary.Add(('m', State.CharException), State.Indefinitely);
+            /* 1886 */
+            Dictionary.Add(('f', State.CharException), State.Indefinitely);
+            /* 1887 */
+            Dictionary.Add(('\\', State.CharException), State.Indefinitely);
+            /* 1888 */
+            Dictionary.Add(('n', State.CharException), State.Indefinitely);
+            /* 1889 */
+            Dictionary.Add(('0', State.CharWithBackSlash), State.CharException);
+            /* 1890 */
+            Dictionary.Add(('s', State.CharWithBackSlash), State.CharException);
+            /* 1891 */
+            Dictionary.Add(('=', State.CharWithBackSlash), State.CharException);
+            /* 1892 */
+            Dictionary.Add(('>', State.CharWithBackSlash), State.CharException);
+            /* 1893 */
+            Dictionary.Add(('<', State.CharWithBackSlash), State.CharException);
+            /* 1894 */
+            Dictionary.Add((',', State.CharWithBackSlash), State.CharException);
+            /* 1895 */
+            Dictionary.Add(('.', State.CharWithBackSlash), State.CharException);
+            /* 1896 */
+            Dictionary.Add(('"', State.CharWithBackSlash), State.HalfChar);
+            /* 1897 */
+            Dictionary.Add(('+', State.CharWithBackSlash), State.CharException);
+            /* 1898 */
+            Dictionary.Add(('-', State.CharWithBackSlash), State.CharException);
+            /* 1899 */
+            Dictionary.Add(('*', State.CharWithBackSlash), State.CharException);
+            /* 1900 */
+            Dictionary.Add(('^', State.CharWithBackSlash), State.CharException);
+            /* 1901 */
+            Dictionary.Add(('{', State.CharWithBackSlash), State.CharException);
+            /* 1902 */
+            Dictionary.Add(('}', State.CharWithBackSlash), State.CharException);
+            /* 1903 */
+            Dictionary.Add(('(', State.CharWithBackSlash), State.CharException);
+            /* 1904 */
+            Dictionary.Add((')', State.CharWithBackSlash), State.CharException);
+            /* 1905 */
+            Dictionary.Add(('[', State.CharWithBackSlash), State.CharException);
+            /* 1906 */
+            Dictionary.Add((']', State.CharWithBackSlash), State.CharException);
+            /* 1907 */
+            Dictionary.Add(('/', State.CharWithBackSlash), State.CharException);
+            /* 1908 */
+            Dictionary.Add(('&', State.CharWithBackSlash), State.CharException);
+            /* 1909 */
+            Dictionary.Add(('|', State.CharWithBackSlash), State.CharException);
+            /* 1910 */
+            Dictionary.Add(('\'', State.CharWithBackSlash), State.HalfChar);
+            /* 1911 */
+            Dictionary.Add(('!', State.CharWithBackSlash), State.CharException);
+            /* 1912 */
+            Dictionary.Add((';', State.CharWithBackSlash), State.CharException);
+            /* 1913 */
+            Dictionary.Add(('@', State.CharWithBackSlash), State.CharException);
+            /* 1914 */
+            Dictionary.Add(('_', State.CharWithBackSlash), State.CharException);
+            /* 1915 */
+            Dictionary.Add(('e', State.CharWithBackSlash), State.CharException);
+            /* 1916 */
+            Dictionary.Add(('d', State.CharWithBackSlash), State.CharException);
+            /* 1917 */
+            Dictionary.Add(('m', State.CharWithBackSlash), State.CharException);
+            /* 1918 */
+            Dictionary.Add(('f', State.CharWithBackSlash), State.CharException);
+            /* 1919 */
+            Dictionary.Add(('\\', State.CharWithBackSlash), State.HalfChar);
+            /* 1920 */
+            Dictionary.Add(('n', State.CharWithBackSlash), State.CharLineFowardHalf);
+            /* 1921 */
+            Dictionary.Add(('0', State.CharLineFowardHalf), State.CharException);
+            /* 1922 */
+            Dictionary.Add(('s', State.CharLineFowardHalf), State.CharException);
+            /* 1923 */
+            Dictionary.Add(('=', State.CharLineFowardHalf), State.CharException);
+            /* 1924 */
+            Dictionary.Add(('>', State.CharLineFowardHalf), State.CharException);
+            /* 1925 */
+            Dictionary.Add(('<', State.CharLineFowardHalf), State.CharException);
+            /* 1926 */
+            Dictionary.Add((',', State.CharLineFowardHalf), State.CharException);
+            /* 1927 */
+            Dictionary.Add(('.', State.CharLineFowardHalf), State.CharException);
+            /* 1928 */
+            Dictionary.Add(('"', State.CharLineFowardHalf), State.CharException);
+            /* 1929 */
+            Dictionary.Add(('+', State.CharLineFowardHalf), State.CharException);
+            /* 1930 */
+            Dictionary.Add(('-', State.CharLineFowardHalf), State.CharException);
+            /* 1931 */
+            Dictionary.Add(('*', State.CharLineFowardHalf), State.CharException);
+            /* 1932 */
+            Dictionary.Add(('^', State.CharLineFowardHalf), State.CharException);
+            /* 1933 */
+            Dictionary.Add(('{', State.CharLineFowardHalf), State.CharException);
+            /* 1934 */
+            Dictionary.Add(('}', State.CharLineFowardHalf), State.CharException);
+            /* 1935 */
+            Dictionary.Add(('(', State.CharLineFowardHalf), State.CharException);
+            /* 1936 */
+            Dictionary.Add((')', State.CharLineFowardHalf), State.CharException);
+            /* 1937 */
+            Dictionary.Add(('[', State.CharLineFowardHalf), State.CharException);
+            /* 1938 */
+            Dictionary.Add((']', State.CharLineFowardHalf), State.CharException);
+            /* 1939 */
+            Dictionary.Add(('/', State.CharLineFowardHalf), State.CharException);
+            /* 1940 */
+            Dictionary.Add(('&', State.CharLineFowardHalf), State.CharException);
+            /* 1941 */
+            Dictionary.Add(('|', State.CharLineFowardHalf), State.CharException);
+            /* 1942 */
+            Dictionary.Add(('\'', State.CharLineFowardHalf), State.CharLineFoward);
+            /* 1943 */
+            Dictionary.Add(('!', State.CharLineFowardHalf), State.CharException);
+            /* 1944 */
+            Dictionary.Add((';', State.CharLineFowardHalf), State.CharException);
+            /* 1945 */
+            Dictionary.Add(('@', State.CharLineFowardHalf), State.CharException);
+            /* 1946 */
+            Dictionary.Add(('_', State.CharLineFowardHalf), State.CharException);
+            /* 1947 */
+            Dictionary.Add(('e', State.CharLineFowardHalf), State.CharException);
+            /* 1948 */
+            Dictionary.Add(('d', State.CharLineFowardHalf), State.CharException);
+            /* 1949 */
+            Dictionary.Add(('m', State.CharLineFowardHalf), State.CharException);
+            /* 1950 */
+            Dictionary.Add(('f', State.CharLineFowardHalf), State.CharException);
+            /* 1951 */
+            Dictionary.Add(('\\', State.CharLineFowardHalf), State.CharException);
+            /* 1952 */
+            Dictionary.Add(('n', State.CharLineFowardHalf), State.CharException);
+            /* 1953 */
+            Dictionary.Add(('0', State.CharLineFoward), State.Indefinitely);
+            /* 1954 */
+            Dictionary.Add(('s', State.CharLineFoward), State.Indefinitely);
+            /* 1955 */
+            Dictionary.Add(('=', State.CharLineFoward), State.Indefinitely);
+            /* 1956 */
+            Dictionary.Add(('>', State.CharLineFoward), State.Indefinitely);
+            /* 1957 */
+            Dictionary.Add(('<', State.CharLineFoward), State.Indefinitely);
+            /* 1958 */
+            Dictionary.Add((',', State.CharLineFoward), State.Indefinitely);
+            /* 1959 */
+            Dictionary.Add(('.', State.CharLineFoward), State.Indefinitely);
+            /* 1960 */
+            Dictionary.Add(('"', State.CharLineFoward), State.Indefinitely);
+            /* 1961 */
+            Dictionary.Add(('+', State.CharLineFoward), State.Indefinitely);
+            /* 1962 */
+            Dictionary.Add(('-', State.CharLineFoward), State.Indefinitely);
+            /* 1963 */
+            Dictionary.Add(('*', State.CharLineFoward), State.Indefinitely);
+            /* 1964 */
+            Dictionary.Add(('^', State.CharLineFoward), State.Indefinitely);
+            /* 1965 */
+            Dictionary.Add(('{', State.CharLineFoward), State.Indefinitely);
+            /* 1966 */
+            Dictionary.Add(('}', State.CharLineFoward), State.Indefinitely);
+            /* 1967 */
+            Dictionary.Add(('(', State.CharLineFoward), State.Indefinitely);
+            /* 1968 */
+            Dictionary.Add((')', State.CharLineFoward), State.Indefinitely);
+            /* 1969 */
+            Dictionary.Add(('[', State.CharLineFoward), State.Indefinitely);
+            /* 1970 */
+            Dictionary.Add((']', State.CharLineFoward), State.Indefinitely);
+            /* 1971 */
+            Dictionary.Add(('/', State.CharLineFoward), State.Indefinitely);
+            /* 1972 */
+            Dictionary.Add(('&', State.CharLineFoward), State.Indefinitely);
+            /* 1973 */
+            Dictionary.Add(('|', State.CharLineFoward), State.Indefinitely);
+            /* 1974 */
+            Dictionary.Add(('\'', State.CharLineFoward), State.Indefinitely);
+            /* 1975 */
+            Dictionary.Add(('!', State.CharLineFoward), State.Indefinitely);
+            /* 1976 */
+            Dictionary.Add((';', State.CharLineFoward), State.Indefinitely);
+            /* 1977 */
+            Dictionary.Add(('@', State.CharLineFoward), State.Indefinitely);
+            /* 1978 */
+            Dictionary.Add(('_', State.CharLineFoward), State.Indefinitely);
+            /* 1979 */
+            Dictionary.Add(('e', State.CharLineFoward), State.Indefinitely);
+            /* 1980 */
+            Dictionary.Add(('d', State.CharLineFoward), State.Indefinitely);
+            /* 1981 */
+            Dictionary.Add(('m', State.CharLineFoward), State.Indefinitely);
+            /* 1982 */
+            Dictionary.Add(('f', State.CharLineFoward), State.Indefinitely);
+            /* 1983 */
+            Dictionary.Add(('\\', State.CharLineFoward), State.Indefinitely);
+            /* 1984 */
+            Dictionary.Add(('n', State.CharLineFoward), State.Indefinitely);
+            /* 1985 */
+            Dictionary.Add(('0', State.ShiftException), State.Indefinitely);
+            /* 1986 */
+            Dictionary.Add(('s', State.ShiftException), State.Indefinitely);
+            /* 1987 */
+            Dictionary.Add(('=', State.ShiftException), State.Indefinitely);
+            /* 1988 */
+            Dictionary.Add(('>', State.ShiftException), State.Indefinitely);
+            /* 1989 */
+            Dictionary.Add(('<', State.ShiftException), State.Indefinitely);
+            /* 1990 */
+            Dictionary.Add((',', State.ShiftException), State.Indefinitely);
+            /* 1991 */
+            Dictionary.Add(('.', State.ShiftException), State.Indefinitely);
+            /* 1992 */
+            Dictionary.Add(('"', State.ShiftException), State.Indefinitely);
+            /* 1993 */
+            Dictionary.Add(('+', State.ShiftException), State.Indefinitely);
+            /* 1994 */
+            Dictionary.Add(('-', State.ShiftException), State.Indefinitely);
+            /* 1995 */
+            Dictionary.Add(('*', State.ShiftException), State.Indefinitely);
+            /* 1996 */
+            Dictionary.Add(('^', State.ShiftException), State.Indefinitely);
+            /* 1997 */
+            Dictionary.Add(('{', State.ShiftException), State.Indefinitely);
+            /* 1998 */
+            Dictionary.Add(('}', State.ShiftException), State.Indefinitely);
+            /* 1999 */
+            Dictionary.Add(('(', State.ShiftException), State.Indefinitely);
+            /* 2000 */
+            Dictionary.Add((')', State.ShiftException), State.Indefinitely);
+            /* 2001 */
+            Dictionary.Add(('[', State.ShiftException), State.Indefinitely);
+            /* 2002 */
+            Dictionary.Add((']', State.ShiftException), State.Indefinitely);
+            /* 2003 */
+            Dictionary.Add(('/', State.ShiftException), State.Indefinitely);
+            /* 2004 */
+            Dictionary.Add(('&', State.ShiftException), State.Indefinitely);
+            /* 2005 */
+            Dictionary.Add(('|', State.ShiftException), State.Indefinitely);
+            /* 2006 */
+            Dictionary.Add(('\'', State.ShiftException), State.Indefinitely);
+            /* 2007 */
+            Dictionary.Add(('!', State.ShiftException), State.Indefinitely);
+            /* 2008 */
+            Dictionary.Add((';', State.ShiftException), State.Indefinitely);
+            /* 2009 */
+            Dictionary.Add(('@', State.ShiftException), State.Indefinitely);
+            /* 2010 */
+            Dictionary.Add(('_', State.ShiftException), State.Indefinitely);
+            /* 2011 */
+            Dictionary.Add(('e', State.ShiftException), State.Indefinitely);
+            /* 2012 */
+            Dictionary.Add(('d', State.ShiftException), State.Indefinitely);
+            /* 2013 */
+            Dictionary.Add(('m', State.ShiftException), State.Indefinitely);
+            /* 2014 */
+            Dictionary.Add(('f', State.ShiftException), State.Indefinitely);
+            /* 2015 */
+            Dictionary.Add(('\\', State.ShiftException), State.Indefinitely);
+            /* 2016 */
+            Dictionary.Add(('n', State.ShiftException), State.Indefinitely);
+            /* 2017 */
+            Dictionary.Add(('0', State.SpeekDog), State.SpeekDog);
+            /* 2017 */
+            Dictionary.Add((' ', State.SpeekDog), State.SpeekDog);
+            /* 2018 */
+            Dictionary.Add(('s', State.SpeekDog), State.SpeekDog);
+            /* 2019 */
+            Dictionary.Add(('=', State.SpeekDog), State.SpeekDog);
+            /* 2020 */
+            Dictionary.Add(('>', State.SpeekDog), State.SpeekDog);
+            /* 2021 */
+            Dictionary.Add(('<', State.SpeekDog), State.SpeekDog);
+            /* 2022 */
+            Dictionary.Add((',', State.SpeekDog), State.SpeekDog);
+            /* 2023 */
+            Dictionary.Add(('.', State.SpeekDog), State.SpeekDog);
+            /* 2024 */
+            Dictionary.Add(('"', State.SpeekDog), State.SleepDog);
+            /* 2025 */
+            Dictionary.Add(('+', State.SpeekDog), State.SpeekDog);
+            /* 2026 */
+            Dictionary.Add(('-', State.SpeekDog), State.SpeekDog);
+            /* 2027 */
+            Dictionary.Add(('*', State.SpeekDog), State.SpeekDog);
+            /* 2028 */
+            Dictionary.Add(('^', State.SpeekDog), State.SpeekDog);
+            /* 2029 */
+            Dictionary.Add(('{', State.SpeekDog), State.SpeekDog);
+            /* 2030 */
+            Dictionary.Add(('}', State.SpeekDog), State.SpeekDog);
+            /* 2031 */
+            Dictionary.Add(('(', State.SpeekDog), State.SpeekDog);
+            /* 2032 */
+            Dictionary.Add((')', State.SpeekDog), State.SpeekDog);
+            /* 2033 */
+            Dictionary.Add(('[', State.SpeekDog), State.SpeekDog);
+            /* 2034 */
+            Dictionary.Add((']', State.SpeekDog), State.SpeekDog);
+            /* 2035 */
+            Dictionary.Add(('/', State.SpeekDog), State.SpeekDog);
+            /* 2036 */
+            Dictionary.Add(('&', State.SpeekDog), State.SpeekDog);
+            /* 2037 */
+            Dictionary.Add(('|', State.SpeekDog), State.SpeekDog);
+            /* 2038 */
+            Dictionary.Add(('\'', State.SpeekDog), State.SpeekDog);
+            /* 2039 */
+            Dictionary.Add(('!', State.SpeekDog), State.SpeekDog);
+            /* 2040 */
+            Dictionary.Add((';', State.SpeekDog), State.SpeekDog);
+            /* 2041 */
+            Dictionary.Add(('@', State.SpeekDog), State.SpeekDog);
+            /* 2042 */
+            Dictionary.Add(('_', State.SpeekDog), State.SpeekDog);
+            /* 2043 */
+            Dictionary.Add(('e', State.SpeekDog), State.SpeekDog);
+            /* 2044 */
+            Dictionary.Add(('d', State.SpeekDog), State.SpeekDog);
+            /* 2045 */
+            Dictionary.Add(('m', State.SpeekDog), State.SpeekDog);
+            /* 2046 */
+            Dictionary.Add(('f', State.SpeekDog), State.SpeekDog);
+            /* 2047 */
+            Dictionary.Add(('\\', State.SpeekDog), State.SpeekDog);
+            /* 2048 */
+            Dictionary.Add(('n', State.SpeekDog), State.SpeekDog);
+            /* 2049 */
+            Dictionary.Add(('0', State.SleepDog), State.Indefinitely);
+            /* 2050 */
+            Dictionary.Add(('s', State.SleepDog), State.Indefinitely);
+            /* 2051 */
+            Dictionary.Add(('=', State.SleepDog), State.Indefinitely);
+            /* 2052 */
+            Dictionary.Add(('>', State.SleepDog), State.Indefinitely);
+            /* 2053 */
+            Dictionary.Add(('<', State.SleepDog), State.Indefinitely);
+            /* 2054 */
+            Dictionary.Add((',', State.SleepDog), State.Indefinitely);
+            /* 2055 */
+            Dictionary.Add(('.', State.SleepDog), State.Indefinitely);
+            /* 2056 */
+            Dictionary.Add(('"', State.SleepDog), State.Indefinitely);
+            /* 2057 */
+            Dictionary.Add(('+', State.SleepDog), State.Indefinitely);
+            /* 2058 */
+            Dictionary.Add(('-', State.SleepDog), State.Indefinitely);
+            /* 2059 */
+            Dictionary.Add(('*', State.SleepDog), State.Indefinitely);
+            /* 2060 */
+            Dictionary.Add(('^', State.SleepDog), State.Indefinitely);
+            /* 2061 */
+            Dictionary.Add(('{', State.SleepDog), State.Indefinitely);
+            /* 2062 */
+            Dictionary.Add(('}', State.SleepDog), State.Indefinitely);
+            /* 2063 */
+            Dictionary.Add(('(', State.SleepDog), State.Indefinitely);
+            /* 2064 */
+            Dictionary.Add((')', State.SleepDog), State.Indefinitely);
+            /* 2065 */
+            Dictionary.Add(('[', State.SleepDog), State.Indefinitely);
+            /* 2066 */
+            Dictionary.Add((']', State.SleepDog), State.Indefinitely);
+            /* 2067 */
+            Dictionary.Add(('/', State.SleepDog), State.Indefinitely);
+            /* 2068 */
+            Dictionary.Add(('&', State.SleepDog), State.Indefinitely);
+            /* 2069 */
+            Dictionary.Add(('|', State.SleepDog), State.Indefinitely);
+            /* 2070 */
+            Dictionary.Add(('\'', State.SleepDog), State.Indefinitely);
+            /* 2071 */
+            Dictionary.Add(('!', State.SleepDog), State.Indefinitely);
+            /* 2072 */
+            Dictionary.Add((';', State.SleepDog), State.Indefinitely);
+            /* 2073 */
+            Dictionary.Add(('@', State.SleepDog), State.Indefinitely);
+            /* 2074 */
+            Dictionary.Add(('_', State.SleepDog), State.Indefinitely);
+            /* 2075 */
+            Dictionary.Add(('e', State.SleepDog), State.Indefinitely);
+            /* 2076 */
+            Dictionary.Add(('d', State.SleepDog), State.Indefinitely);
+            /* 2077 */
+            Dictionary.Add(('m', State.SleepDog), State.Indefinitely);
+            /* 2078 */
+            Dictionary.Add(('f', State.SleepDog), State.Indefinitely);
+            /* 2079 */
+            Dictionary.Add(('\\', State.SleepDog), State.Indefinitely);
+            /* 2080 */
+            Dictionary.Add(('n', State.SleepDog), State.Indefinitely);
+            /* 2081 */
+            Dictionary.Add(('0', State.ExponentaIntNumberToDouble), State.ExponentaIntNumberToDouble);
+            /* 2082 */
+            Dictionary.Add(('s', State.ExponentaIntNumberToDouble), State.NumberException);
+            /* 2083 */
+            Dictionary.Add(('=', State.ExponentaIntNumberToDouble), State.Indefinitely);
+            /* 2084 */
+            Dictionary.Add(('>', State.ExponentaIntNumberToDouble), State.Indefinitely);
+            /* 2085 */
+            Dictionary.Add(('<', State.ExponentaIntNumberToDouble), State.Indefinitely);
+            /* 2086 */
+            Dictionary.Add((',', State.ExponentaIntNumberToDouble), State.NumberException);
+            /* 2087 */
+            Dictionary.Add(('.', State.ExponentaIntNumberToDouble), State.Indefinitely);
+            /* 2088 */
+            Dictionary.Add(('"', State.ExponentaIntNumberToDouble), State.NumberException);
+            /* 2089 */
+            Dictionary.Add(('+', State.ExponentaIntNumberToDouble), State.Indefinitely);
+            /* 2090 */
+            Dictionary.Add(('-', State.ExponentaIntNumberToDouble), State.Indefinitely);
+            /* 2091 */
+            Dictionary.Add(('*', State.ExponentaIntNumberToDouble), State.Indefinitely);
+            /* 2092 */
+            Dictionary.Add(('^', State.ExponentaIntNumberToDouble), State.Indefinitely);
+            /* 2093 */
+            Dictionary.Add(('{', State.ExponentaIntNumberToDouble), State.NumberException);
+            /* 2094 */
+            Dictionary.Add(('}', State.ExponentaIntNumberToDouble), State.NumberException);
+            /* 2095 */
+            Dictionary.Add(('(', State.ExponentaIntNumberToDouble), State.NumberException);
+            /* 2096 */
+            Dictionary.Add((')', State.ExponentaIntNumberToDouble), State.Indefinitely);
+            /* 2097 */
+            Dictionary.Add(('[', State.ExponentaIntNumberToDouble), State.NumberException);
+            /* 2098 */
+            Dictionary.Add((']', State.ExponentaIntNumberToDouble), State.NumberException);
+            /* 2099 */
+            Dictionary.Add(('/', State.ExponentaIntNumberToDouble), State.Indefinitely);
+            /* 2100 */
+            Dictionary.Add(('&', State.ExponentaIntNumberToDouble), State.Indefinitely);
+            /* 2101 */
+            Dictionary.Add(('|', State.ExponentaIntNumberToDouble), State.Indefinitely);
+            /* 2102 */
+            Dictionary.Add(('\'', State.ExponentaIntNumberToDouble), State.NumberException);
+            /* 2103 */
+            Dictionary.Add(('!', State.ExponentaIntNumberToDouble), State.Indefinitely);
+            /* 2104 */
+            Dictionary.Add((';', State.ExponentaIntNumberToDouble), State.Indefinitely);
+            /* 2105 */
+            Dictionary.Add(('@', State.ExponentaIntNumberToDouble), State.NumberException);
+            /* 2106 */
+            Dictionary.Add(('_', State.ExponentaIntNumberToDouble), State.NumberException);
+            /* 2107 */
+            Dictionary.Add(('e', State.ExponentaIntNumberToDouble), State.NumberException);
+            /* 2108 */
+            Dictionary.Add(('d', State.ExponentaIntNumberToDouble), State.DoubleD);
+            /* 2109 */
+            Dictionary.Add(('m', State.ExponentaIntNumberToDouble), State.Decimal);
+            /* 2110 */
+            Dictionary.Add(('f', State.ExponentaIntNumberToDouble), State.Float);
+            /* 2111 */
+            Dictionary.Add(('\\', State.ExponentaIntNumberToDouble), State.NumberException);
+            /* 2112 */
+            Dictionary.Add(('n', State.ExponentaIntNumberToDouble), State.NumberException);
+            /* 2113 */
+            Dictionary.Add(('0', State.ExponentaIntPlus), State.ExponentaIntNumberToDouble);
+            /* 2114 */
+            Dictionary.Add(('s', State.ExponentaIntPlus), State.NumberException);
+            /* 2115 */
+            Dictionary.Add(('=', State.ExponentaIntPlus), State.NumberException);
+            /* 2116 */
+            Dictionary.Add(('>', State.ExponentaIntPlus), State.NumberException);
+            /* 2117 */
+            Dictionary.Add(('<', State.ExponentaIntPlus), State.NumberException);
+            /* 2118 */
+            Dictionary.Add((',', State.ExponentaIntPlus), State.NumberException);
+            /* 2119 */
+            Dictionary.Add(('.', State.ExponentaIntPlus), State.NumberException);
+            /* 2120 */
+            Dictionary.Add(('"', State.ExponentaIntPlus), State.NumberException);
+            /* 2121 */
+            Dictionary.Add(('+', State.ExponentaIntPlus), State.NumberException);
+            /* 2122 */
+            Dictionary.Add(('-', State.ExponentaIntPlus), State.NumberException);
+            /* 2123 */
+            Dictionary.Add(('*', State.ExponentaIntPlus), State.NumberException);
+            /* 2124 */
+            Dictionary.Add(('^', State.ExponentaIntPlus), State.NumberException);
+            /* 2125 */
+            Dictionary.Add(('{', State.ExponentaIntPlus), State.NumberException);
+            /* 2126 */
+            Dictionary.Add(('}', State.ExponentaIntPlus), State.NumberException);
+            /* 2127 */
+            Dictionary.Add(('(', State.ExponentaIntPlus), State.NumberException);
+            /* 2128 */
+            Dictionary.Add((')', State.ExponentaIntPlus), State.NumberException);
+            /* 2129 */
+            Dictionary.Add(('[', State.ExponentaIntPlus), State.NumberException);
+            /* 2130 */
+            Dictionary.Add((']', State.ExponentaIntPlus), State.NumberException);
+            /* 2131 */
+            Dictionary.Add(('/', State.ExponentaIntPlus), State.NumberException);
+            /* 2132 */
+            Dictionary.Add(('&', State.ExponentaIntPlus), State.NumberException);
+            /* 2133 */
+            Dictionary.Add(('|', State.ExponentaIntPlus), State.NumberException);
+            /* 2134 */
+            Dictionary.Add(('\'', State.ExponentaIntPlus), State.NumberException);
+            /* 2135 */
+            Dictionary.Add(('!', State.ExponentaIntPlus), State.NumberException);
+            /* 2136 */
+            Dictionary.Add((';', State.ExponentaIntPlus), State.NumberException);
+            /* 2137 */
+            Dictionary.Add(('@', State.ExponentaIntPlus), State.NumberException);
+            /* 2138 */
+            Dictionary.Add(('_', State.ExponentaIntPlus), State.NumberException);
+            /* 2139 */
+            Dictionary.Add(('e', State.ExponentaIntPlus), State.NumberException);
+            /* 2140 */
+            Dictionary.Add(('d', State.ExponentaIntPlus), State.NumberException);
+            /* 2141 */
+            Dictionary.Add(('m', State.ExponentaIntPlus), State.NumberException);
+            /* 2142 */
+            Dictionary.Add(('f', State.ExponentaIntPlus), State.NumberException);
+            /* 2143 */
+            Dictionary.Add(('\\', State.ExponentaIntPlus), State.NumberException);
+            /* 2144 */
+            Dictionary.Add(('n', State.ExponentaIntPlus), State.NumberException);
+            /* 2145 */
+            Dictionary.Add(('0', State.ExponentaIntMinus), State.ExponentaIntNumberToDouble);
+            /* 2146 */
+            Dictionary.Add(('s', State.ExponentaIntMinus), State.NumberException);
+            /* 2147 */
+            Dictionary.Add(('=', State.ExponentaIntMinus), State.NumberException);
+            /* 2148 */
+            Dictionary.Add(('>', State.ExponentaIntMinus), State.NumberException);
+            /* 2149 */
+            Dictionary.Add(('<', State.ExponentaIntMinus), State.NumberException);
+            /* 2150 */
+            Dictionary.Add((',', State.ExponentaIntMinus), State.NumberException);
+            /* 2151 */
+            Dictionary.Add(('.', State.ExponentaIntMinus), State.NumberException);
+            /* 2152 */
+            Dictionary.Add(('"', State.ExponentaIntMinus), State.NumberException);
+            /* 2153 */
+            Dictionary.Add(('+', State.ExponentaIntMinus), State.NumberException);
+            /* 2154 */
+            Dictionary.Add(('-', State.ExponentaIntMinus), State.NumberException);
+            /* 2155 */
+            Dictionary.Add(('*', State.ExponentaIntMinus), State.NumberException);
+            /* 2156 */
+            Dictionary.Add(('^', State.ExponentaIntMinus), State.NumberException);
+            /* 2157 */
+            Dictionary.Add(('{', State.ExponentaIntMinus), State.NumberException);
+            /* 2158 */
+            Dictionary.Add(('}', State.ExponentaIntMinus), State.NumberException);
+            /* 2159 */
+            Dictionary.Add(('(', State.ExponentaIntMinus), State.NumberException);
+            /* 2160 */
+            Dictionary.Add((')', State.ExponentaIntMinus), State.NumberException);
+            /* 2161 */
+            Dictionary.Add(('[', State.ExponentaIntMinus), State.NumberException);
+            /* 2162 */
+            Dictionary.Add((']', State.ExponentaIntMinus), State.NumberException);
+            /* 2163 */
+            Dictionary.Add(('/', State.ExponentaIntMinus), State.NumberException);
+            /* 2164 */
+            Dictionary.Add(('&', State.ExponentaIntMinus), State.NumberException);
+            /* 2165 */
+            Dictionary.Add(('|', State.ExponentaIntMinus), State.NumberException);
+            /* 2166 */
+            Dictionary.Add(('\'', State.ExponentaIntMinus), State.NumberException);
+            /* 2167 */
+            Dictionary.Add(('!', State.ExponentaIntMinus), State.NumberException);
+            /* 2168 */
+            Dictionary.Add((';', State.ExponentaIntMinus), State.NumberException);
+            /* 2169 */
+            Dictionary.Add(('@', State.ExponentaIntMinus), State.NumberException);
+            /* 2170 */
+            Dictionary.Add(('_', State.ExponentaIntMinus), State.NumberException);
+            /* 2171 */
+            Dictionary.Add(('e', State.ExponentaIntMinus), State.NumberException);
+            /* 2172 */
+            Dictionary.Add(('d', State.ExponentaIntMinus), State.NumberException);
+            /* 2173 */
+            Dictionary.Add(('m', State.ExponentaIntMinus), State.NumberException);
+            /* 2174 */
+            Dictionary.Add(('f', State.ExponentaIntMinus), State.NumberException);
+            /* 2175 */
+            Dictionary.Add(('\\', State.ExponentaIntMinus), State.NumberException);
+            /* 2176 */
+            Dictionary.Add(('n', State.ExponentaIntMinus), State.NumberException);
 
         }
 

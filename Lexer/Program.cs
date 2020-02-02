@@ -11,13 +11,13 @@ namespace Lexer
             string path;
             #region Setting
 
-            //if (args.Length > 0)
-            if (args.Length == 0)
-            {
-                path = Environment.CurrentDirectory + @"\" + "Test.csc";
-   
+             // if (args.Length > 0)
+             if (args.Length == 0)
+             {
+                 path = Environment.CurrentDirectory + @"\" + "Test.csc";
+
                 //path = args[0];
-                Atr atr = Atr.Default; 
+                Atr atr = Atr.Lexer;
 
                 try
                 {
@@ -30,21 +30,21 @@ namespace Lexer
                     }
                     else
                     {
-                        Console.WriteLine("The attribute you entered does not exist: " + attribute +
-                                          " ; The default attribute value is set: Default");
+                        //  Console.WriteLine("The attribute you entered does not exist: " + attribute +
+                        //                    " ; The default attribute value is set: Default");
                     }
 
                 }
                 catch
                 {
-                   // Console.WriteLine("The default attribute value is set: Default");
-                   // Console.WriteLine();
+                    // Console.WriteLine("The default attribute value is set: Default");
+                    // Console.WriteLine();
                 }
 
                 #endregion
 
-               if (File.Exists(path))
-               {
+                if (File.Exists(path))
+                {
                     #region Attribute
                     if (atr == Atr.Default || atr == Atr.Syntax)
                     {
@@ -59,24 +59,39 @@ namespace Lexer
                         Token token = tokenyzer.GetToken();
                         while (token != null)
                         {
-                            Console.WriteLine(token.RowPos+"    "+token.ColumnPos+ "    "+token.LiteralValue+ "    "+token.TypeLeksem);
-                            token = tokenyzer.GetToken();
+                            Console.WriteLine(token.RowPos + "    " + token.ColumnPos + "    " + token.TypeLeksem + "    " + token.LiteralValue);
+                            if (token.TypeLeksem == TypeLeksem.ErrorException ||
+                                token.TypeLeksem == TypeLeksem.CharException ||
+                                token.TypeLeksem == TypeLeksem.NumberException ||
+                                token.TypeLeksem == TypeLeksem.OperatorException ||
+                                token.TypeLeksem == TypeLeksem.BackSlashException ||
+                                token.TypeLeksem == TypeLeksem.OperatorException ||
+                                token.TypeLeksem == TypeLeksem.IdentifierException ||
+                                token.TypeLeksem == TypeLeksem.IteratorException ||
+                                token.TypeLeksem == TypeLeksem.InvalidCharacterException ||
+                                token.TypeLeksem == TypeLeksem.LogicalException)
+                            {
+                                break;
+
+                            }
+
+                            else token = tokenyzer.GetToken();
                         }
                     }
 
                     #endregion
-               }
-               else
-               {
+                }
+                else
+                {
                     Console.WriteLine("The file at the specified path does not exist: " + path);
                     Console.WriteLine("--Press AnyKey");
-               }
+                }
             }
             else
             {
                 Console.WriteLine("No arguments");
             }
-
+             
             Console.ReadKey();
         }
     }

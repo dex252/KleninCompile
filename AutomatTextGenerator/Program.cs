@@ -44,7 +44,10 @@ namespace AutomatTextGenerator
                                 {
                                     AddText(fs, $"/* {pos} */  Dictionary.Add((\'\\'\', State.{status}), State.{nextStatus});" + '\n');
                                 }
-                                else
+                                else if (character == '\\')
+                                {
+                                    AddText(fs, $"/* {pos} */  Dictionary.Add(('\\\\', State.{status}), State.{nextStatus});" + '\n');
+                                } else
                                 {
                                     AddText(fs, $"/* {pos} */  Dictionary.Add((\'{character}\', State.{status}), State.{nextStatus});" + '\n');
                                 }
@@ -106,8 +109,37 @@ namespace AutomatTextGenerator
             IntDoubleOperator = 36,
             DevisionMultiplication = 37, /* /* */
             MultiComment = 38, /* /* */
-            MultiCommentEnd = 39, /* /* */
-            EndOfFile = 40,
+            Dog = 39,
+            BackSlashException = 40,
+            InvalidCharacter,
+            ExponentaInt,
+            DoubleD,
+            Decimal,
+            Float,
+            Int_,
+            ErrorInIdentifier,
+            NumberException,
+            Double_,
+            ExponentaDouble,
+            DoubleToDouble,
+            DoubleToDecimal,
+            DoubleToFloat,
+            DoublePoint,
+            ErrorInOperator,
+            ErrorInEterator,
+            ErrorInLogicalExpression,
+            FinishMultipleComment,
+            CharException,
+            CharWithBackSlash,
+            CharLineFowardHalf,
+            CharLineFoward,
+            ShiftException,
+            SpeekDog,
+            SleepDog,
+            ExponentaIntNumberToDouble,
+            ExponentaIntPlus,
+            ExponentaIntMinus,
+            EndOfFile = 99,
         }
     }
 }
